@@ -7,7 +7,7 @@ const services = [
     tag: "中小企業・店舗向け",
     title: "AI導入支援",
     description:
-      "事務作業、在庫管理、チラシ制作——面倒な日常業務をAIと仕組みで「いつのまに」自動化。月30時間以上の削減実績。",
+      "事務作業、在庫管理、チラシ制作——面倒な日常業務をAIと仕組みで「いつまに」自動化。月30時間以上の削減実績。",
     href: "/services/ai-implementation",
     color: "#e8f0eb",
     iconColor: "#3d6b4f",
@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-[#fafaf8] pt-20 pb-28">
         <div className="container-narrow text-center">
           <p className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase mb-6">
-            itsunomani
+            itsumani
           </p>
           <h1 className="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-tight tracking-tight text-[#1a1a18] mb-6">
             気がつけば、<br />もう楽になっている。
@@ -146,7 +146,7 @@ export default function HomePage() {
         <div className="container-wide">
           <div className="text-center mb-14">
             <h2 className="section-title">はじめ方</h2>
-            <p className="section-subtitle">4ステップで、「いつのまに」が動き始める</p>
+            <p className="section-subtitle">4ステップで、「いつまに」が動き始める</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flow.map((f) => (
@@ -212,7 +212,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#1a1a18] text-white">
         <div className="container-narrow text-center">
           <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold mb-6 leading-tight">
-            「いつのまに」が選ばれる理由
+            「いつまに」が選ばれる理由
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 text-left">
             {[

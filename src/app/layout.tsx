@@ -4,22 +4,22 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://itsunomani.com"),
+  metadataBase: new URL("https://itsumani.com"),
   title: {
-    default: "いつのまに | AI業務自動化・Webアプリ開発",
-    template: "%s | いつのまに",
+    default: "いつまに | AI業務自動化・Webアプリ開発",
+    template: "%s | いつまに",
   },
   description:
     "気がつけば、もう楽になっている。AI と仕組みの力で、あなたの「面倒」を静かに消します。地方の中小企業から個人クリエイターまで。",
   keywords: ["AI導入支援", "業務自動化", "Webアプリ開発", "中小企業DX", "生成AI", "GAS自動化"],
-  authors: [{ name: "いつのまに / JIN" }],
-  creator: "いつのまに",
+  authors: [{ name: "いつまに / JIN" }],
+  creator: "いつまに",
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://itsunomani.com",
-    siteName: "いつのまに",
-    title: "いつのまに | AI業務自動化・Webアプリ開発",
+    url: "https://itsumani.com",
+    siteName: "いつまに",
+    title: "いつまに | AI業務自動化・Webアプリ開発",
     description:
       "気がつけば、もう楽になっている。AI と仕組みの力で、あなたの「面倒」を静かに消します。",
     images: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "いつのまに",
+        alt: "いつまに",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "いつのまに | AI業務自動化・Webアプリ開発",
+    title: "いつまに | AI業務自動化・Webアプリ開発",
     description: "気がつけば、もう楽になっている。",
     images: ["/og-image.png"],
   },

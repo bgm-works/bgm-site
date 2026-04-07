@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Clock, TrendingUp, Shield, Users, Wrench } fro
 export const metadata: Metadata = {
   title: "AI導入支援 — 地方中小企業・店舗向け",
   description:
-    "「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、いつのまに消します。",
+    "「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、いつまに消します。",
 };
 
 const problems = [
@@ -101,7 +101,7 @@ export default function AiImplementationPage() {
             AI導入支援
           </h1>
           <p className="text-lg text-[#4a4a48] leading-relaxed max-w-lg">
-            「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、<strong>いつのまに</strong>消します。
+            「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、<strong>いつまに</strong>消します。
           </p>
           <Link
             href="/contact"
@@ -125,7 +125,7 @@ export default function AiImplementationPage() {
             ))}
           </div>
           <p className="text-center text-[#6b6b68] mt-8 text-sm">
-            1つでも当てはまったら、<strong className="text-[#3d6b4f]">いつのまに</strong>にご相談ください。
+            1つでも当てはまったら、<strong className="text-[#3d6b4f]">いつまに</strong>にご相談ください。
           </p>
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function AiImplementationPage() {
                     <p className="text-sm text-[#4a4a48] leading-relaxed">{c.before}</p>
                   </div>
                   <div className="border-t border-[#e2e2de] pt-4">
-                    <p className="text-xs text-[#3d6b4f] font-medium mb-1">いつのまに</p>
+                    <p className="text-xs text-[#3d6b4f] font-medium mb-1">いつまに</p>
                     <p className="text-sm text-[#1a1a18] leading-relaxed font-medium">{c.after}</p>
                   </div>
                 </div>

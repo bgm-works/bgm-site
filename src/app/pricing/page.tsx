@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "料金",
   description:
-    "いつのまに の料金プラン。AI導入支援・アトリエboost・Webアプリ開発の3サービス。まずは無料ヒアリングから。",
+    "いつまに の料金プラン。AI導入支援・アトリエboost・Webアプリ開発の3サービス。まずは無料ヒアリングから。",
 };
 
 const plans = [
