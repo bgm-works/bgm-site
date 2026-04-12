@@ -111,13 +111,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#1b2428] py-16">
+      <section className="bg-gradient-to-r from-[#14383d] via-[#17444a] to-[#1f4f56] py-16">
         <div className="container-wide">
           <SectionHeader
             label="ABOUT BGM"
             title="数字で見るBGM"
-            subtitle="ソフトバンクのコーポレートサイトを参考に、大型タイポグラフィで実績を見せる構成へ再設計。"
-            className="mb-8 text-white [&_.section-subtitle]:text-white/75 [&_.section-title]:text-white"
+            subtitle="現場で積み重ねてきた経験・資格・成果を、BGMの実績として分かりやすく可視化しています。"
+            className="mb-8 text-white [&_.section-subtitle]:text-white/90 [&_.section-title]:text-white"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (

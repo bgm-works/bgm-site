@@ -72,9 +72,12 @@ export function StatCounter({ value, label }: StatCounterProps) {
     parsed.target === null ? value : `${parsed.prefix}${count.toLocaleString()}${parsed.suffix}`;
 
   return (
-    <div ref={ref} className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
-      <p className="text-4xl font-bold text-white">{display}</p>
-      <p className="mt-2 text-sm text-white/70">{label}</p>
+    <div
+      ref={ref}
+      className="rounded-2xl border border-white/35 bg-white/15 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-sm"
+    >
+      <p className="text-4xl font-bold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">{display}</p>
+      <p className="mt-2 text-sm text-white/90">{label}</p>
     </div>
   );
 }
