@@ -74,9 +74,6 @@ export default function ContactPage() {
               >
                 info@bgm-works.com
               </a>
-              <p className="mt-2 text-xs text-muted-foreground">
-                ※ドメインメールは設定後に有効になります
-              </p>
               </CardContent>
             </Card>
           </div>

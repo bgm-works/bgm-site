@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink } from "lucide-react";
+import { BrandWord } from "@/components/shared/brand-word";
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div>
             <div className="mb-3 flex flex-col leading-none">
-              <span className="text-lg font-bold text-foreground">BGM</span>
+              <BrandWord className="text-lg" />
               <span className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
                 Business Growth Mechanics
               </span>
@@ -102,7 +103,7 @@ export function Footer() {
         <Separator className="my-6" />
         <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            © 2026 BGM – Business Growth Mechanics. All rights reserved.
+            © 2026 <BrandWord className="text-xs align-baseline" /> – Business Growth Mechanics. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             全国対応 | オンラインで完結
