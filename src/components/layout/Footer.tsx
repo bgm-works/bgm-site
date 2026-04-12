@@ -8,12 +8,12 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex flex-col leading-none mb-3">
-              <span className="text-lg font-bold text-[#1a1a18]">いつまに</span>
-              <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">itsumani</span>
+              <span className="text-lg font-bold text-[#1a1a18]">BGM</span>
+              <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">Business Growth Mechanics</span>
             </div>
             <p className="text-sm text-[#6b6b68] leading-relaxed">
-              気がつけば、もう楽になっている。<br />
-              AI と仕組みの力で、あなたの「面倒」を静かに消す。
+              仕組みが、成長を動かす。<br />
+              AIと設計力で、事業成長のメカニズムを解き明かします。
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-[#e2e2de] flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-xs text-[#6b6b68]">
-            © 2026 いつまに. All rights reserved.
+            © 2026 BGM – Business Growth Mechanics. All rights reserved.
           </p>
           <p className="text-xs text-[#6b6b68]">
             個人事業主 ｜ 京都府

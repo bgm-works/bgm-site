@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Bot, Palette, Code, Clock, CheckCircle, TrendingUp } from "lucide-react";
+import { ArrowRight, Bot, Palette, Code, Clock, CheckCircle, TrendingUp, Cog } from "lucide-react";
 
 const services = [
   {
@@ -7,7 +7,7 @@ const services = [
     tag: "中小企業・店舗向け",
     title: "AI導入支援",
     description:
-      "事務作業、在庫管理、チラシ制作——面倒な日常業務をAIと仕組みで「いつまに」自動化。月30時間以上の削減実績。",
+      "事務作業、在庫管理、チラシ制作——繰り返しの業務をAIと仕組みで自動化。成長を阻む「詰まり」を取り除き、経営者の時間を取り戻します。",
     href: "/services/ai-implementation",
     color: "#e8f0eb",
     iconColor: "#3d6b4f",
@@ -27,7 +27,7 @@ const services = [
     tag: "Web・アプリ開発",
     title: "受託開発",
     description:
-      "17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。納期は他社の1/3、品質は妥協なし。",
+      "17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。事業成長に直結するプロダクトを、他社の1/3の納期で届けます。",
     href: "/services/development",
     color: "#e8eaf0",
     iconColor: "#3d4f6b",
@@ -42,10 +42,10 @@ const stats = [
 ];
 
 const flow = [
-  { step: "01", title: "無料ヒアリング", desc: "30分のオンラインで「面倒」をすべて聞かせてください。" },
-  { step: "02", title: "提案・見積もり", desc: "最適な仕組みと費用を3営業日以内にご提案します。" },
-  { step: "03", title: "構築・導入", desc: "AIが爆速で動く仕組みを作ります。あなたの手間はゼロ。" },
-  { step: "04", title: "月額保守", desc: "「いつのまに止まってた」がないよう、ずっと見守ります。" },
+  { step: "01", title: "無料ヒアリング", desc: "30分のオンラインで「成長の詰まり」をすべて聞かせてください。" },
+  { step: "02", title: "成長設計図の提案", desc: "事業成長の仕組みと実装コストを3営業日以内にご提案します。" },
+  { step: "03", title: "仕組みの構築・導入", desc: "AIが動く成長エンジンを設計・実装します。" },
+  { step: "04", title: "継続チューニング", desc: "事業フェーズに合わせて仕組みを定期的に最適化します。" },
 ];
 
 export default function HomePage() {
@@ -55,14 +55,14 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-[#fafaf8] pt-20 pb-28">
         <div className="container-narrow text-center">
           <p className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase mb-6">
-            itsumani
+            Business Growth Mechanics
           </p>
           <h1 className="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-tight tracking-tight text-[#1a1a18] mb-6">
-            気がつけば、<br />もう楽になっている。
+            仕組みが、<br />成長を動かす。
           </h1>
           <p className="text-lg text-[#6b6b68] max-w-lg mx-auto mb-10 leading-relaxed">
-            AI と仕組みの力で、あなたの「面倒」を静かに消す。<br />
-            地方の中小企業から個人クリエイターまで。
+            事業成長は運やタイミングではなく、<strong className="text-[#1a1a18]">再現可能なメカニズム</strong>が存在します。<br />
+            AIと設計力で、あなたの事業に「成長の仕組み」を実装します。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -104,12 +104,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Founding Philosophy */}
+      <section className="py-24 bg-[#f4f4f0]">
+        <div className="container-narrow">
+          <div className="flex items-center gap-3 mb-8">
+            <Cog size={20} className="text-[#3d6b4f]" />
+            <span className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase">Our Philosophy</span>
+          </div>
+          <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold text-[#1a1a18] leading-tight mb-8">
+            成長には、仕組みがある。
+          </h2>
+          <div className="space-y-5 text-[#4a4a47] leading-relaxed">
+            <p>
+              17年間、大企業のシステムアーキテクトとして複雑なビジネスプロセスを設計・最適化してきました。
+              その経験の中で確信したことがあります——<strong className="text-[#1a1a18]">成長している組織は、必ず「成長の仕組み」を持っている</strong>、ということ。
+            </p>
+            <p>
+              運やタイミングではなく、情報の流れ、意思決定の速度、作業の自動化、顧客との接点設計——
+              これらが有機的に連動するとき、事業は加速します。まるで歯車が噛み合うように。
+            </p>
+            <p>
+              AIが個人レベルで使える時代になった今、企業アーキテクトが大企業向けに設計してきた
+              その「成長の仕組み」を、地方の中小企業・個人事業主にも届けることができます。
+            </p>
+            <p className="font-medium text-[#1a1a18]">
+              BGM（Business Growth Mechanics）は、あなたの事業成長のメカニズムを設計し、
+              AIと仕組みの力で確実に動かし続けることを約束します。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="py-24">
         <div className="container-wide">
           <div className="text-center mb-14">
             <h2 className="section-title">3つのサービス</h2>
-            <p className="section-subtitle">課題に合わせて、最適な仕組みを選べます</p>
+            <p className="section-subtitle">事業フェーズと課題に合わせて、最適な仕組みを設計します</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((s) => {
@@ -146,7 +177,7 @@ export default function HomePage() {
         <div className="container-wide">
           <div className="text-center mb-14">
             <h2 className="section-title">はじめ方</h2>
-            <p className="section-subtitle">4ステップで、「いつまに」が動き始める</p>
+            <p className="section-subtitle">4ステップで、あなたの事業に成長の仕組みが動き始めます</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flow.map((f) => (
@@ -208,28 +239,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why */}
+      {/* Why BGM */}
       <section className="py-24 bg-[#1a1a18] text-white">
         <div className="container-narrow text-center">
           <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold mb-6 leading-tight">
-            「いつまに」が選ばれる理由
+            BGMが選ばれる理由
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 text-left">
             {[
               {
-                icon: Clock,
-                title: "納期は他社の1/3",
-                desc: "AI爆速開発により、1週間かかる案件を1〜2日で納品。スピードは最大の付加価値。",
+                icon: Cog,
+                title: "設計思考で根本から変える",
+                desc: "表面的な自動化ではなく、事業成長の構造そのものを再設計します。17年のシステムアーキテクト経験が、あなたの事業の「詰まり」を見抜きます。",
               },
               {
-                icon: CheckCircle,
-                title: "要件定義から保守まで",
-                desc: "17年のSE経験で「使われない仕組み」を作らない。本当の課題を一緒に掘り起こします。",
+                icon: Clock,
+                title: "AI × 企業設計力で爆速実装",
+                desc: "大企業向けに磨いた設計力と最新AIを組み合わせ、他社の1/3の納期で成長の仕組みを動かします。",
               },
               {
                 icon: TrendingUp,
-                title: "作ったら終わり、にしない",
-                desc: "月額保守でシステムを生き続けさせます。「いつのまに壊れてた」は、ありません。",
+                title: "仕組みを育て続ける",
+                desc: "月額保守で定期チューニング。事業フェーズが変わっても「成長の仕組み」が常に最適な状態で動き続けます。",
               },
             ].map((r) => {
               const Icon = r.icon;
@@ -250,8 +281,8 @@ export default function HomePage() {
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">まず、話してみてください。</h2>
           <p className="text-[#6b6b68] mb-10 leading-relaxed">
-            「これ、自動化できる？」「どのくらいかかる？」<br />
-            30分の無料ヒアリングで、あなたの「面倒」を一緒に整理します。
+            「どこに詰まりがあるか分からない」「何を自動化すれば伸びるか」<br />
+            30分の無料ヒアリングで、あなたの事業成長のメカニズムを一緒に整理します。
           </p>
           <Link
             href="/contact"

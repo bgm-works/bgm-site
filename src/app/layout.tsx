@@ -4,37 +4,37 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://itsumani.com"),
+  metadataBase: new URL("https://bgm-works.com"),
   title: {
-    default: "いつまに | AI業務自動化・Webアプリ開発",
-    template: "%s | いつまに",
+    default: "BGM | Business Growth Mechanics — AI×仕組みで事業成長を設計する",
+    template: "%s | BGM",
   },
   description:
-    "気がつけば、もう楽になっている。AI と仕組みの力で、あなたの「面倒」を静かに消します。地方の中小企業から個人クリエイターまで。",
-  keywords: ["AI導入支援", "業務自動化", "Webアプリ開発", "中小企業DX", "生成AI", "GAS自動化"],
-  authors: [{ name: "いつまに / JIN" }],
-  creator: "いつまに",
+    "仕組みが、成長を動かす。AIと設計力で事業成長のメカニズムを解き明かし、地方の中小企業・個人クリエイターの成長を継続的にサポートします。",
+  keywords: ["AI導入支援", "業務自動化", "Webアプリ開発", "中小企業DX", "生成AI", "GAS自動化", "Business Growth Mechanics", "BGM"],
+  authors: [{ name: "BGM / JIN" }],
+  creator: "BGM",
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://itsumani.com",
-    siteName: "いつまに",
-    title: "いつまに | AI業務自動化・Webアプリ開発",
+    url: "https://bgm-works.com",
+    siteName: "BGM",
+    title: "BGM | Business Growth Mechanics",
     description:
-      "気がつけば、もう楽になっている。AI と仕組みの力で、あなたの「面倒」を静かに消します。",
+      "仕組みが、成長を動かす。AIと設計力で事業成長のメカニズムを解き明かします。",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "いつまに",
+        alt: "BGM – Business Growth Mechanics",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "いつまに | AI業務自動化・Webアプリ開発",
-    description: "気がつけば、もう楽になっている。",
+    title: "BGM | Business Growth Mechanics",
+    description: "仕組みが、成長を動かす。",
     images: ["/og-image.png"],
   },
   robots: {

@@ -20,8 +20,8 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-[#fafaf8]/90 backdrop-blur-sm border-b border-[#e2e2de]">
       <div className="container-wide flex items-center justify-between h-16">
         <Link href="/" className="flex flex-col leading-none">
-          <span className="text-xl font-bold tracking-tight text-[#1a1a18]">いつまに</span>
-          <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">itsumani</span>
+          <span className="text-xl font-bold tracking-tight text-[#1a1a18]">BGM</span>
+          <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">Business Growth Mechanics</span>
         </Link>
 
         {/* Desktop nav */}

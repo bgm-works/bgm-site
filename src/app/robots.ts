@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://itsumani.com/sitemap.xml",
+    sitemap: "https://bgm-works.com/sitemap.xml",
   };
 }

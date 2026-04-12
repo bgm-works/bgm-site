@@ -4,7 +4,7 @@ import { Mail, Clock, MessageSquare } from "lucide-react";
 export const metadata: Metadata = {
   title: "お問い合わせ",
   description:
-    "いつまに へのお問い合わせ・無料ヒアリング予約はこちら。30分のオンライン相談で、業務の「面倒」を一緒に整理します。",
+    "BGM へのお問い合わせ・無料ヒアリング予約はこちら。30分のオンライン相談で、業務の「面倒」を一緒に整理します。",
 };
 
 export default function ContactPage() {
@@ -64,10 +64,10 @@ export default function ContactPage() {
             <div className="bg-[#f4f4f0] rounded-2xl p-6">
               <p className="text-sm font-bold text-[#1a1a18] mb-2">直接メール</p>
               <a
-                href="mailto:jin@itsumani.com"
+                href="mailto:info@bgm-works.com"
                 className="text-[#3d6b4f] hover:underline text-sm font-medium"
               >
-                jin@itsumani.com
+                info@bgm-works.com
               </a>
               <p className="text-xs text-[#9b9b98] mt-2">
                 ※ドメインメールは設定後に有効になります

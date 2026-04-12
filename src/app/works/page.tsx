@@ -5,7 +5,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
   title: "実績・ポートフォリオ",
   description:
-    "いつまに の実績・ポートフォリオ。katatte、PP Route Optimizer、O365-GCal自動同期、AIコンシェルジュ、Master Flow Viewerなど実際に稼働するプロダクト5作品を紹介。",
+    "BGM の実績・ポートフォリオ。katatte、PP Route Optimizer、O365-GCal自動同期、AIコンシェルジュ、Master Flow Viewerなど実際に稼働するプロダクト5作品を紹介。",
 };
 
 const works = [
