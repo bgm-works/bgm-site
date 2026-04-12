@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink } from "lucide-react";
 import { BrandWord } from "@/components/shared/brand-word";
+import { BrandSubtitle } from "@/components/shared/brand-subtitle";
 
 export function Footer() {
   return (
@@ -12,9 +13,7 @@ export function Footer() {
           <div>
             <div className="mb-3 flex flex-col leading-none">
               <BrandWord className="text-lg" />
-              <span className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
-                Business Growth Mechanics
-              </span>
+              <BrandSubtitle className="text-[10px]" />
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               がんばりを、仕組みに変えよう。<br />

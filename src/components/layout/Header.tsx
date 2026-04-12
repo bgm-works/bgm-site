@@ -12,6 +12,7 @@ import {
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { BrandWord } from "@/components/shared/brand-word";
+import { BrandSubtitle } from "@/components/shared/brand-subtitle";
 
 const navItems = [
   { label: "サービス", href: "/#services" },
@@ -27,9 +28,7 @@ export function Header() {
       <div className="container-wide flex h-18 items-center justify-between gap-3">
         <Link href="/" className="flex flex-col leading-none">
           <BrandWord className="text-xl" />
-          <span className="text-[10px] tracking-[0.24em] uppercase text-muted-foreground">
-            Business Growth Mechanics
-          </span>
+          <BrandSubtitle className="text-[10px] tracking-[0.24em]" />
         </Link>
 
         <NavigationMenu className="hidden md:flex">
