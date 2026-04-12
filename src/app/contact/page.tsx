@@ -81,7 +81,7 @@ export default function ContactPage() {
               <h2 className="text-lg font-bold text-[#1a1a18] mb-6">お問い合わせフォーム</h2>
               {/* Formspree embed */}
               <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/xrerzbje"
                 method="POST"
                 className="space-y-5"
               >
