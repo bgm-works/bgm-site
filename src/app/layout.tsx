@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | BGM",
   },
   description:
-    "仕組みが、成長を動かす。AIと設計力で事業成長のメカニズムを解き明かし、地方の中小企業・個人クリエイターの成長を継続的にサポートします。",
+    "がんばりを、仕組みに変えよう。AIと設計力で、中小企業・個人事業主の成長を継続的にサポートします。",
   keywords: ["AI導入支援", "業務自動化", "Webアプリ開発", "中小企業DX", "生成AI", "GAS自動化", "Business Growth Mechanics", "BGM"],
   authors: [{ name: "BGM / JIN" }],
   creator: "BGM",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "BGM",
     title: "BGM | Business Growth Mechanics",
     description:
-      "仕組みが、成長を動かす。AIと設計力で事業成長のメカニズムを解き明かします。",
+      "がんばりを、仕組みに変えよう。AIと設計力で、あなたの事業に成長の仕組みを。",
     images: [
       {
         url: "/og-image.png",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BGM | Business Growth Mechanics",
-    description: "仕組みが、成長を動かす。",
+    description: "がんばりを、仕組みに変えよう。",
     images: ["/og-image.png"],
   },
   robots: {

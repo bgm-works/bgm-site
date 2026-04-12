@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Award, Layers, Globe, Smartphone, Bot } from "lucide-r
 export const metadata: Metadata = {
   title: "Webアプリ開発・AI自動化受託",
   description:
-    "17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。納期は他社の1/3。React/Next.js/AWS/生成AI統合に対応。",
+    "「こういうの、作れないかな」——そのぼんやりしたイメージで十分です。17年のSE経験 × AI爆速開発で、一緒に形にします。",
 };
 
 const skills = [
@@ -56,26 +56,26 @@ const works = [
 const reasons = [
   {
     icon: Zap,
-    title: "納期は他社の1/3",
-    desc: "Cursor + AI爆速開発により、通常1週間かかる実装を1〜2日で完成。スピードは品質を落としません。",
+    title: "アイデアが、すぐ動き出す",
+    desc: "AI爆速開発で、通常1週間かかる実装を1〜2日で完成させます。「早く試してみたい」——その気持ちに応えます。",
   },
   {
     icon: Layers,
-    title: "要件定義から運用まで一気通貫",
-    desc: "「作って渡して終わり」はしません。17年のSE経験で本当の課題を掘り起こし、使われる仕組みを作ります。",
+    title: "「何を作ればいいか」から、一緒に考える",
+    desc: "作って渡して終わり、はしません。17年のSE経験で本当に必要なものを見極め、あなたと一緒にプロダクトを育てます。",
   },
   {
     icon: Award,
-    title: "AWS 3冠の設計力",
-    desc: "SAA/DVA/SOA取得。スケーラブルで安全なインフラ設計。個人開発から法人システムまで対応できます。",
+    title: "大企業品質の設計力を、あなたのプロジェクトに",
+    desc: "AWS 3冠（SAA/DVA/SOA）取得。大企業レベルの堅牢な設計を、個人や中小企業にもお届けします。",
   },
 ];
 
 const flowItems = [
-  { step: "01", title: "ヒアリング", desc: "要件・予算・納期を整理。何を作るかを一緒に決めます。" },
-  { step: "02", title: "提案・見積もり", desc: "技術選定・工数・費用を3営業日以内に提示。" },
-  { step: "03", title: "設計・開発", desc: "AIを活用した爆速開発。週次でデモを共有します。" },
-  { step: "04", title: "納品・運用", desc: "本番デプロイ後も保守対応。長期パートナーとして。" },
+  { step: "01", title: "一緒に整理する", desc: "何を作りたいか、まだぼんやりでも大丈夫。要件・予算・優先度を一緒に整理します。" },
+  { step: "02", title: "提案・見積もり", desc: "最適な技術と進め方を、3営業日以内にご提案します。" },
+  { step: "03", title: "一緒に作り上げる", desc: "AIを活用した爆速開発。毎週デモをお見せしながら、一緒に磨いていきます。" },
+  { step: "04", title: "一緒に育てる", desc: "リリースはゴールではなく、スタート。月額保守で改善を続け、長期パートナーとして伴走します。" },
 ];
 
 export default function DevelopmentPage() {
@@ -87,11 +87,14 @@ export default function DevelopmentPage() {
           <span className="text-xs font-medium text-[#3d4f6b] tracking-widest uppercase">
             Service 03
           </span>
-          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-5 leading-tight">
+          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-3 leading-tight">
             Webアプリ開発<br />AI自動化受託
           </h1>
+          <p className="text-xl font-medium text-[#3d4f6b] mb-5">
+            「こういうの、作れないかな」——それで十分です。
+          </p>
           <p className="text-lg text-[#4a4a48] leading-relaxed max-w-xl">
-            17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。<strong>納期は他社の1/3</strong>、品質は妥協なし。
+            まだぼんやりしたイメージでも大丈夫。17年のSE経験 × AI爆速開発で、<strong>一緒に形にします</strong>。納期は他社の1/3。品質は妥協しません。
           </p>
           <Link
             href="/contact"
@@ -178,7 +181,7 @@ export default function DevelopmentPage() {
       {/* Accepts */}
       <section className="py-20 bg-[#f4f4f0]">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">こんな案件を受け付けています</h2>
+          <h2 className="section-title text-center mb-12">こんな「作りたい」に応えます</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
               { icon: Globe, label: "Webアプリ開発", examples: "業務ツール / ダッシュボード / 予約システム" },
@@ -244,7 +247,10 @@ export default function DevelopmentPage() {
       <section className="py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">「これ、作れますか？」と聞いてみてください。</h2>
-          <p className="text-[#6b6b68] mb-8">たいていのことは作れます。まず話しましょう。</p>
+          <p className="text-[#6b6b68] mb-8 leading-relaxed">
+            たいていのことは作れます。<br />
+            まずは気軽に、聞いてみてください。
+          </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d4f6b] text-white font-medium rounded-full hover:bg-[#2d3f5b] transition-colors"

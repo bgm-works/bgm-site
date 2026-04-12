@@ -72,7 +72,7 @@ export function Footer() {
             © 2026 BGM – Business Growth Mechanics. All rights reserved.
           </p>
           <p className="text-xs text-[#6b6b68]">
-            個人事業主 ｜ 京都府
+            全国対応 ｜ オンラインで完結
           </p>
         </div>
       </div>

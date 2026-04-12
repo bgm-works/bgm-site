@@ -133,7 +133,7 @@ export default function AiImplementationPage() {
       {/* Solutions */}
       <section className="py-20 bg-[#f4f4f0]">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">解決できること</h2>
+          <h2 className="section-title text-center mb-12">BGMで、こう変わります</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {solutions.map((s) => {
               const Icon = s.icon;
@@ -228,9 +228,10 @@ export default function AiImplementationPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="container-narrow text-center">
-          <h2 className="section-title mb-4">まず、30分話しませんか？</h2>
-          <p className="text-[#6b6b68] mb-8">
-            「うちで本当に使えるの？」——その疑問、ヒアリングで一緒に確かめましょう。
+          <h2 className="section-title mb-4">まずは気軽に、30分話してみませんか？</h2>
+          <p className="text-[#6b6b68] mb-8 leading-relaxed">
+            「うちで本当に使えるの？」——その疑問、一緒に確かめましょう。<br />
+            話すだけで、やるべきことが見えてきます。
           </p>
           <Link
             href="/contact"
