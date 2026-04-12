@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { SectionHeader } from "@/components/shared/section-header";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "ブログ・コンテンツ",
@@ -50,97 +55,91 @@ const snsList = [
 export default function BlogPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#f4f4f0]">
-        <div className="container-narrow text-center">
-          <h1 className="section-title mb-4">ブログ・コンテンツ</h1>
-          <p className="text-[#6b6b68] leading-relaxed">
-            AI自動化・業務効率化・起業の実録をNoteで発信中。<br />
-            実際に自分で試して、動いたことだけを書いています。
-          </p>
+      <section className="bg-muted/35 py-20">
+        <div className="container-narrow">
+          <SectionHeader
+            label="BLOG & CONTENT"
+            title="ブログ・コンテンツ"
+            subtitle="AI自動化・業務効率化・起業の実録をNoteで発信中。実際に自分で試して、動いたことだけを書いています。"
+            align="center"
+          />
         </div>
       </section>
 
-      {/* Note articles */}
       <section className="py-20">
         <div className="container-wide">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="section-title">Noteの記事</h2>
-            <a
-              href="https://note.com/jin_lifelab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-[#1B6B6B] font-medium hover:underline"
+          <div className="mb-10 flex items-center justify-between">
+            <SectionHeader label="NOTE" title="Noteの記事" />
+            <Button
+              variant="outline"
+              render={<a href="https://note.com/jin_lifelab" target="_blank" rel="noopener noreferrer" />}
+              className="rounded-full"
             >
               Noteを見る <ExternalLink size={13} />
-            </a>
+            </Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {noteArticles.map((article) => (
-              <a
-                key={article.title}
-                href="https://note.com/jin_lifelab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#1B6B6B] hover:shadow-md transition-all"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-medium text-[#1B6B6B] bg-[#E3F0F0] px-3 py-1 rounded-full">
-                    {article.tag}
-                  </span>
-                  <span className="text-xs text-[#9b9b98]">{article.date}</span>
-                </div>
-                <h3 className="font-bold text-[#1a1a18] mb-3 leading-snug group-hover:text-[#1B6B6B] transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-[#6b6b68] leading-relaxed">{article.desc}</p>
-                <div className="mt-4 flex items-center gap-1 text-sm text-[#1B6B6B] font-medium">
-                  Noteで読む <ArrowRight size={13} />
-                </div>
-              </a>
+              <Reveal key={article.title}>
+                <Card className="group h-full border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
+                  <CardHeader>
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="secondary">{article.tag}</Badge>
+                      <span className="text-xs text-muted-foreground">{article.date}</span>
+                    </div>
+                    <CardTitle className="leading-snug group-hover:text-primary">{article.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="leading-relaxed">{article.desc}</CardDescription>
+                    <Button
+                      variant="ghost"
+                      render={<a href="https://note.com/jin_lifelab" target="_blank" rel="noopener noreferrer" />}
+                      className="mt-3 px-0 text-primary"
+                    >
+                      Noteで読む <ArrowRight size={13} />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SNS */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-wide">
-          <h2 className="section-title mb-10">SNSでも発信中</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <SectionHeader label="SOCIAL" title="SNSでも発信中" className="mb-10" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {snsList.map((s) => (
-              <a
-                key={s.platform}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#1B6B6B] hover:shadow-md transition-all"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <p className="font-bold text-[#1a1a18]">{s.platform}</p>
-                  <ExternalLink size={14} className="text-[#9b9b98] group-hover:text-[#1B6B6B] transition-colors" />
-                </div>
-                <p className="text-sm text-[#1B6B6B] mb-2">{s.handle}</p>
-                <p className="text-sm text-[#6b6b68] leading-relaxed">{s.desc}</p>
-              </a>
+              <Reveal key={s.platform}>
+                <Card className="group h-full border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-base">{s.platform}</CardTitle>
+                      <ExternalLink size={14} className="text-muted-foreground group-hover:text-primary" />
+                    </div>
+                    <p className="text-sm text-primary">{s.handle}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="leading-relaxed">{s.desc}</CardDescription>
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 rounded-[inherit]" aria-label={`${s.platform}を開く`} />
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">お仕事のご相談はこちら</h2>
-          <p className="text-[#6b6b68] mb-8">
+          <p className="mb-8 text-muted-foreground">
             記事を読んで「うちも試したい」と思ったら、お気軽にどうぞ。
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
-          >
+          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
-          </Link>
+          </Button>
         </div>
       </section>
     </>

@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Zap, Award, Layers, Globe, Smartphone, Bot } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { SectionHeader } from "@/components/shared/section-header";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "Webアプリ開発・AI自動化受託",
@@ -81,68 +86,72 @@ const flowItems = [
 export default function DevelopmentPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#E8EEF0]">
+      <section className="bg-secondary py-20">
         <div className="container-narrow">
-          <span className="text-xs font-medium text-[#3D5A6B] tracking-widest uppercase">
-            Service 03
-          </span>
-          <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-3 leading-tight">
+          <Badge className="rounded-full bg-[var(--cool-accent)] px-4 py-1.5 text-xs tracking-[0.2em] text-white">SERVICE 03</Badge>
+          <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] font-bold leading-tight">
             Webアプリ開発<br />AI自動化受託
           </h1>
-          <p className="text-xl font-medium text-[#3D5A6B] mb-5">
+          <p className="mb-5 mt-3 text-xl font-medium text-[var(--cool-accent)]">
             「こういうの、作れないかな」——それで十分です。
           </p>
-          <p className="text-lg text-[#4a4a48] leading-relaxed max-w-xl">
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             まだぼんやりしたイメージでも大丈夫。17年のSE経験 × AI爆速開発で、<strong>一緒に形にします</strong>。納期は他社の1/3。品質は妥協しません。
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#3D5A6B] text-white font-medium rounded-full hover:bg-[#2D4A5B] transition-colors"
-          >
+          <Button render={<Link href="/contact" />} className="mt-8 rounded-full bg-[var(--cool-accent)] px-7 py-4 text-white hover:bg-[color:var(--cool-accent)]/90">
             相談してみる <ArrowRight size={16} />
-          </Link>
+          </Button>
         </div>
       </section>
 
-      {/* Reasons */}
       <section className="py-20">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">選ばれる3つの理由</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <SectionHeader label="WHY DEVELOPMENT" title="選ばれる3つの理由" align="center" className="mb-10" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {reasons.map((r) => {
               const Icon = r.icon;
               return (
-                <div key={r.title} className="bg-white rounded-2xl border border-[#e2e2de] p-8">
-                  <div className="w-12 h-12 bg-[#E8EEF0] rounded-xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#3D5A6B]" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#1a1a18] mb-3">{r.title}</h3>
-                  <p className="text-sm text-[#6b6b68] leading-relaxed">{r.desc}</p>
-                </div>
+                <Reveal key={r.title}>
+                  <Card className="h-full border-border/80">
+                    <CardHeader>
+                      <div className="flex size-12 items-center justify-center rounded-xl bg-secondary text-[var(--cool-accent)]">
+                        <Icon size={22} />
+                      </div>
+                      <CardTitle className="text-lg">{r.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="leading-relaxed">{r.desc}</CardDescription>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">対応技術</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SectionHeader label="TECH STACK" title="対応技術" align="center" className="mb-10" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map((s) => (
-              <div key={s.category} className="bg-white rounded-2xl border border-[#e2e2de] p-6">
-                <h3 className="text-sm font-bold text-[#3D5A6B] mb-4 uppercase tracking-wide">{s.category}</h3>
-                <ul className="space-y-2">
-                  {s.items.map((item) => (
-                    <li key={item} className="text-sm text-[#4a4a48] flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#3D5A6B] flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Reveal key={s.category}>
+                <Card className="h-full border-border/80">
+                  <CardHeader>
+                    <CardTitle className="text-sm uppercase tracking-[0.2em] text-[var(--cool-accent)]">{s.category}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {s.items.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[var(--cool-accent)]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -151,38 +160,40 @@ export default function DevelopmentPage() {
       {/* Works */}
       <section className="py-20">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">実績</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <SectionHeader label="WORKS" title="実績" align="center" className="mb-10" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {works.map((w) => (
-              <div key={w.name} className="bg-white rounded-2xl border border-[#e2e2de] p-7">
-                <span className="text-xs font-medium text-[#3D5A6B] bg-[#E8EEF0] px-3 py-1 rounded-full">
-                  {w.tag}
-                </span>
-                <h3 className="text-lg font-bold text-[#1a1a18] mt-4 mb-2">{w.name}</h3>
-                <p className="text-sm text-[#6b6b68] leading-relaxed mb-4">{w.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {w.tech.map((t) => (
-                    <span key={t} className="text-xs text-[#6b6b68] border border-[#e2e2de] px-2 py-1 rounded-md">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <Reveal key={w.name}>
+                <Card className="h-full border-border/80">
+                  <CardHeader>
+                    <Badge variant="secondary" className="w-fit text-[var(--cool-accent)]">{w.tag}</Badge>
+                    <CardTitle className="pt-2">{w.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4 leading-relaxed">{w.desc}</CardDescription>
+                    <div className="flex flex-wrap gap-2">
+                      {w.tech.map((t) => (
+                        <Badge key={t} variant="outline">{t}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/works" className="inline-flex items-center gap-2 text-[#3D5A6B] font-medium hover:underline">
+            <Button variant="outline" render={<Link href="/works" />} className="rounded-full border-[var(--cool-accent)] text-[var(--cool-accent)]">
               全ての実績を見る <ArrowRight size={15} />
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Accepts */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">こんな「作りたい」に応えます</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <SectionHeader label="BUILD TARGETS" title="こんな「作りたい」に応えます" align="center" className="mb-10" />
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
             {[
               { icon: Globe, label: "Webアプリ開発", examples: "業務ツール / ダッシュボード / 予約システム" },
               { icon: Bot, label: "AI自動化", examples: "LLM統合 / n8n / GAS / 議事録自動化" },
@@ -190,13 +201,19 @@ export default function DevelopmentPage() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="bg-white rounded-2xl border border-[#e2e2de] p-7 text-center">
-                  <div className="w-12 h-12 bg-[#E8EEF0] rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon size={22} className="text-[#3D5A6B]" />
-                  </div>
-                  <h3 className="font-bold text-[#1a1a18] mb-2">{item.label}</h3>
-                  <p className="text-xs text-[#9b9b98]">{item.examples}</p>
-                </div>
+                <Reveal key={item.label}>
+                  <Card className="h-full border-border/80 text-center">
+                    <CardHeader>
+                      <div className="mx-auto flex size-12 items-center justify-center rounded-xl bg-secondary">
+                        <Icon size={22} className="text-[var(--cool-accent)]" />
+                      </div>
+                      <CardTitle className="text-base">{item.label}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription>{item.examples}</CardDescription>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               );
             })}
           </div>
@@ -206,57 +223,60 @@ export default function DevelopmentPage() {
       {/* Flow */}
       <section className="py-20">
         <div className="container-wide">
-          <h2 className="section-title text-center mb-12">進め方</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SectionHeader label="FLOW" title="進め方" align="center" className="mb-10" />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {flowItems.map((f) => (
-              <div key={f.step} className="bg-white rounded-2xl p-7 border border-[#e2e2de]">
-                <p className="text-4xl font-bold text-[#e2e2de] mb-4">{f.step}</p>
-                <h3 className="text-base font-bold text-[#1a1a18] mb-2">{f.title}</h3>
-                <p className="text-sm text-[#6b6b68] leading-relaxed">{f.desc}</p>
-              </div>
+              <Reveal key={f.step}>
+                <Card className="h-full border-border/80">
+                  <CardHeader>
+                    <p className="font-mono text-4xl text-muted">#{f.step}</p>
+                    <CardTitle className="text-base">{f.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="leading-relaxed">{f.desc}</CardDescription>
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-narrow">
-          <h2 className="section-title text-center mb-4">料金の目安</h2>
-          <p className="section-subtitle text-center mb-10">要件によって大きく変わるため、まずはご相談ください。</p>
-          <div className="bg-white rounded-2xl border border-[#e2e2de] divide-y divide-[#e2e2de]">
+          <SectionHeader label="PRICE GUIDE" title="料金の目安" subtitle="要件によって大きく変わるため、まずはご相談ください。" align="center" className="mb-8" />
+          <Card className="overflow-hidden border-border/80">
+            <CardContent className="divide-y divide-border p-0">
             {[
               { label: "小規模（LP・自動化ツール）", price: "5万〜20万円", desc: "シンプルな機能 / 1〜2週間" },
               { label: "中規模（Webアプリ）", price: "20万〜80万円", desc: "認証・DB・API連携あり / 2〜6週間" },
               { label: "大規模（業務システム）", price: "80万円〜", desc: "複雑な要件・チーム開発 / 2ヶ月〜" },
               { label: "月額保守", price: "2万〜10万円/月", desc: "バグ対応・機能追加・AI追従" },
             ].map((r) => (
-              <div key={r.label} className="flex items-center justify-between px-8 py-5">
+              <div key={r.label} className="flex items-center justify-between gap-4 px-8 py-5">
                 <div>
-                  <p className="font-bold text-[#1a1a18]">{r.label}</p>
-                  <p className="text-sm text-[#6b6b68]">{r.desc}</p>
+                  <p className="font-bold">{r.label}</p>
+                  <p className="text-sm text-muted-foreground">{r.desc}</p>
                 </div>
-                <p className="text-lg font-bold text-[#3D5A6B] whitespace-nowrap ml-4">{r.price}</p>
+                <p className="ml-4 whitespace-nowrap text-lg font-bold text-[var(--cool-accent)]">{r.price}</p>
               </div>
             ))}
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">「これ、作れますか？」と聞いてみてください。</h2>
-          <p className="text-[#6b6b68] mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed text-muted-foreground">
             たいていのことは作れます。<br />
             まずは気軽に、聞いてみてください。
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3D5A6B] text-white font-medium rounded-full hover:bg-[#2D4A5B] transition-colors"
-          >
+          <Button render={<Link href="/contact" />} size="lg" className="rounded-full bg-[var(--cool-accent)] px-8 text-white hover:bg-[color:var(--cool-accent)]/90">
             相談してみる <ArrowRight size={16} />
-          </Link>
+          </Button>
         </div>
       </section>
     </>

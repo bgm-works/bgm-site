@@ -1,9 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 
 const navItems = [
   { label: "サービス", href: "/#services" },
@@ -14,73 +21,72 @@ const navItems = [
 ];
 
 export function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 bg-[#fafaf8]/90 backdrop-blur-sm border-b border-[#e2e2de]">
-      <div className="container-wide flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur">
+      <div className="container-wide flex h-18 items-center justify-between gap-3">
         <Link href="/" className="flex flex-col leading-none">
-          <span className="text-xl font-bold tracking-tight text-[#1a1a18]">BGM</span>
-          <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">Business Growth Mechanics</span>
+          <span className="text-xl font-bold tracking-tight text-foreground">BGM</span>
+          <span className="text-[10px] tracking-[0.24em] uppercase text-muted-foreground">
+            Business Growth Mechanics
+          </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) =>
-            item.highlight ? (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-4 py-2 bg-[#1B6B6B] text-white text-sm font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-[#6b6b68] hover:text-[#1a1a18] transition-colors"
-              >
-                {item.label}
-              </Link>
-            )
-          )}
-        </nav>
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList className="gap-2">
+            {navItems.map((item) => (
+              <NavigationMenuItem key={item.href}>
+                {item.highlight ? (
+                  <Button
+                    render={<Link href={item.href} />}
+                    className="rounded-full px-4"
+                  >
+                    {item.label}
+                  </Button>
+                ) : (
+                  <NavigationMenuLink
+                    href={item.href}
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    {item.label}
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden p-2 text-[#6b6b68]"
-          onClick={() => setOpen(!open)}
-          aria-label="メニューを開く"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "md:hidden overflow-hidden transition-all duration-200",
-          open ? "max-h-96 border-b border-[#e2e2de]" : "max-h-0"
-        )}
-      >
-        <nav className="container-wide py-4 flex flex-col gap-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "text-sm font-medium transition-colors",
-                item.highlight
-                  ? "text-[#1B6B6B]"
-                  : "text-[#1a1a18] hover:text-[#1B6B6B]"
-              )}
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <Sheet>
+          <SheetTrigger
+            render={
+              <Button
+                variant="outline"
+                size="icon"
+                className="md:hidden"
+                aria-label="メニューを開く"
+              />
+            }
+          >
+            <Menu />
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[280px]">
+            <SheetTitle className="px-5 pt-5 text-sm tracking-[0.18em] uppercase text-muted-foreground">
+              Menu
+            </SheetTitle>
+            <Separator className="mt-4" />
+            <nav className="flex flex-col gap-2 px-4 py-4">
+              {navItems.map((item) => (
+                <Button
+                  key={item.href}
+                  variant={item.highlight ? "default" : "ghost"}
+                  className="justify-start"
+                  render={<Link href={item.href} />}
+                >
+                  {item.label}
+                </Button>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

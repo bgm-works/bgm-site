@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SectionHeader } from "@/components/shared/section-header";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "料金",
@@ -173,7 +179,7 @@ const faq = [
   },
   {
     q: "オンラインのみですか？",
-    a: "基本はオンライン（Zoom / Google Meet）対応です。関西圏（京都・大阪・神戸）であれば訪問も対応可能です。",
+    a: "基本はオンライン（Zoom / Google Meet）で対応していますが、ご要望をいただいた場合は対面でのお打ち合わせにも対応しています。",
   },
   {
     q: "途中でキャンセルできますか？",
@@ -184,142 +190,96 @@ const faq = [
 export default function PricingPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#f4f4f0]">
-        <div className="container-narrow text-center">
-          <h1 className="section-title mb-4">料金</h1>
-          <p className="text-[#6b6b68] leading-relaxed">
-            まずは無料ヒアリングから。費用は一切かかりません。<br />
-            規模・要件に応じて最適なプランをご提案します。
-          </p>
+      <section className="bg-muted/35 py-20">
+        <div className="container-narrow">
+          <SectionHeader
+            label="PRICING"
+            title="料金"
+            subtitle="まずは無料ヒアリングから。規模・要件に応じて最適なプランをご提案します。"
+            align="center"
+          />
         </div>
       </section>
 
-      {/* Plans */}
       {plans.map((plan) => (
-        <section key={plan.service} className="py-16 border-b border-[#e2e2de]">
+        <section key={plan.service} className="border-b border-border py-16">
           <div className="container-wide">
-            <div className="flex items-center gap-3 mb-10">
-              <span
-                className="text-sm font-bold text-white px-4 py-2 rounded-full"
-                style={{ backgroundColor: plan.tagColor }}
-              >
+            <Reveal>
+              <Badge className="rounded-full px-4 py-1.5 text-xs tracking-[0.18em] uppercase" style={{ backgroundColor: plan.tagColor }}>
                 {plan.service}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              </Badge>
+            </Reveal>
+            <div className="mt-7 grid grid-cols-1 gap-6 md:grid-cols-3">
               {plan.tiers.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`rounded-2xl p-8 flex flex-col ${
-                    tier.highlight
-                      ? "border-2 text-white"
-                      : "bg-white border border-[#e2e2de]"
-                  }`}
-                  style={
-                    tier.highlight
-                      ? { backgroundColor: plan.tagColor, borderColor: plan.tagColor }
-                      : {}
-                  }
-                >
-                  <p
-                    className={`text-xs font-medium tracking-widest uppercase mb-2 ${
-                      tier.highlight ? "text-white/60" : "text-[#6b6b68]"
+                <Reveal key={tier.name}>
+                  <Card
+                    className={`flex h-full flex-col border-border/80 transition-transform hover:-translate-y-1 hover:shadow-xl ${
+                      tier.highlight ? "text-white" : ""
                     }`}
+                    style={tier.highlight ? { backgroundColor: plan.tagColor, borderColor: plan.tagColor } : undefined}
                   >
-                    {tier.name}
-                  </p>
-                  <p
-                    className={`text-xl font-bold mb-1 ${
-                      tier.highlight ? "text-white" : "text-[#1a1a18]"
-                    }`}
-                  >
-                    {tier.price}
-                  </p>
-                  <p
-                    className={`text-xs mb-6 ${
-                      tier.highlight ? "text-white/60" : "text-[#9b9b98]"
-                    }`}
-                  >
-                    {tier.desc}
-                  </p>
-                  <ul className="space-y-3 flex-1">
-                    {tier.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2">
-                        <CheckCircle
-                          size={13}
-                          className="mt-0.5 flex-shrink-0"
-                          style={{ color: tier.highlight ? "rgba(255,255,255,0.7)" : plan.tagColor }}
-                        />
-                        <span
-                          className={`text-sm ${
-                            tier.highlight ? "text-white/90" : "text-[#4a4a48]"
-                          }`}
-                        >
-                          {f}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={tier.href}
-                    className={`mt-7 text-center py-3 px-6 rounded-full font-medium text-sm transition-colors ${
-                      tier.highlight
-                        ? "bg-white hover:bg-[#f4f4f0]"
-                        : "border hover:opacity-80"
-                    }`}
-                    style={
-                      tier.highlight
-                        ? { color: plan.tagColor }
-                        : { borderColor: plan.tagColor, color: plan.tagColor }
-                    }
-                  >
-                    {tier.cta}
-                  </Link>
-                </div>
+                    <CardHeader className="space-y-1">
+                      <p className={`text-xs uppercase tracking-[0.2em] ${tier.highlight ? "text-white/75" : "text-muted-foreground"}`}>
+                        {tier.name}
+                      </p>
+                      <CardTitle className={`text-2xl ${tier.highlight ? "text-white" : "text-foreground"}`}>{tier.price}</CardTitle>
+                      <p className={`text-xs ${tier.highlight ? "text-white/70" : "text-muted-foreground"}`}>{tier.desc}</p>
+                    </CardHeader>
+                    <CardContent className="flex flex-1 flex-col">
+                      <ul className="flex-1 space-y-3">
+                        {tier.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2 text-sm">
+                            <CheckCircle2
+                              className="mt-0.5 size-4 flex-shrink-0"
+                              style={{ color: tier.highlight ? "rgba(255,255,255,0.8)" : plan.tagColor }}
+                            />
+                            <span className={tier.highlight ? "text-white/95" : "text-muted-foreground"}>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button
+                        render={<Link href={tier.href} />}
+                        variant={tier.highlight ? "secondary" : "outline"}
+                        className="mt-7 rounded-full"
+                        style={!tier.highlight ? { borderColor: plan.tagColor, color: plan.tagColor } : undefined}
+                      >
+                        {tier.cta}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
       ))}
 
-      {/* FAQ */}
       <section className="py-20">
         <div className="container-narrow">
-          <h2 className="section-title text-center mb-12">よくある質問</h2>
-          <div className="space-y-4">
+          <SectionHeader label="FAQ" title="よくある質問" align="center" className="mb-10" />
+          <Accordion defaultValue={faq[0]?.q ? [faq[0].q] : []} className="rounded-2xl border border-border bg-card px-5 py-2">
             {faq.map((item) => (
-              <details
-                key={item.q}
-                className="bg-white border border-[#e2e2de] rounded-2xl overflow-hidden group"
-              >
-                <summary className="px-7 py-5 cursor-pointer font-medium text-[#1a1a18] flex items-center justify-between list-none">
-                  {item.q}
-                  <span className="text-[#6b6b68] text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div className="px-7 pb-5">
-                  <p className="text-sm text-[#6b6b68] leading-relaxed">{item.a}</p>
-                </div>
-              </details>
+              <AccordionItem key={item.q} value={item.q}>
+                <AccordionTrigger className="py-4 text-base">{item.q}</AccordionTrigger>
+                <AccordionContent className="pb-4 text-sm leading-relaxed text-muted-foreground">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">まずは話してみましょう。</h2>
-          <p className="text-[#6b6b68] mb-8">
+          <p className="mb-8 text-muted-foreground">
             「予算が不安」「何から始めれば」——その疑問にも、ヒアリングでお答えします。
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
-          >
+          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
-          </Link>
-          <p className="mt-3 text-xs text-[#9b9b98]">返信は24時間以内。費用は一切かかりません。</p>
+          </Button>
+          <p className="mt-3 text-xs text-muted-foreground">返信は24時間以内。費用は一切かかりません。</p>
         </div>
       </section>
     </>

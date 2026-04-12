@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { SectionHeader } from "@/components/shared/section-header";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "実績・ポートフォリオ",
@@ -109,103 +114,94 @@ const works = [
 export default function WorksPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#f4f4f0]">
-        <div className="container-narrow text-center">
-          <h1 className="section-title mb-4">実績・ポートフォリオ</h1>
-          <p className="text-[#6b6b68] leading-relaxed">
-            実際に動いているプロダクトを5つ紹介します。<br />
-            すべて、アイデアから実装まで1〜3日で完成しています。
-          </p>
+      <section className="bg-muted/35 py-20">
+        <div className="container-narrow">
+          <SectionHeader
+            label="WORKS"
+            title="実績・ポートフォリオ"
+            subtitle="実際に動いているプロダクトを5つ紹介します。すべて、アイデアから実装まで1〜3日で完成しています。"
+            align="center"
+          />
         </div>
       </section>
 
-      {/* Works list */}
       <section className="py-20">
-        <div className="container-wide space-y-12">
+        <div className="container-wide grid gap-7">
           {works.map((w) => (
-            <article
-              key={w.id}
-              className="bg-white rounded-2xl border border-[#e2e2de] overflow-hidden"
-            >
-              {/* Header */}
-              <div
-                className="px-8 py-6 flex items-start justify-between gap-4"
-                style={{ backgroundColor: w.color }}
-              >
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-4xl font-bold text-white/40">{w.number}</span>
-                    <span
-                      className="text-xs font-medium px-3 py-1 rounded-full text-white"
-                      style={{ backgroundColor: w.accentColor }}
-                    >
-                      {w.tag}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-[#1a1a18]">{w.name}</h2>
-                  <p className="text-sm font-medium mt-1" style={{ color: w.accentColor }}>
-                    {w.tagline}
-                  </p>
-                </div>
-                {w.available && (
-                  <a
-                    href={w.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm font-medium text-white px-4 py-2 rounded-full flex-shrink-0"
-                    style={{ backgroundColor: w.accentColor }}
+            <Reveal key={w.id}>
+              <Card className="overflow-hidden border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
+                <div className="grid gap-0 md:grid-cols-[240px_1fr]">
+                  <div
+                    className="flex min-h-44 items-end bg-gradient-to-br p-5"
+                    style={{ backgroundColor: w.color }}
                   >
-                    サイトを見る <ExternalLink size={13} />
-                  </a>
-                )}
-              </div>
-
-              {/* Body */}
-              <div className="px-8 py-7 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-2">
-                  <p className="text-sm text-[#4a4a48] leading-relaxed mb-5">{w.description}</p>
-                  <ul className="space-y-2">
-                    {w.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-sm">
-                        <span className="mt-0.5 flex-shrink-0" style={{ color: w.accentColor }}>✓</span>
-                        <span className="text-[#4a4a48]">{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-[#9b9b98] uppercase tracking-wide mb-3">使用技術</p>
-                  <div className="flex flex-wrap gap-2">
-                    {w.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs border border-[#e2e2de] text-[#6b6b68] px-2.5 py-1.5 rounded-lg"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    <div className="rounded-xl border border-white/50 bg-white/30 p-3">
+                      <p className="font-mono text-4xl font-semibold text-white/70">{w.number}</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <CardHeader className="p-0">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <Badge className="mb-3" style={{ backgroundColor: w.accentColor }}>
+                            {w.tag}
+                          </Badge>
+                          <CardTitle className="text-2xl">{w.name}</CardTitle>
+                          <p className="mt-1 text-sm font-medium" style={{ color: w.accentColor }}>
+                            {w.tagline}
+                          </p>
+                        </div>
+                        {w.available ? (
+                          <Button
+                            render={
+                              <a href={w.url} target="_blank" rel="noopener noreferrer" />
+                            }
+                            className="rounded-full"
+                            style={{ backgroundColor: w.accentColor }}
+                          >
+                            サイトを見る <ExternalLink size={13} />
+                          </Button>
+                        ) : null}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="mt-5 grid gap-6 p-0 md:grid-cols-3">
+                      <div className="space-y-4 md:col-span-2">
+                        <CardDescription className="leading-relaxed text-muted-foreground">{w.description}</CardDescription>
+                        <ul className="space-y-2">
+                          {w.points.map((p) => (
+                            <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span className="mt-0.5 flex-shrink-0" style={{ color: w.accentColor }}>✓</span>
+                              <span>{p}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">使用技術</p>
+                        <div className="flex flex-wrap gap-2">
+                          {w.tech.map((t) => (
+                            <Badge key={t} variant="outline">{t}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
                   </div>
                 </div>
-              </div>
-            </article>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#f4f4f0]">
+      <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">あなたのプロダクトも、作れます。</h2>
-          <p className="text-[#6b6b68] mb-8">
+          <p className="mb-8 text-muted-foreground">
             アイデアがあれば、それが何でも形にできます。まずお話しください。
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
-          >
+          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             相談してみる <ArrowRight size={16} />
-          </Link>
+          </Button>
         </div>
       </section>
     </>
