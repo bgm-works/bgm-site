@@ -12,8 +12,8 @@ export function Footer() {
               <span className="text-[10px] text-[#6b6b68] tracking-widest uppercase">Business Growth Mechanics</span>
             </div>
             <p className="text-sm text-[#6b6b68] leading-relaxed">
-              仕組みが、成長を動かす。<br />
-              AIと設計力で、事業成長のメカニズムを解き明かします。
+              がんばりを、仕組みに変えよう。<br />
+              AIと設計力で、あなたの事業に成長の仕組みを。
             </p>
           </div>
 
@@ -59,14 +59,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://note.com/jin_lifelab"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors"
-                >
-                  Note（ブログ）
-                </a>
+                <Link href="/blog" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                  ブログ
+                </Link>
               </li>
             </ul>
           </div>

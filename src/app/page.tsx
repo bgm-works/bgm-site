@@ -42,10 +42,10 @@ const stats = [
 ];
 
 const flow = [
-  { step: "01", title: "無料ヒアリング", desc: "30分のオンラインで「成長の詰まり」をすべて聞かせてください。" },
-  { step: "02", title: "成長設計図の提案", desc: "事業成長の仕組みと実装コストを3営業日以内にご提案します。" },
-  { step: "03", title: "仕組みの構築・導入", desc: "AIが動く成長エンジンを設計・実装します。" },
-  { step: "04", title: "継続チューニング", desc: "事業フェーズに合わせて仕組みを定期的に最適化します。" },
+  { step: "01", title: "無料ヒアリング", desc: "30分のオンラインで、今いちばん困っていることを聞かせてください。" },
+  { step: "02", title: "成長設計図の提案", desc: "あなたの事業に合った仕組みと費用感を、3営業日以内にご提案します。" },
+  { step: "03", title: "仕組みの構築・導入", desc: "小さく始めて、手応えを感じながら一緒に作り上げます。" },
+  { step: "04", title: "一緒に育てる", desc: "事業の変化に合わせて仕組みを定期チューニング。ずっと伴走します。" },
 ];
 
 export default function HomePage() {
@@ -58,11 +58,11 @@ export default function HomePage() {
             Business Growth Mechanics
           </p>
           <h1 className="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-tight tracking-tight text-[#1a1a18] mb-6">
-            仕組みが、<br />成長を動かす。
+            がんばりを、<br />仕組みに変えよう。
           </h1>
           <p className="text-lg text-[#6b6b68] max-w-lg mx-auto mb-10 leading-relaxed">
-            事業成長は運やタイミングではなく、<strong className="text-[#1a1a18]">再現可能なメカニズム</strong>が存在します。<br />
-            AIと設計力で、あなたの事業に「成長の仕組み」を実装します。
+            毎日がんばっているのに、もっと伸ばしたい。<br />
+            その想いを、AIと設計力で<strong className="text-[#1a1a18]">「成長の仕組み」</strong>に変えます。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -112,24 +112,29 @@ export default function HomePage() {
             <span className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase">Our Philosophy</span>
           </div>
           <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold text-[#1a1a18] leading-tight mb-8">
-            成長には、仕組みがある。
+            がんばっている、あなたへ。
           </h2>
-          <div className="space-y-5 text-[#4a4a47] leading-relaxed">
-            <p>
-              17年間、大企業のシステムアーキテクトとして複雑なビジネスプロセスを設計・最適化してきました。
-              その経験の中で確信したことがあります——<strong className="text-[#1a1a18]">成長している組織は、必ず「成長の仕組み」を持っている</strong>、ということ。
+          <div className="space-y-6 text-[#4a4a47] leading-relaxed">
+            <p className="text-lg">
+              「もう少し売上を伸ばしたい。でも、自分の手が足りない。」<br />
+              「AIがいいって聞くけど、何から手をつければいいか分からない。」
             </p>
             <p>
-              運やタイミングではなく、情報の流れ、意思決定の速度、作業の自動化、顧客との接点設計——
-              これらが有機的に連動するとき、事業は加速します。まるで歯車が噛み合うように。
+              その忙しさは、事業を本気で良くしたいという証拠だと思っています。
             </p>
             <p>
-              AIが個人レベルで使える時代になった今、企業アーキテクトが大企業向けに設計してきた
-              その「成長の仕組み」を、地方の中小企業・個人事業主にも届けることができます。
+              17年間、大企業でビジネスの仕組みを設計する中で、
+              ひとつ確信したことがあります。<br />
+              <strong className="text-[#1a1a18]">成長する事業には、必ず「成長の仕組み」がある。</strong><br />
+              それは才能でも運でもなく、設計できるものです。
             </p>
-            <p className="font-medium text-[#1a1a18]">
-              BGM（Business Growth Mechanics）は、あなたの事業成長のメカニズムを設計し、
-              AIと仕組みの力で確実に動かし続けることを約束します。
+            <p>
+              AIが身近になった今、その仕組みを届けられるようになりました。
+            </p>
+            <p className="font-medium text-[#1a1a18] text-lg">
+              あなたのがんばりを、仕組みに変える。<br />
+              そして、その仕組みを一緒に育て続ける。<br />
+              それがBGMの約束です。
             </p>
           </div>
         </div>
@@ -177,7 +182,7 @@ export default function HomePage() {
         <div className="container-wide">
           <div className="text-center mb-14">
             <h2 className="section-title">はじめ方</h2>
-            <p className="section-subtitle">4ステップで、あなたの事業に成長の仕組みが動き始めます</p>
+            <p className="section-subtitle">4ステップで、あなたの事業に成長の仕組みが生まれます</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flow.map((f) => (
@@ -249,18 +254,18 @@ export default function HomePage() {
             {[
               {
                 icon: Cog,
-                title: "設計思考で根本から変える",
-                desc: "表面的な自動化ではなく、事業成長の構造そのものを再設計します。17年のシステムアーキテクト経験が、あなたの事業の「詰まり」を見抜きます。",
+                title: "事業の「詰まり」を、一緒に見つける",
+                desc: "表面的な自動化ではなく、売上が伸びない原因を構造から見つけます。17年の設計経験で、あなた自身も気づいていないボトルネックを発見します。",
               },
               {
                 icon: Clock,
-                title: "AI × 企業設計力で爆速実装",
-                desc: "大企業向けに磨いた設計力と最新AIを組み合わせ、他社の1/3の納期で成長の仕組みを動かします。",
+                title: "小さく始めて、手応えを感じてから広げる",
+                desc: "最初から大きな投資は不要。まず1つの仕組みを作り、効果を実感してから次のステップへ。AI×設計力で、他社の1/3の納期で形にします。",
               },
               {
                 icon: TrendingUp,
-                title: "仕組みを育て続ける",
-                desc: "月額保守で定期チューニング。事業フェーズが変わっても「成長の仕組み」が常に最適な状態で動き続けます。",
+                title: "事業が変わっても、仕組みが寄り添い続ける",
+                desc: "作って終わりではありません。月額保守で定期チューニング。事業フェーズに合わせて仕組みを一緒に育てます。",
               },
             ].map((r) => {
               const Icon = r.icon;
@@ -279,10 +284,10 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-24">
         <div className="container-narrow text-center">
-          <h2 className="section-title mb-4">まず、話してみてください。</h2>
+          <h2 className="section-title mb-4">まずは気軽に、話してみてください。</h2>
           <p className="text-[#6b6b68] mb-10 leading-relaxed">
-            「どこに詰まりがあるか分からない」「何を自動化すれば伸びるか」<br />
-            30分の無料ヒアリングで、あなたの事業成長のメカニズムを一緒に整理します。
+            「何から手をつければいいか分からない」でも大丈夫です。<br />
+            30分の無料ヒアリングで、あなたの事業の「がんばりどころ」を一緒に整理します。
           </p>
           <Link
             href="/contact"
