@@ -48,8 +48,8 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="flex gap-4">
-                      <div className="w-10 h-10 bg-[#e8f0eb] rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Icon size={18} className="text-[#3d6b4f]" />
+                      <div className="w-10 h-10 bg-[#E3F0F0] rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon size={18} className="text-[#1B6B6B]" />
                       </div>
                       <div>
                         <p className="font-bold text-[#1a1a18] text-sm mb-1">{item.title}</p>
@@ -65,7 +65,7 @@ export default function ContactPage() {
               <p className="text-sm font-bold text-[#1a1a18] mb-2">直接メール</p>
               <a
                 href="mailto:info@bgm-works.com"
-                className="text-[#3d6b4f] hover:underline text-sm font-medium"
+                className="text-[#1B6B6B] hover:underline text-sm font-medium"
               >
                 info@bgm-works.com
               </a>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                       name="name"
                       required
                       placeholder="山田 太郎"
-                      className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors"
+                      className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors"
                     />
                   </div>
                   <div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       id="company"
                       name="company"
                       placeholder="株式会社〇〇 / 個人"
-                      className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors"
+                      className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors"
                     />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                     name="email"
                     required
                     placeholder="example@email.com"
-                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors"
+                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors"
                   />
                 </div>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   <select
                     id="service"
                     name="service"
-                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors bg-white"
+                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors bg-white"
                   >
                     <option value="">選択してください</option>
                     <option value="ai-implementation">AI導入支援（中小企業・店舗向け）</option>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     required
                     rows={5}
                     placeholder="例：毎月の請求書処理を自動化したい。今は手入力で月10時間かかっている。費用感と対応できるか知りたい。"
-                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors resize-none"
+                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] placeholder:text-[#c4c4c0] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors resize-none"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   <select
                     id="budget"
                     name="budget"
-                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] focus:outline-none focus:border-[#3d6b4f] focus:ring-1 focus:ring-[#3d6b4f] transition-colors bg-white"
+                    className="w-full border border-[#e2e2de] rounded-xl px-4 py-3 text-sm text-[#1a1a18] focus:outline-none focus:border-[#1B6B6B] focus:ring-1 focus:ring-[#1B6B6B] transition-colors bg-white"
                   >
                     <option value="">回答しない</option>
                     <option value="under-5">5万円未満</option>
@@ -179,7 +179,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors text-sm"
+                  className="w-full py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors text-sm"
                 >
                   送信する（無料）
                 </button>

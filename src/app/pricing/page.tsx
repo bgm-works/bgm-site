@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const plans = [
   {
     service: "AI導入支援",
-    tagColor: "#3d6b4f",
+    tagColor: "#1B6B6B",
     bgColor: "#e8f0eb",
     tiers: [
       {
@@ -60,8 +60,8 @@ const plans = [
   },
   {
     service: "アトリエboost",
-    tagColor: "#6b4f3d",
-    bgColor: "#f0ebe8",
+    tagColor: "#C06A3A",
+    bgColor: "#FBF0EA",
     tiers: [
       {
         name: "無料ヒアリング",
@@ -109,8 +109,8 @@ const plans = [
   },
   {
     service: "Webアプリ開発",
-    tagColor: "#3d4f6b",
-    bgColor: "#e8eaf0",
+    tagColor: "#3D5A6B",
+    bgColor: "#E8EEF0",
     tiers: [
       {
         name: "小規模",
@@ -315,7 +315,7 @@ export default function PricingPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>

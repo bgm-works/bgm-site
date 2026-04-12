@@ -92,9 +92,9 @@ export default function AiImplementationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#e8f0eb]">
+      <section className="pt-20 pb-16 bg-[#E3F0F0]">
         <div className="container-narrow">
-          <span className="text-xs font-medium text-[#3d6b4f] tracking-widest uppercase">
+          <span className="text-xs font-medium text-[#1B6B6B] tracking-widest uppercase">
             Service 01
           </span>
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-5 leading-tight">
@@ -105,7 +105,7 @@ export default function AiImplementationPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>
@@ -125,7 +125,7 @@ export default function AiImplementationPage() {
             ))}
           </div>
           <p className="text-center text-[#6b6b68] mt-8 text-sm">
-            1つでも当てはまったら、<strong className="text-[#3d6b4f]">BGM</strong>にご相談ください。
+            1つでも当てはまったら、<strong className="text-[#1B6B6B]">BGM</strong>にご相談ください。
           </p>
         </div>
       </section>
@@ -139,8 +139,8 @@ export default function AiImplementationPage() {
               const Icon = s.icon;
               return (
                 <div key={s.title} className="bg-white rounded-2xl border border-[#e2e2de] p-8">
-                  <div className="w-11 h-11 bg-[#e8f0eb] rounded-xl flex items-center justify-center mb-5">
-                    <Icon size={20} className="text-[#3d6b4f]" />
+                  <div className="w-11 h-11 bg-[#E3F0F0] rounded-xl flex items-center justify-center mb-5">
+                    <Icon size={20} className="text-[#1B6B6B]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#1a1a18] mb-2">{s.title}</h3>
                   <p className="text-sm text-[#6b6b68] leading-relaxed">{s.desc}</p>
@@ -167,7 +167,7 @@ export default function AiImplementationPage() {
                     <p className="text-sm text-[#4a4a48] leading-relaxed">{c.before}</p>
                   </div>
                   <div className="border-t border-[#e2e2de] pt-4">
-                    <p className="text-xs text-[#3d6b4f] font-medium mb-1">BGM</p>
+                    <p className="text-xs text-[#1B6B6B] font-medium mb-1">BGM</p>
                     <p className="text-sm text-[#1a1a18] leading-relaxed font-medium">{c.after}</p>
                   </div>
                 </div>
@@ -188,23 +188,23 @@ export default function AiImplementationPage() {
                 key={p.name}
                 className={`rounded-2xl p-8 flex flex-col ${
                   p.highlight
-                    ? "bg-[#3d6b4f] text-white border-2 border-[#3d6b4f]"
+                    ? "bg-[#1B6B6B] text-white border-2 border-[#1B6B6B]"
                     : "bg-white border border-[#e2e2de]"
                 }`}
               >
-                <p className={`text-xs font-medium tracking-widest uppercase mb-2 ${p.highlight ? "text-[#a8d4b8]" : "text-[#6b6b68]"}`}>
+                <p className={`text-xs font-medium tracking-widest uppercase mb-2 ${p.highlight ? "text-[#A8D4D4]" : "text-[#6b6b68]"}`}>
                   {p.name}
                 </p>
                 <p className={`text-2xl font-bold mb-1 ${p.highlight ? "text-white" : "text-[#1a1a18]"}`}>
                   {p.price}
                 </p>
-                <p className={`text-xs mb-6 ${p.highlight ? "text-[#a8d4b8]" : "text-[#9b9b98]"}`}>
+                <p className={`text-xs mb-6 ${p.highlight ? "text-[#A8D4D4]" : "text-[#9b9b98]"}`}>
                   {p.desc}
                 </p>
                 <ul className="space-y-3 flex-1">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <CheckCircle size={14} className={`mt-0.5 flex-shrink-0 ${p.highlight ? "text-[#a8d4b8]" : "text-[#3d6b4f]"}`} />
+                      <CheckCircle size={14} className={`mt-0.5 flex-shrink-0 ${p.highlight ? "text-[#A8D4D4]" : "text-[#1B6B6B]"}`} />
                       <span className={`text-sm ${p.highlight ? "text-white/90" : "text-[#4a4a48]"}`}>{f}</span>
                     </li>
                   ))}
@@ -213,8 +213,8 @@ export default function AiImplementationPage() {
                   href={p.href}
                   className={`mt-8 text-center py-3 px-6 rounded-full font-medium text-sm transition-colors ${
                     p.highlight
-                      ? "bg-white text-[#3d6b4f] hover:bg-[#f4f4f0]"
-                      : "border border-[#3d6b4f] text-[#3d6b4f] hover:bg-[#e8f0eb]"
+                      ? "bg-white text-[#1B6B6B] hover:bg-[#f4f4f0]"
+                      : "border border-[#1B6B6B] text-[#1B6B6B] hover:bg-[#E3F0F0]"
                   }`}
                 >
                   {p.cta}
@@ -235,7 +235,7 @@ export default function AiImplementationPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>

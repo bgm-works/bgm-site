@@ -82,15 +82,15 @@ export default function DevelopmentPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#e8eaf0]">
+      <section className="pt-20 pb-16 bg-[#E8EEF0]">
         <div className="container-narrow">
-          <span className="text-xs font-medium text-[#3d4f6b] tracking-widest uppercase">
+          <span className="text-xs font-medium text-[#3D5A6B] tracking-widest uppercase">
             Service 03
           </span>
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-3 leading-tight">
             Webアプリ開発<br />AI自動化受託
           </h1>
-          <p className="text-xl font-medium text-[#3d4f6b] mb-5">
+          <p className="text-xl font-medium text-[#3D5A6B] mb-5">
             「こういうの、作れないかな」——それで十分です。
           </p>
           <p className="text-lg text-[#4a4a48] leading-relaxed max-w-xl">
@@ -98,7 +98,7 @@ export default function DevelopmentPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#3d4f6b] text-white font-medium rounded-full hover:bg-[#2d3f5b] transition-colors"
+            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#3D5A6B] text-white font-medium rounded-full hover:bg-[#2D4A5B] transition-colors"
           >
             相談してみる <ArrowRight size={16} />
           </Link>
@@ -114,8 +114,8 @@ export default function DevelopmentPage() {
               const Icon = r.icon;
               return (
                 <div key={r.title} className="bg-white rounded-2xl border border-[#e2e2de] p-8">
-                  <div className="w-12 h-12 bg-[#e8eaf0] rounded-xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#3d4f6b]" />
+                  <div className="w-12 h-12 bg-[#E8EEF0] rounded-xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#3D5A6B]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#1a1a18] mb-3">{r.title}</h3>
                   <p className="text-sm text-[#6b6b68] leading-relaxed">{r.desc}</p>
@@ -133,11 +133,11 @@ export default function DevelopmentPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((s) => (
               <div key={s.category} className="bg-white rounded-2xl border border-[#e2e2de] p-6">
-                <h3 className="text-sm font-bold text-[#3d4f6b] mb-4 uppercase tracking-wide">{s.category}</h3>
+                <h3 className="text-sm font-bold text-[#3D5A6B] mb-4 uppercase tracking-wide">{s.category}</h3>
                 <ul className="space-y-2">
                   {s.items.map((item) => (
                     <li key={item} className="text-sm text-[#4a4a48] flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#3d4f6b] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#3D5A6B] flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -155,7 +155,7 @@ export default function DevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {works.map((w) => (
               <div key={w.name} className="bg-white rounded-2xl border border-[#e2e2de] p-7">
-                <span className="text-xs font-medium text-[#3d4f6b] bg-[#e8eaf0] px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-[#3D5A6B] bg-[#E8EEF0] px-3 py-1 rounded-full">
                   {w.tag}
                 </span>
                 <h3 className="text-lg font-bold text-[#1a1a18] mt-4 mb-2">{w.name}</h3>
@@ -171,7 +171,7 @@ export default function DevelopmentPage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/works" className="inline-flex items-center gap-2 text-[#3d4f6b] font-medium hover:underline">
+            <Link href="/works" className="inline-flex items-center gap-2 text-[#3D5A6B] font-medium hover:underline">
               全ての実績を見る <ArrowRight size={15} />
             </Link>
           </div>
@@ -191,8 +191,8 @@ export default function DevelopmentPage() {
               const Icon = item.icon;
               return (
                 <div key={item.label} className="bg-white rounded-2xl border border-[#e2e2de] p-7 text-center">
-                  <div className="w-12 h-12 bg-[#e8eaf0] rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon size={22} className="text-[#3d4f6b]" />
+                  <div className="w-12 h-12 bg-[#E8EEF0] rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon size={22} className="text-[#3D5A6B]" />
                   </div>
                   <h3 className="font-bold text-[#1a1a18] mb-2">{item.label}</h3>
                   <p className="text-xs text-[#9b9b98]">{item.examples}</p>
@@ -236,7 +236,7 @@ export default function DevelopmentPage() {
                   <p className="font-bold text-[#1a1a18]">{r.label}</p>
                   <p className="text-sm text-[#6b6b68]">{r.desc}</p>
                 </div>
-                <p className="text-lg font-bold text-[#3d4f6b] whitespace-nowrap ml-4">{r.price}</p>
+                <p className="text-lg font-bold text-[#3D5A6B] whitespace-nowrap ml-4">{r.price}</p>
               </div>
             ))}
           </div>
@@ -253,7 +253,7 @@ export default function DevelopmentPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d4f6b] text-white font-medium rounded-full hover:bg-[#2d3f5b] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3D5A6B] text-white font-medium rounded-full hover:bg-[#2D4A5B] transition-colors"
           >
             相談してみる <ArrowRight size={16} />
           </Link>

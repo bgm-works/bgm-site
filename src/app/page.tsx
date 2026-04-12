@@ -9,8 +9,8 @@ const services = [
     description:
       "事務作業、在庫管理、チラシ制作——繰り返しの業務をAIと仕組みで自動化。成長を阻む「詰まり」を取り除き、経営者の時間を取り戻します。",
     href: "/services/ai-implementation",
-    color: "#e8f0eb",
-    iconColor: "#3d6b4f",
+    color: "#E3F0F0",
+    iconColor: "#1B6B6B",
   },
   {
     icon: Palette,
@@ -19,8 +19,8 @@ const services = [
     description:
       "受注管理、在庫、SNS投稿——バックオフィスをAI従業員に丸投げして、あなたは「創る」ことだけに集中できるアトリエへ。",
     href: "/services/atelier-boost",
-    color: "#f0ebe8",
-    iconColor: "#6b4f3d",
+    color: "#FBF0EA",
+    iconColor: "#C06A3A",
   },
   {
     icon: Code,
@@ -29,8 +29,8 @@ const services = [
     description:
       "17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。事業成長に直結するプロダクトを、他社の1/3の納期で届けます。",
     href: "/services/development",
-    color: "#e8eaf0",
-    iconColor: "#3d4f6b",
+    color: "#E8EEF0",
+    iconColor: "#3D5A6B",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#fafaf8] pt-20 pb-28">
         <div className="container-narrow text-center">
-          <p className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase mb-6">
+          <p className="text-sm font-medium text-[#1B6B6B] tracking-widest uppercase mb-6">
             Business Growth Mechanics
           </p>
           <h1 className="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-tight tracking-tight text-[#1a1a18] mb-6">
@@ -67,14 +67,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
             >
               無料ヒアリングを予約する
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/#services"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#e2e2de] text-[#1a1a18] font-medium rounded-full hover:border-[#3d6b4f] hover:text-[#3d6b4f] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#e2e2de] text-[#1a1a18] font-medium rounded-full hover:border-[#1B6B6B] hover:text-[#1B6B6B] transition-colors"
             >
               サービスを見る
             </Link>
@@ -84,11 +84,11 @@ export default function HomePage() {
         {/* decorative circles */}
         <div
           aria-hidden
-          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#e8f0eb] opacity-40 blur-3xl"
+          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#E3F0F0] opacity-40 blur-3xl"
         />
         <div
           aria-hidden
-          className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#f0ebe8] opacity-40 blur-3xl"
+          className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#FBF0EA] opacity-40 blur-3xl"
         />
       </section>
 
@@ -108,8 +108,8 @@ export default function HomePage() {
       <section className="py-24 bg-[#f4f4f0]">
         <div className="container-narrow">
           <div className="flex items-center gap-3 mb-8">
-            <Cog size={20} className="text-[#3d6b4f]" />
-            <span className="text-sm font-medium text-[#3d6b4f] tracking-widest uppercase">Our Philosophy</span>
+            <Cog size={20} className="text-[#1B6B6B]" />
+            <span className="text-sm font-medium text-[#1B6B6B] tracking-widest uppercase">Our Philosophy</span>
           </div>
           <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold text-[#1a1a18] leading-tight mb-8">
             がんばっている、あなたへ。
@@ -154,7 +154,7 @@ export default function HomePage() {
                 <Link
                   key={s.title}
                   href={s.href}
-                  className="group flex flex-col p-8 rounded-2xl border border-[#e2e2de] hover:border-[#3d6b4f] hover:shadow-lg transition-all bg-white"
+                  className="group flex flex-col p-8 rounded-2xl border border-[#e2e2de] hover:border-[#1B6B6B] hover:shadow-lg transition-all bg-white"
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
@@ -163,11 +163,11 @@ export default function HomePage() {
                     <Icon size={22} style={{ color: s.iconColor }} />
                   </div>
                   <span className="text-xs font-medium text-[#6b6b68] mb-2">{s.tag}</span>
-                  <h3 className="text-xl font-bold text-[#1a1a18] mb-3 group-hover:text-[#3d6b4f] transition-colors">
+                  <h3 className="text-xl font-bold text-[#1a1a18] mb-3 group-hover:text-[#1B6B6B] transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-sm text-[#6b6b68] leading-relaxed flex-1">{s.description}</p>
-                  <div className="mt-6 flex items-center gap-1 text-sm text-[#3d6b4f] font-medium">
+                  <div className="mt-6 flex items-center gap-1 text-sm text-[#1B6B6B] font-medium">
                     詳しく見る <ArrowRight size={14} />
                   </div>
                 </Link>
@@ -225,7 +225,7 @@ export default function HomePage() {
               },
             ].map((w) => (
               <div key={w.name} className="bg-white rounded-2xl border border-[#e2e2de] p-7">
-                <span className="text-xs font-medium text-[#3d6b4f] bg-[#e8f0eb] px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-[#1B6B6B] bg-[#E3F0F0] px-3 py-1 rounded-full">
                   {w.tag}
                 </span>
                 <h3 className="text-lg font-bold text-[#1a1a18] mt-4 mb-2">{w.name}</h3>
@@ -236,7 +236,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/works"
-              className="inline-flex items-center gap-2 text-[#3d6b4f] font-medium hover:underline"
+              className="inline-flex items-center gap-2 text-[#1B6B6B] font-medium hover:underline"
             >
               すべての実績を見る <ArrowRight size={15} />
             </Link>
@@ -271,7 +271,7 @@ export default function HomePage() {
               const Icon = r.icon;
               return (
                 <div key={r.title}>
-                  <Icon size={24} className="text-[#7ab892] mb-4" />
+                  <Icon size={24} className="text-[#7AB8B8] mb-4" />
                   <h3 className="text-base font-bold mb-2">{r.title}</h3>
                   <p className="text-sm text-[#9b9b98] leading-relaxed">{r.desc}</p>
                 </div>
@@ -291,7 +291,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#3d6b4f] text-white text-lg font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#1B6B6B] text-white text-lg font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             無料ヒアリングを予約する
             <ArrowRight size={18} />

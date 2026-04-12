@@ -31,7 +31,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 bg-[#3d6b4f] text-white text-sm font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+                className="px-4 py-2 bg-[#1B6B6B] text-white text-sm font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
               >
                 {item.label}
               </Link>
@@ -72,8 +72,8 @@ export function Header() {
               className={cn(
                 "text-sm font-medium transition-colors",
                 item.highlight
-                  ? "text-[#3d6b4f]"
-                  : "text-[#1a1a18] hover:text-[#3d6b4f]"
+                  ? "text-[#1B6B6B]"
+                  : "text-[#1a1a18] hover:text-[#1B6B6B]"
               )}
               onClick={() => setOpen(false)}
             >

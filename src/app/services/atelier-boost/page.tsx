@@ -53,15 +53,15 @@ export default function AtelierBoostPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 bg-[#f0ebe8]">
+      <section className="pt-20 pb-16 bg-[#FBF0EA]">
         <div className="container-narrow">
-          <span className="text-xs font-medium text-[#6b4f3d] tracking-widest uppercase">
+          <span className="text-xs font-medium text-[#C06A3A] tracking-widest uppercase">
             Service 02
           </span>
           <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#1a1a18] mt-3 mb-3 leading-tight">
             アトリエboost
           </h1>
-          <p className="text-xl font-medium text-[#6b4f3d] mb-5">
+          <p className="text-xl font-medium text-[#C06A3A] mb-5">
             1人社長 + 4人のAI従業員。
           </p>
           <p className="text-lg text-[#4a4a48] leading-relaxed max-w-lg">
@@ -69,7 +69,7 @@ export default function AtelierBoostPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#6b4f3d] text-white font-medium rounded-full hover:bg-[#5a3e2c] transition-colors"
+            className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-[#C06A3A] text-white font-medium rounded-full hover:bg-[#A0552D] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>
@@ -103,8 +103,8 @@ export default function AtelierBoostPage() {
               return (
                 <div key={e.name} className="bg-white rounded-2xl border border-[#e2e2de] p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#f0ebe8] rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon size={22} className="text-[#6b4f3d]" />
+                    <div className="w-12 h-12 bg-[#FBF0EA] rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon size={22} className="text-[#C06A3A]" />
                     </div>
                     <div>
                       <p className="text-xs text-[#9b9b98] mb-1">{e.role}</p>
@@ -142,8 +142,8 @@ export default function AtelierBoostPage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-[#6b4f3d] bg-white overflow-hidden">
-              <div className="bg-[#6b4f3d] px-6 py-4">
+            <div className="rounded-2xl border-2 border-[#C06A3A] bg-white overflow-hidden">
+              <div className="bg-[#C06A3A] px-6 py-4">
                 <h3 className="font-bold text-white">アトリエboost導入後</h3>
               </div>
               <ul className="p-6 space-y-3">
@@ -154,7 +154,7 @@ export default function AtelierBoostPage() {
                   "毎週の売上インサイトで次の作品を決定",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[#1a1a18]">
-                    <CheckCircle size={14} className="text-[#6b4f3d] mt-0.5 flex-shrink-0" />
+                    <CheckCircle size={14} className="text-[#C06A3A] mt-0.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -196,7 +196,7 @@ export default function AtelierBoostPage() {
                   <p className="font-bold text-[#1a1a18]">{r.label}</p>
                   <p className="text-sm text-[#6b6b68]">{r.desc}</p>
                 </div>
-                <p className="text-lg font-bold text-[#6b4f3d] whitespace-nowrap ml-4">{r.price}</p>
+                <p className="text-lg font-bold text-[#C06A3A] whitespace-nowrap ml-4">{r.price}</p>
               </div>
             ))}
           </div>
@@ -204,7 +204,7 @@ export default function AtelierBoostPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#f0ebe8]">
+      <section className="py-20 bg-[#FBF0EA]">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">あなたのアトリエを、止まらないアトリエへ。</h2>
           <p className="text-[#6b6b68] mb-8 leading-relaxed">
@@ -212,7 +212,7 @@ export default function AtelierBoostPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#6b4f3d] text-white font-medium rounded-full hover:bg-[#5a3e2c] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C06A3A] text-white font-medium rounded-full hover:bg-[#A0552D] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>

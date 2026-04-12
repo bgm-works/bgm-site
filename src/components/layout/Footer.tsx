@@ -22,17 +22,17 @@ export function Footer() {
             <h3 className="text-sm font-bold text-[#1a1a18] mb-3">サービス</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/ai-implementation" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/services/ai-implementation" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   AI導入支援
                 </Link>
               </li>
               <li>
-                <Link href="/services/atelier-boost" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/services/atelier-boost" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   アトリエboost
                 </Link>
               </li>
               <li>
-                <Link href="/services/development" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/services/development" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   Webアプリ開発
                 </Link>
               </li>
@@ -44,22 +44,22 @@ export function Footer() {
             <h3 className="text-sm font-bold text-[#1a1a18] mb-3">リンク</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/works" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/works" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   実績・ポートフォリオ
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/pricing" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   料金
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/contact" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   お問い合わせ
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-[#6b6b68] hover:text-[#3d6b4f] transition-colors">
+                <Link href="/blog" className="text-sm text-[#6b6b68] hover:text-[#1B6B6B] transition-colors">
                   ブログ
                 </Link>
               </li>

@@ -9,7 +9,7 @@ export default function NotFound() {
       <p className="text-[#6b6b68] mb-8">URLを確認するか、トップページに戻ってください。</p>
       <Link
         href="/"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-[#3d6b4f] text-white rounded-full hover:bg-[#2d5a3f] transition-colors text-sm font-medium"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B6B6B] text-white rounded-full hover:bg-[#0E4A4A] transition-colors text-sm font-medium"
       >
         トップへ戻る <ArrowRight size={15} />
       </Link>

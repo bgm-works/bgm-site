@@ -25,8 +25,8 @@ const works = [
     tech: ["Next.js 15", "OpenAI API (Whisper + GPT-4o)", "Tailwind CSS", "Vercel", "PWA"],
     url: "https://katatte.vercel.app",
     available: true,
-    color: "#e8f0eb",
-    accentColor: "#3d6b4f",
+    color: "#E3F0F0",
+    accentColor: "#1B6B6B",
   },
   {
     id: "pp-route-optimizer",
@@ -44,8 +44,8 @@ const works = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
     url: "#",
     available: false,
-    color: "#e8eaf0",
-    accentColor: "#3d4f6b",
+    color: "#E8EEF0",
+    accentColor: "#3D5A6B",
   },
   {
     id: "o365-gcal-sync",
@@ -63,8 +63,8 @@ const works = [
     tech: ["Node.js", "Google Calendar API", "Microsoft Graph API", "GAS"],
     url: "#",
     available: false,
-    color: "#f0ebe8",
-    accentColor: "#6b4f3d",
+    color: "#FBF0EA",
+    accentColor: "#C06A3A",
   },
   {
     id: "ai-concierge",
@@ -82,8 +82,8 @@ const works = [
     tech: ["Claude API", "Google Apps Script", "GitHub Actions", "Cursor AI"],
     url: "#",
     available: false,
-    color: "#e8f0eb",
-    accentColor: "#3d6b4f",
+    color: "#E3F0F0",
+    accentColor: "#1B6B6B",
   },
   {
     id: "master-flow-viewer",
@@ -101,8 +101,8 @@ const works = [
     tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "Vercel Edge Runtime", "PWA"],
     url: "#",
     available: false,
-    color: "#e8eaf0",
-    accentColor: "#3d4f6b",
+    color: "#E8EEF0",
+    accentColor: "#3D5A6B",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function WorksPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             相談してみる <ArrowRight size={16} />
           </Link>

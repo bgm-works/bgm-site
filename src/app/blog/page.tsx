@@ -70,7 +70,7 @@ export default function BlogPage() {
               href="https://note.com/jin_lifelab"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-[#3d6b4f] font-medium hover:underline"
+              className="inline-flex items-center gap-1.5 text-sm text-[#1B6B6B] font-medium hover:underline"
             >
               Noteを見る <ExternalLink size={13} />
             </a>
@@ -82,19 +82,19 @@ export default function BlogPage() {
                 href="https://note.com/jin_lifelab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#3d6b4f] hover:shadow-md transition-all"
+                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#1B6B6B] hover:shadow-md transition-all"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-medium text-[#3d6b4f] bg-[#e8f0eb] px-3 py-1 rounded-full">
+                  <span className="text-xs font-medium text-[#1B6B6B] bg-[#E3F0F0] px-3 py-1 rounded-full">
                     {article.tag}
                   </span>
                   <span className="text-xs text-[#9b9b98]">{article.date}</span>
                 </div>
-                <h3 className="font-bold text-[#1a1a18] mb-3 leading-snug group-hover:text-[#3d6b4f] transition-colors">
+                <h3 className="font-bold text-[#1a1a18] mb-3 leading-snug group-hover:text-[#1B6B6B] transition-colors">
                   {article.title}
                 </h3>
                 <p className="text-sm text-[#6b6b68] leading-relaxed">{article.desc}</p>
-                <div className="mt-4 flex items-center gap-1 text-sm text-[#3d6b4f] font-medium">
+                <div className="mt-4 flex items-center gap-1 text-sm text-[#1B6B6B] font-medium">
                   Noteで読む <ArrowRight size={13} />
                 </div>
               </a>
@@ -114,13 +114,13 @@ export default function BlogPage() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#3d6b4f] hover:shadow-md transition-all"
+                className="group bg-white rounded-2xl border border-[#e2e2de] p-7 hover:border-[#1B6B6B] hover:shadow-md transition-all"
               >
                 <div className="flex items-center justify-between mb-3">
                   <p className="font-bold text-[#1a1a18]">{s.platform}</p>
-                  <ExternalLink size={14} className="text-[#9b9b98] group-hover:text-[#3d6b4f] transition-colors" />
+                  <ExternalLink size={14} className="text-[#9b9b98] group-hover:text-[#1B6B6B] transition-colors" />
                 </div>
-                <p className="text-sm text-[#3d6b4f] mb-2">{s.handle}</p>
+                <p className="text-sm text-[#1B6B6B] mb-2">{s.handle}</p>
                 <p className="text-sm text-[#6b6b68] leading-relaxed">{s.desc}</p>
               </a>
             ))}
@@ -137,7 +137,7 @@ export default function BlogPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d6b4f] text-white font-medium rounded-full hover:bg-[#2d5a3f] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B6B6B] text-white font-medium rounded-full hover:bg-[#0E4A4A] transition-colors"
           >
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Link>
