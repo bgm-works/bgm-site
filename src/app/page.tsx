@@ -63,9 +63,6 @@ export default function HomePage() {
         <div aria-hidden className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-secondary blur-3xl" />
         <div className="container-wide relative grid items-center gap-10 lg:grid-cols-2">
           <Reveal>
-            <Badge variant="secondary" className="mb-5 rounded-full px-4 py-1.5 text-xs tracking-[0.2em]">
-              BUSINESS GROWTH MECHANICS
-            </Badge>
             <h1 className="text-balance text-[clamp(2.6rem,7vw,4.6rem)] font-bold leading-tight">
               がんばりを、<br />
               仕組みに変えよう。
@@ -111,13 +108,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#14383d] via-[#17444a] to-[#1f4f56] py-16">
+      {/*
+        BGMWorks ブランド v1.0 (2026-04-21):
+        - 背景: 旧 hard-coded ダークティール (#14383d 系) → Primary Dark (#08545A) のフラット 1 色。
+        - section-eyebrow ("ABOUT BGM") は default で primary 色 (#0E8B8B) になり、
+          暗背景上で同系色のため埋もれていた → テラコッタ (#D89060) で上書き。
+        - section-subtitle / section-title も白系で明示的に上書き。
+      */}
+      <section className="bg-[#08545A] py-16">
         <div className="container-wide">
           <SectionHeader
             label="ABOUT BGM"
             title="数字で見るBGM"
             subtitle="現場で積み重ねてきた経験・資格・成果を、BGMの実績として分かりやすく可視化しています。"
-            className="mb-8 text-white [&_.section-subtitle]:text-white/90 [&_.section-title]:text-white"
+            className="mb-8 [&_.section-eyebrow]:text-[#D89060] [&_.section-subtitle]:text-white/85 [&_.section-title]:text-white"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (

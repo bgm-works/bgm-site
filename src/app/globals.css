@@ -4,42 +4,47 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  BGMWorks ブランドカラー v1.0 (中間ターコイズ)
+  制定: 2026-04-21
+  参照: 08_リソース/BGMWorks_ブランドガイド.md
+*/
 :root {
   --background: #fafaf8;
   --foreground: #171f23;
   --card: #ffffff;
-  --card-foreground: #1d2529;
+  --card-foreground: #171f23;
   --popover: #ffffff;
-  --popover-foreground: #1d2529;
-  --primary: #1b6b6b;
+  --popover-foreground: #171f23;
+  --primary: #0e8b8b;
   --primary-foreground: #f6ffff;
-  --secondary: #edf3f5;
-  --secondary-foreground: #234146;
+  --secondary: #e5f0f0;
+  --secondary-foreground: #08545a;
   --muted: #f3f6f7;
   --muted-foreground: #5f7378;
-  --accent: #e3f0f0;
-  --accent-foreground: #1b5555;
+  --accent: #e0eded;
+  --accent-foreground: #08545a;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #dce5e8;
   --input: #dce5e8;
-  --ring: #1b6b6b;
-  --chart-1: #1b6b6b;
+  --ring: #0e8b8b;
+  --chart-1: #0e8b8b;
   --chart-2: #3d5a6b;
-  --chart-3: #c06a3a;
-  --chart-4: #7f9197;
-  --chart-5: #25373d;
+  --chart-3: #d89060;
+  --chart-4: #4fbfbf;
+  --chart-5: #08545a;
   --radius: 0.85rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #1d2529;
-  --sidebar-primary: #1b6b6b;
+  --sidebar-foreground: #171f23;
+  --sidebar-primary: #0e8b8b;
   --sidebar-primary-foreground: #f6ffff;
-  --sidebar-accent: #e3f0f0;
-  --sidebar-accent-foreground: #1b5555;
+  --sidebar-accent: #e0eded;
+  --sidebar-accent-foreground: #08545a;
   --sidebar-border: #dce5e8;
-  --sidebar-ring: #1b6b6b;
-  --hero-grad-start: #edf6f8;
+  --sidebar-ring: #0e8b8b;
+  --hero-grad-start: #ebf6f6;
   --hero-grad-end: #ffffff;
-  --warm-accent: #c06a3a;
+  --warm-accent: #d89060;
   --cool-accent: #3d5a6b;
 }
 
@@ -109,10 +114,16 @@ h1, h2, h3, h4 {
   color: var(--foreground);
 }
 
+/*
+  v1.0 fix (2026-04-21):
+  以前は color: var(--muted) (#f3f6f7 ≒ 背景色) を指定しており、
+  白系背景の上で text がほぼ不可視になっていた。前景用の muted-foreground に修正。
+*/
 .section-subtitle {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: var(--muted-foreground);
   margin-top: 0.5rem;
+  line-height: 1.7;
 }
 
 /* utilities */
