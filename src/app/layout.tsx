@@ -46,6 +46,16 @@ export const metadata: Metadata = {
     description: "がんばりを、仕組みに変えよう。",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   robots: {
     index: true,
     follow: true,
