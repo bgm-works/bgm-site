@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink } from "lucide-react";
 import { BrandWord } from "@/components/shared/brand-word";
 import { BrandSubtitle } from "@/components/shared/brand-subtitle";
 
@@ -9,7 +8,7 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-border bg-muted/40">
       <div className="container-wide py-14">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <div className="mb-3 flex flex-col leading-none">
               <BrandWord className="text-lg" />
@@ -72,31 +71,6 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-3 text-sm font-bold text-foreground">SNS</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://note.com/jin_lifelab"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary"
-                >
-                  Note <ExternalLink size={13} />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/jin_lifelab"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary"
-                >
-                  X (Twitter) <ExternalLink size={13} />
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <Separator className="my-6" />

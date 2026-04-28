@@ -1,56 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
-import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "ブログ・コンテンツ",
   description:
-    "業務改善・事業づくり・起業に関するノウハウをNoteで発信中。実際に試して、時間削減や判断改善につながったことを書いています。",
+    "BGM 公式のブログ・コンテンツページ。公式SNSと記事導線は準備中です。",
 };
-
-const noteArticles = [
-  {
-    title: "ANA SFC修行、2026年5月19日を待つべき理由——新運賃体系で変わる最適ルートを完全解説",
-    date: "2026-04-10予定",
-    tag: "SFC修行 / 最適化",
-    desc: "2026年5月から変わるANA運賃体系を受け、SFC修行の最適ルートがどう変わるかを徹底解説。PP Route Optimizerでの計算結果も公開。",
-  },
-  {
-    title: "AIエージェントを「量産」する時代が来た｜みずほFGと三井物産の事例から見える次の一手",
-    date: "2026-04-07",
-    tag: "AI / ビジネス",
-    desc: "みずほFGが2025年内に1万エージェント構築、三井物産が5万人にCopilot展開。「企業のAI本気化」が始まった今、個人や中小企業はどう動くべきか。",
-  },
-];
-
-const snsList = [
-  {
-    platform: "Note",
-    handle: "@jin_lifelab",
-    desc: "業務改善・事業づくり・副業の実録。週1〜2本更新。",
-    url: "https://note.com/jin_lifelab",
-    color: "#41C9B4",
-  },
-  {
-    platform: "X (Twitter)",
-    handle: "@jin_lifelab",
-    desc: "AI最新情報・毎日のコンテンツ。平日毎朝更新。",
-    url: "https://x.com/jin_lifelab",
-    color: "#000000",
-  },
-  {
-    platform: "Threads",
-    handle: "@jin_lifelab",
-    desc: "思考ログ・ビジネス考察。Xより少し長めの投稿。",
-    url: "https://www.threads.net/@jin_lifelab",
-    color: "#000000",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -60,74 +20,26 @@ export default function BlogPage() {
           <SectionHeader
             label="BLOG & CONTENT"
             title="ブログ・コンテンツ"
-            subtitle="業務改善・事業づくり・起業の実録をNoteで発信中。実際に自分で試して、動いたことだけを書いています。"
+            subtitle="BGM公式としての発信導線は準備中です。個人SNSや別ブランドの発信とは切り分けて運用します。"
             align="center"
           />
         </div>
       </section>
 
       <section className="py-20">
-        <div className="container-wide">
-          <div className="mb-10 flex items-center justify-between">
-            <SectionHeader label="NOTE" title="Noteの記事" />
-            <Button
-              variant="outline"
-              render={<a href="https://note.com/jin_lifelab" target="_blank" rel="noopener noreferrer" />}
-              className="rounded-full"
-            >
-              Noteを見る <ExternalLink size={13} />
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {noteArticles.map((article) => (
-              <Reveal key={article.title}>
-                <Card className="group h-full border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
-                  <CardHeader>
-                    <div className="mb-2 flex items-center gap-2">
-                      <Badge variant="secondary">{article.tag}</Badge>
-                      <span className="text-xs text-muted-foreground">{article.date}</span>
-                    </div>
-                    <CardTitle className="leading-snug group-hover:text-primary">{article.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="leading-relaxed">{article.desc}</CardDescription>
-                    <Button
-                      variant="ghost"
-                      render={<a href="https://note.com/jin_lifelab" target="_blank" rel="noopener noreferrer" />}
-                      className="mt-3 px-0 text-primary"
-                    >
-                      Noteで読む <ArrowRight size={13} />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-muted/35 py-20">
-        <div className="container-wide">
-          <SectionHeader label="SOCIAL" title="SNSでも発信中" className="mb-10" />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {snsList.map((s) => (
-              <Reveal key={s.platform}>
-                <Card className="group h-full border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-base">{s.platform}</CardTitle>
-                      <ExternalLink size={14} className="text-muted-foreground group-hover:text-primary" />
-                    </div>
-                    <p className="text-sm text-primary">{s.handle}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="leading-relaxed">{s.desc}</CardDescription>
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 rounded-[inherit]" aria-label={`${s.platform}を開く`} />
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
+        <div className="container-narrow">
+          <Card className="border-border/80">
+            <CardHeader>
+              <Badge variant="secondary" className="w-fit">COMING SOON</Badge>
+              <CardTitle>公式ブログ・SNSは準備中です</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="leading-relaxed">
+                BGM Worksとしての発信先は、公式アカウントを整備してから掲載します。
+                現時点では、個人のNote・X・Threadsなどへのリンクは掲載していません。
+              </CardDescription>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
