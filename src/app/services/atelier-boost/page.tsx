@@ -8,9 +8,9 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
-  title: "アトリエboost — 個人クリエイター向けAIバックオフィス自動化",
+  title: "アトリエboost — 個人クリエイター向けバックオフィス改善",
   description:
-    "1人社長 + 4人のAI従業員。受注管理、在庫、SNS投稿——バックオフィスをAIに丸投げして、あなたは「創る」ことだけに集中できるアトリエへ。",
+    "受注管理、在庫、SNS投稿、顧客対応に奪われる時間を減らし、制作時間・販売機会・顧客対応品質を取り戻すアトリエ改善サービス。",
 };
 
 const pains = [
@@ -20,38 +20,38 @@ const pains = [
   { label: "顧客対応", desc: "メッセージの返信に追われて制作時間が取れない" },
 ];
 
-const aiEmployees = [
+const supportAreas = [
   {
     icon: Package,
-    name: "自動化エンジニア",
+    name: "受注・在庫の整理",
     role: "受注・在庫管理",
-    desc: "注文が来たら自動で台帳に記録、在庫を更新、発送準備リストを生成。あなたは発送するだけ。",
+    desc: "注文・在庫・発送準備をひと目で追える状態にし、確認漏れや売り越しを減らします。",
   },
   {
     icon: MessageSquare,
-    name: "コミュニケーター",
+    name: "顧客対応の品質安定",
     role: "問い合わせ・DM対応",
-    desc: "よくある質問への返信案を自動生成。あなたは確認して送るだけ。深夜のDMも翌朝には返信済み。",
+    desc: "よくある質問や注文連絡の返信を迷わず返せるようにし、対応の遅れと返信漏れを減らします。",
   },
   {
     icon: Brush,
-    name: "クリエイティブAI",
+    name: "販売機会を増やす発信",
     role: "SNS・コンテンツ",
-    desc: "新作の写真をアップするだけで、Instagram・X・Threadsの投稿文を自動生成。投稿頻度が3倍に。",
+    desc: "新作紹介や制作背景の発信を続けやすくし、投稿頻度と見込み客との接点を増やします。",
   },
   {
     icon: BarChart3,
-    name: "アナリスト",
+    name: "次の制作判断を支援",
     role: "売上・データ分析",
-    desc: "何が売れているか、いつ売れるか、次に作るべき作品のインサイトを毎週自動レポート。",
+    desc: "何が売れているか、どのタイミングで動くかを整理し、次に作る作品や在庫量を判断しやすくします。",
   },
 ];
 
 const flow = [
   { step: "01", title: "現状ヒアリング", desc: "今どんな作業に時間を取られているかを全部聞かせてください。" },
-  { step: "02", title: "AI従業員設計", desc: "あなたのアトリエに合わせた自動化ワークフローを設計します。" },
+  { step: "02", title: "改善範囲の設計", desc: "制作時間・販売機会・顧客対応に効く順番で、改善する業務を絞り込みます。" },
   { step: "03", title: "構築・テスト", desc: "2〜4週間で動く状態に。実際に使いながら一緒に調整します。" },
-  { step: "04", title: "自走＋保守", desc: "あなたが使いこなせるまでサポート。壊れたら即対応。" },
+  { step: "04", title: "定着＋保守", desc: "日々の制作を止めずに使い続けられるよう、運用しながら改善します。" },
 ];
 
 export default function AtelierBoostPage() {
@@ -61,9 +61,9 @@ export default function AtelierBoostPage() {
         <div className="container-narrow">
           <Badge className="rounded-full bg-[var(--warm-accent)] px-4 py-1.5 text-xs tracking-[0.2em] text-white">SERVICE 02</Badge>
           <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] font-bold leading-tight">アトリエboost</h1>
-          <p className="mb-5 mt-3 text-xl font-medium text-[var(--warm-accent)]">1人社長 + 4人のAI従業員。</p>
+          <p className="mb-5 mt-3 text-xl font-medium text-[var(--warm-accent)]">制作時間と販売機会を、取り戻す。</p>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
-            受注管理、在庫、SNS——バックオフィスをAIに丸投げして、あなたは「創る」ことだけに集中できるアトリエへ。
+            受注管理、在庫、SNS、顧客対応。制作以外の作業を軽くして、あなたが「創ること」と「売ること」に集中できるアトリエへ。
           </p>
           <Button render={<Link href="/contact" />} className="mt-8 rounded-full bg-[var(--warm-accent)] px-7 py-4 text-white hover:bg-[color:var(--warm-accent)]/90">
             無料ヒアリングを予約する <ArrowRight size={16} />
@@ -91,9 +91,9 @@ export default function AtelierBoostPage() {
 
       <section className="bg-muted/35 py-20">
         <div className="container-wide">
-          <SectionHeader label="AI STAFF" title="4人のAI従業員を雇います" subtitle="給与は月数万円。遅刻もミスも不満もありません。" align="center" className="mb-10" />
+          <SectionHeader label="IMPROVEMENT AREAS" title="制作と販売を止める作業を減らします" subtitle="道具の話ではなく、制作時間・販売機会・顧客対応品質に効く順番で整えます。" align="center" className="mb-10" />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {aiEmployees.map((e) => {
+            {supportAreas.map((e) => {
               const Icon = e.icon;
               return (
                 <Reveal key={e.name}>
@@ -153,9 +153,9 @@ export default function AtelierBoostPage() {
                 <ul className="space-y-3">
                   {[
                     "制作に集中できる時間が月50時間増加",
-                    "注文は自動で台帳へ、朝には完了リスト",
-                    "SNS投稿頻度が3倍、集客力アップ",
-                    "毎週の売上インサイトで次の作品を決定",
+                    "注文・在庫・発送準備が一覧化され、対応漏れを削減",
+                    "新作告知の頻度が上がり、販売機会を増やせる",
+                    "売れ筋と在庫の動きから、次の制作判断がしやすくなる",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm">
                       <CheckCircle size={14} className="mt-0.5 flex-shrink-0 text-[var(--warm-accent)]" />
@@ -196,9 +196,9 @@ export default function AtelierBoostPage() {
           <Card className="overflow-hidden border-border/80">
             <CardContent className="divide-y divide-border p-0">
               {[
-                { label: "無料ヒアリング", price: "¥0", desc: "現状の課題整理・自動化できる箇所の特定" },
-                { label: "初期構築", price: "20万〜50万円", desc: "AI従業員の設計・構築・テスト・マニュアル作成" },
-                { label: "月額保守", price: "2万〜5万円/月", desc: "稼働監視・仕様変更・AI進化への追従" },
+                { label: "無料ヒアリング", price: "¥0", desc: "現状の課題整理・改善効果が出やすい箇所の特定" },
+                { label: "初期構築", price: "20万〜50万円", desc: "受注・在庫・発信まわりの仕組み化とマニュアル作成" },
+                { label: "月額保守", price: "2万〜5万円/月", desc: "稼働監視・仕様変更・業務変化に合わせた改善" },
               ].map((r) => (
                 <div key={r.label} className="flex items-center justify-between gap-4 px-7 py-5">
                   <div>

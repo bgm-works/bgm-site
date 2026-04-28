@@ -8,23 +8,23 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
-  title: "Webアプリ開発・AI自動化受託",
+  title: "Webアプリ開発・業務ツール受託",
   description:
-    "「こういうの、作れないかな」——そのぼんやりしたイメージで十分です。17年のSE経験 × AI爆速開発で、一緒に形にします。",
+    "「こういうの、作れないかな」——そのぼんやりしたイメージで十分です。17年のSE経験で、業務改善や事業検証に効くプロダクトを一緒に形にします。",
 };
 
 const skills = [
   { category: "フロントエンド", items: ["React / Next.js", "TypeScript", "Tailwind CSS", "PWA対応"] },
   { category: "バックエンド", items: ["Node.js / Python", "REST API / GraphQL", "PostgreSQL / MySQL", "AWS (SAA/DVA/SOA)"] },
-  { category: "AI統合", items: ["OpenAI / Claude API", "生成AI業務自動化", "n8n / GAS / Zapier", "Cursor AI爆速開発"] },
+  { category: "業務連携", items: ["OpenAI / Claude API", "業務フロー改善", "n8n / GAS / Zapier", "短期検証の開発体制"] },
   { category: "その他", items: ["Vercel / Supabase", "GitHub Actions CI/CD", "Google Workspace連携", "LINE Bot開発"] },
 ];
 
 const works = [
   {
     name: "katatte",
-    tag: "PWA / AI統合",
-    desc: "写真×音声→AI記事生成。音声チャンク分割アップロード、動的録音制限、ビー玉ゲームUI実装。",
+    tag: "PWA / 体験設計",
+    desc: "写真を見ながら話すだけで、旅行体験を記事として残せるプロダクト。思い出を整理する手間を減らします。",
     url: "https://katatte.vercel.app",
     tech: ["Next.js", "OpenAI API", "PWA"],
   },
@@ -37,15 +37,15 @@ const works = [
   },
   {
     name: "O365→GCal自動同期",
-    tag: "業務自動化",
-    desc: "会社のOutlook予定をGoogleカレンダーへ毎朝自動同期。ICS + Google Calendar API連携。",
+    tag: "予定管理 / 業務改善",
+    desc: "会社のOutlook予定を毎朝Googleカレンダーへ反映。二重確認を減らし、予定の見落としを防ぎます。",
     url: "#",
     tech: ["Node.js", "Google API", "GAS"],
   },
   {
     name: "AIコンシェルジュ",
-    tag: "AI自動化設計",
-    desc: "毎朝の8ステップをAIが全自動実行。カレンダー取得・SNS下書き生成・思考ログ作成まで。",
+    tag: "日次業務の仕組み化",
+    desc: "朝の定型業務をまとめて処理し、1日の開始前に予定・発信・記録の準備が整う状態を作ります。",
     url: "#",
     tech: ["Claude API", "GAS", "GitHub"],
   },
@@ -62,7 +62,7 @@ const reasons = [
   {
     icon: Zap,
     title: "アイデアが、すぐ動き出す",
-    desc: "AI爆速開発で、通常1週間かかる実装を1〜2日で完成させます。「早く試してみたい」——その気持ちに応えます。",
+    desc: "小さく作って早く触れる状態にします。市場や現場で試すまでの時間を短くし、投資判断を早めます。",
   },
   {
     icon: Layers,
@@ -79,7 +79,7 @@ const reasons = [
 const flowItems = [
   { step: "01", title: "一緒に整理する", desc: "何を作りたいか、まだぼんやりでも大丈夫。要件・予算・優先度を一緒に整理します。" },
   { step: "02", title: "提案・見積もり", desc: "最適な技術と進め方を、3営業日以内にご提案します。" },
-  { step: "03", title: "一緒に作り上げる", desc: "AIを活用した爆速開発。毎週デモをお見せしながら、一緒に磨いていきます。" },
+  { step: "03", title: "一緒に作り上げる", desc: "毎週デモをお見せしながら、使う人の反応を見て一緒に磨いていきます。" },
   { step: "04", title: "一緒に育てる", desc: "リリースはゴールではなく、スタート。月額保守で改善を続け、長期パートナーとして伴走します。" },
 ];
 
@@ -90,13 +90,13 @@ export default function DevelopmentPage() {
         <div className="container-narrow">
           <Badge className="rounded-full bg-[var(--cool-accent)] px-4 py-1.5 text-xs tracking-[0.2em] text-white">SERVICE 03</Badge>
           <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] font-bold leading-tight">
-            Webアプリ開発<br />AI自動化受託
+            Webアプリ開発<br />業務ツール受託
           </h1>
           <p className="mb-5 mt-3 text-xl font-medium text-[var(--cool-accent)]">
             「こういうの、作れないかな」——それで十分です。
           </p>
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            まだぼんやりしたイメージでも大丈夫。17年のSE経験 × AI爆速開発で、<strong>一緒に形にします</strong>。納期は他社の1/3。品質は妥協しません。
+            まだぼんやりしたイメージでも大丈夫。17年のSE経験で、<strong>事業検証や業務改善に使える形</strong>まで一緒に落とし込みます。早く試せて、運用に耐える品質を大切にします。
           </p>
           <Button render={<Link href="/contact" />} className="mt-8 rounded-full bg-[var(--cool-accent)] px-7 py-4 text-white hover:bg-[color:var(--cool-accent)]/90">
             相談してみる <ArrowRight size={16} />
@@ -196,7 +196,7 @@ export default function DevelopmentPage() {
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
             {[
               { icon: Globe, label: "Webアプリ開発", examples: "業務ツール / ダッシュボード / 予約システム" },
-              { icon: Bot, label: "AI自動化", examples: "LLM統合 / n8n / GAS / 議事録自動化" },
+              { icon: Bot, label: "業務改善", examples: "入力削減 / n8n / GAS / 議事録整理" },
               { icon: Smartphone, label: "モバイルアプリ", examples: "React Native (Expo) / PWA対応" },
             ].map((item) => {
               const Icon = item.icon;
@@ -249,10 +249,10 @@ export default function DevelopmentPage() {
           <Card className="overflow-hidden border-border/80">
             <CardContent className="divide-y divide-border p-0">
             {[
-              { label: "小規模（LP・自動化ツール）", price: "5万〜20万円", desc: "シンプルな機能 / 1〜2週間" },
+              { label: "小規模（LP・業務ツール）", price: "5万〜20万円", desc: "シンプルな機能 / 1〜2週間" },
               { label: "中規模（Webアプリ）", price: "20万〜80万円", desc: "認証・DB・API連携あり / 2〜6週間" },
               { label: "大規模（業務システム）", price: "80万円〜", desc: "複雑な要件・チーム開発 / 2ヶ月〜" },
-              { label: "月額保守", price: "2万〜10万円/月", desc: "バグ対応・機能追加・AI追従" },
+              { label: "月額保守", price: "2万〜10万円/月", desc: "バグ対応・機能追加・業務変化への追従" },
             ].map((r) => (
               <div key={r.label} className="flex items-center justify-between gap-4 px-8 py-5">
                 <div>

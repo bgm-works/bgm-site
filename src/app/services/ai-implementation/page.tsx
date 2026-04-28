@@ -8,9 +8,9 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
-  title: "AI導入支援 — 地方中小企業・店舗向け",
+  title: "業務改善支援 — 地方中小企業・店舗向け",
   description:
-    "「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、仕組みで自動化します。",
+    "手入力・転記・確認待ちを減らし、経営者と現場の時間を取り戻す業務改善支援。小さく始めて、利益・時間・品質に効く仕組みを作ります。",
 };
 
 const problems = [
@@ -25,23 +25,23 @@ const problems = [
 const solutions = [
   {
     icon: Clock,
-    title: "書類作業の自動化",
-    desc: "領収書・請求書・在庫データをスキャンするだけで自動集計。手入力ゼロへ。",
+    title: "書類作業の時間を削減",
+    desc: "領収書・請求書・在庫データの入力や転記を減らし、確認だけで済む流れへ。月末作業を軽くします。",
   },
   {
     icon: TrendingUp,
-    title: "集客コンテンツの自動生成",
-    desc: "AIが高品質なチラシ・SNS投稿・メルマガ文章を数分で生成。デザイナー不要。",
+    title: "集客の打ち手を増やす",
+    desc: "チラシ・SNS・メルマガの作成時間を短くし、販促の頻度と見た目の品質を安定させます。",
   },
   {
     icon: Wrench,
-    title: "業務フローの自動化",
-    desc: "Google Workspace / LINE / メール連携で「あの作業もう要らない」を次々と実現。",
+    title: "業務フローを整える",
+    desc: "Google Workspace / LINE / メール連携で、二重入力・確認漏れ・差し戻しを減らします。",
   },
   {
     icon: Shield,
     title: "月額保守でずっと安心",
-    desc: "「壊れたらどうしよう」を解消。AIの進化に合わせてアップデートし続けます。",
+    desc: "「壊れたらどうしよう」を解消。現場の変化に合わせて、手順と仕組みを更新し続けます。",
   },
 ];
 
@@ -49,17 +49,17 @@ const cases = [
   {
     business: "飲食店（ラーメン店）",
     before: "手書き発注→Excelへの転記を毎日30分",
-    after: "LINEで写真を送るだけで自動集計。月15時間削減。",
+    after: "発注確認を5分に短縮。月15時間を、仕込み・接客・新メニュー検討に戻す。",
   },
   {
     business: "小売店",
     before: "手作りのチラシ作成に毎月3時間",
-    after: "AIが5分でプロ品質のチラシを生成。",
+    after: "販促案の作成を5分の確認作業に。発信頻度を上げ、来店機会を増やす。",
   },
   {
     business: "士業（行政書士）",
     before: "依頼受付メール→台帳入力に毎回15分",
-    after: "メール到着→自動で台帳に登録。返信文も自動下書き。",
+    after: "受付から台帳登録までを即日化。返信漏れを減らし、案件対応の品質を安定させる。",
   },
 ];
 
@@ -68,7 +68,7 @@ const pricing = [
     name: "スタート",
     price: "無料",
     desc: "まずここから",
-    features: ["30分オンラインヒアリング", "業務の棚卸しシート提供", "自動化できる箇所の特定", "概算費用のご提示"],
+    features: ["30分オンラインヒアリング", "業務の棚卸しシート提供", "改善効果が出やすい箇所の特定", "概算費用のご提示"],
     cta: "無料ヒアリングを予約",
     href: "/contact",
     highlight: false,
@@ -77,7 +77,7 @@ const pricing = [
     name: "導入",
     price: "10万〜30万円",
     desc: "一括（業務規模による）",
-    features: ["業務フロー詳細ヒアリング", "自動化システムの構築", "操作マニュアル作成", "導入後2週間のフォロー"],
+    features: ["業務フロー詳細ヒアリング", "改善する手順と仕組みの構築", "操作マニュアル作成", "導入後2週間のフォロー"],
     cta: "相談してみる",
     href: "/contact",
     highlight: true,
@@ -86,7 +86,7 @@ const pricing = [
     name: "保守",
     price: "月額1万〜3万円",
     desc: "導入後の安心パック",
-    features: ["月1回の稼働チェック", "軽微な仕様変更対応", "AIアップデートへの追従", "優先サポート"],
+    features: ["月1回の稼働チェック", "軽微な仕様変更対応", "業務変化に合わせた改善", "優先サポート"],
     cta: "詳しく聞く",
     href: "/contact",
     highlight: false,
@@ -99,9 +99,10 @@ export default function AiImplementationPage() {
       <section className="bg-accent/70 py-20">
         <div className="container-narrow">
           <Badge className="rounded-full px-4 py-1.5 text-xs tracking-[0.2em]">SERVICE 01</Badge>
-          <h1 className="mt-4 text-[clamp(2rem,6vw,3.6rem)] font-bold leading-tight">AI導入支援</h1>
+          <h1 className="mt-4 text-[clamp(2rem,6vw,3.6rem)] font-bold leading-tight">業務改善支援</h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            「AIなんてうちには関係ない」——そう思っていた経営者ほど、導入後に驚かれます。月30時間の事務作業を、<strong>仕組みで</strong>自動化します。
+            大事なのは、どんな技術を使うかではなく、<strong>利益に効く時間</strong>をどれだけ取り戻せるか。
+            手入力・転記・確認待ちを減らし、経営者と現場が本来の仕事に集中できる流れを作ります。
           </p>
           <Button render={<Link href="/contact" />} className="mt-8 rounded-full px-7 py-4">
             無料ヒアリングを予約する <ArrowRight size={16} />
@@ -132,7 +133,7 @@ export default function AiImplementationPage() {
 
       <section className="bg-muted/35 py-20">
         <div className="container-wide">
-          <SectionHeader label="SOLUTIONS" title="BGMで、こう変わります" align="center" className="mb-10" />
+          <SectionHeader label="SOLUTIONS" title="BGMで、事業のQCDを整えます" align="center" className="mb-10" />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {solutions.map((s) => {
               const Icon = s.icon;
@@ -159,7 +160,7 @@ export default function AiImplementationPage() {
       {/* Cases */}
       <section className="py-20">
         <div className="container-wide">
-          <SectionHeader label="CASE STUDY" title="こんな変化が起きています" align="center" className="mb-10" />
+          <SectionHeader label="CASE STUDY" title="利益と時間に効く変化を作ります" align="center" className="mb-10" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cases.map((c) => (
               <Reveal key={c.business}>
@@ -173,7 +174,7 @@ export default function AiImplementationPage() {
                       <p className="text-sm leading-relaxed text-muted-foreground">{c.before}</p>
                     </div>
                     <div className="border-t border-border pt-4">
-                      <p className="mb-1 text-xs font-medium text-primary">BGM</p>
+                      <p className="mb-1 text-xs font-medium text-primary">改善後</p>
                       <p className="text-sm font-medium leading-relaxed">{c.after}</p>
                     </div>
                   </CardContent>

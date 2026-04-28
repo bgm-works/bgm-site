@@ -15,12 +15,12 @@ const notoSansJp = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bgm-works.com"),
   title: {
-    default: "BGM | Business Growth Mechanics — AI×仕組みで事業成長を設計する",
+    default: "BGM | Business Growth Mechanics — 仕組みで事業成長を設計する",
     template: "%s | BGM",
   },
   description:
-    "がんばりを、仕組みに変えよう。AIと設計力で、中小企業・個人事業主の成長を継続的にサポートします。",
-  keywords: ["AI導入支援", "業務自動化", "Webアプリ開発", "中小企業DX", "生成AI", "GAS自動化", "Business Growth Mechanics", "BGM"],
+    "がんばりを、仕組みに変えよう。業務設計と実装力で、中小企業・個人事業主の成長を継続的にサポートします。",
+  keywords: ["業務改善支援", "時間削減", "Webアプリ開発", "中小企業DX", "事業成長", "GAS連携", "Business Growth Mechanics", "BGM"],
   authors: [{ name: "BGM / JIN" }],
   creator: "BGM",
   openGraph: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "BGM",
     title: "BGM | Business Growth Mechanics",
     description:
-      "がんばりを、仕組みに変えよう。AIと設計力で、あなたの事業に成長の仕組みを。",
+      "がんばりを、仕組みに変えよう。業務設計と実装力で、あなたの事業に成長の仕組みを。",
     images: [
       {
         url: "/og-image.png",

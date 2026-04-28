@@ -18,7 +18,7 @@ export default function ContactPage() {
           <SectionHeader
             label="CONTACT"
             title="お問い合わせ"
-            subtitle="「これ、自動化できる？」「どのくらいかかる？」どんな小さな疑問でも、気軽にどうぞ。"
+            subtitle="「この作業、どれくらい軽くできる？」「費用対効果は合う？」どんな小さな疑問でも、気軽にどうぞ。"
             align="center"
           />
         </div>

@@ -17,7 +17,7 @@ export function Footer() {
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               がんばりを、仕組みに変えよう。<br />
-              AIと設計力で、あなたの事業に成長の仕組みを。
+              業務設計と実装力で、あなたの事業に成長の仕組みを。
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="secondary">全国対応</Badge>
@@ -30,7 +30,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/services/ai-implementation" className="text-sm text-muted-foreground hover:text-primary">
-                  AI導入支援
+                  業務改善支援
                 </Link>
               </li>
               <li>

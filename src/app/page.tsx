@@ -10,10 +10,10 @@ import { Reveal } from "@/components/shared/reveal";
 const services = [
   {
     icon: Bot,
-    label: "AI IMPLEMENTATION",
-    title: "AI導入支援",
+    label: "BUSINESS IMPROVEMENT",
+    title: "業務改善支援",
     description:
-      "事務作業、在庫管理、チラシ制作——繰り返しの業務をAIと仕組みで自動化。成長を阻む「詰まり」を取り除き、経営者の時間を取り戻します。",
+      "事務作業、在庫管理、販促づくり——繰り返しの業務を見直し、利益につながる時間を経営者と現場に戻します。",
     href: "/services/ai-implementation",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     label: "ATELIER BOOST",
     title: "アトリエboost",
     description:
-      "受注管理、在庫、SNS投稿——バックオフィスをAI従業員に丸投げして、あなたは「創る」ことだけに集中できるアトリエへ。",
+      "受注管理、在庫、SNS投稿——制作以外の作業を減らし、あなたは「創る」ことに集中できるアトリエへ。",
     href: "/services/atelier-boost",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     label: "DEVELOPMENT",
     title: "受託開発",
     description:
-      "17年のSE経験 × AI爆速開発。要件定義から本番運用まで一気通貫。事業成長に直結するプロダクトを、他社の1/3の納期で届けます。",
+      "17年のSE経験と効率的な開発体制で、要件定義から本番運用まで一気通貫。事業成長に直結するプロダクトを短納期で届けます。",
     href: "/services/development",
   },
 ];
@@ -49,9 +49,9 @@ const flow = [
 ];
 
 const works = [
-  { tag: "PWA / AI", title: "katatte", desc: "写真と言葉から記事を生む、体験設計重視の生成AIプロダクト。" },
+  { tag: "PWA / 体験設計", title: "katatte", desc: "写真と言葉から思い出を記事として残す、記録体験重視のプロダクト。" },
   { tag: "最適化 / Web", title: "PP Route Optimizer", desc: "複雑な条件でも最適な移動ルートを高速計算する業務支援ツール。" },
-  { tag: "自動化 / AI", title: "AIコンシェルジュ", desc: "日次オペレーションを丸ごと自動化する、運用基盤の設計と実装。" },
+  { tag: "業務設計 / 運用", title: "朝の業務コンシェルジュ", desc: "日次オペレーションを整え、朝の立ち上がり時間を短くする仕組み。" },
 ];
 
 export default function HomePage() {
@@ -68,7 +68,7 @@ export default function HomePage() {
               仕組みに変えよう。
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-              毎日がんばっているのに、もっと伸ばしたい。その想いを、AIと設計力で
+              毎日がんばっているのに、もっと伸ばしたい。その想いを、業務設計と実装力で
               「成長の仕組み」に変えます。経営の現場に寄り添いながら、
               実装と運用までを一気通貫で伴走します。
             </p>
@@ -94,7 +94,7 @@ export default function HomePage() {
               <CardContent className="space-y-4 p-6">
                 {[
                   "現場ヒアリングでボトルネックを構造化",
-                  "AIと業務フローを接続して小さく実装",
+                  "現場の業務フローに合わせて小さく実装",
                   "運用データを基に継続改善を実行",
                 ].map((item, index) => (
                   <div key={item} className="flex items-start gap-3 rounded-xl border border-border/80 p-4">
@@ -146,7 +146,7 @@ export default function HomePage() {
               <CardContent className="space-y-5 p-8 text-muted-foreground">
                 <p>
                   「もう少し売上を伸ばしたい。でも、自分の手が足りない。」
-                  「AIがいいって聞くけど、何から手をつければいいか分からない。」
+                  「何から手をつければいいか分からない。」
                 </p>
                 <p>
                   その忙しさは、事業を本気で良くしたいという証拠です。成長する事業には、
@@ -286,7 +286,7 @@ export default function HomePage() {
               {
                 icon: BrainCircuit,
                 title: "事業の詰まりを構造で捉える",
-                text: "表面的な自動化ではなく、売上が伸びない原因を分解して最短で改善します。",
+                text: "表面的なツール導入ではなく、売上が伸びない原因を分解して最短で改善します。",
               },
               {
                 icon: Code,

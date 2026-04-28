@@ -10,7 +10,7 @@ import { Reveal } from "@/components/shared/reveal";
 export const metadata: Metadata = {
   title: "ブログ・コンテンツ",
   description:
-    "AI自動化・業務効率化・起業に関するノウハウをNoteで発信中。AIを使った爆速開発の実録や、中小企業のDX事例なども。",
+    "業務改善・事業づくり・起業に関するノウハウをNoteで発信中。実際に試して、時間削減や判断改善につながったことを書いています。",
 };
 
 const noteArticles = [
@@ -32,7 +32,7 @@ const snsList = [
   {
     platform: "Note",
     handle: "@jin_lifelab",
-    desc: "AI活用・業務自動化・副業の実録。週1〜2本更新。",
+    desc: "業務改善・事業づくり・副業の実録。週1〜2本更新。",
     url: "https://note.com/jin_lifelab",
     color: "#41C9B4",
   },
@@ -60,7 +60,7 @@ export default function BlogPage() {
           <SectionHeader
             label="BLOG & CONTENT"
             title="ブログ・コンテンツ"
-            subtitle="AI自動化・業務効率化・起業の実録をNoteで発信中。実際に自分で試して、動いたことだけを書いています。"
+            subtitle="業務改善・事業づくり・起業の実録をNoteで発信中。実際に自分で試して、動いたことだけを書いています。"
             align="center"
           />
         </div>

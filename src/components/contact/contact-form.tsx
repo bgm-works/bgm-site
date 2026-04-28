@@ -42,9 +42,9 @@ export function ContactForm() {
             <SelectValue placeholder="選択してください" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="ai-implementation">AI導入支援（中小企業・店舗向け）</SelectItem>
+            <SelectItem value="ai-implementation">業務改善支援（中小企業・店舗向け）</SelectItem>
             <SelectItem value="atelier-boost">アトリエboost（個人クリエイター向け）</SelectItem>
-            <SelectItem value="development">Webアプリ開発・AI自動化受託</SelectItem>
+            <SelectItem value="development">Webアプリ開発・業務ツール受託</SelectItem>
             <SelectItem value="other">その他・まだ決まっていない</SelectItem>
           </SelectContent>
         </Select>
@@ -58,7 +58,7 @@ export function ContactForm() {
           name="message"
           required
           rows={6}
-          placeholder="例：毎月の請求書処理を自動化したい。今は手入力で月10時間かかっている。費用感と対応できるか知りたい。"
+          placeholder="例：毎月の請求書処理に手入力で月10時間かかっている。どれくらい時間を減らせるか、費用感とあわせて知りたい。"
         />
       </div>
 
