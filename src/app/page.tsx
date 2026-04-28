@@ -49,9 +49,9 @@ const flow = [
 ];
 
 const works = [
-  { tag: "PWA / 体験設計", title: "katatte", desc: "写真と言葉から思い出を記事として残す、記録体験重視のプロダクト。" },
-  { tag: "最適化 / Web", title: "PP Route Optimizer", desc: "複雑な条件でも最適な移動ルートを高速計算する業務支援ツール。" },
-  { tag: "業務設計 / 運用", title: "朝の業務コンシェルジュ", desc: "日次オペレーションを整え、朝の立ち上がり時間を短くする仕組み。" },
+  { tag: "工務店 / 日報・発注", title: "日報・発注整理フロー", desc: "現場から届く写真・音声を、翌朝の確認しやすい日報下書きと発注メモへ整えます。" },
+  { tag: "士業 / 受付管理", title: "依頼受付・台帳整理", desc: "受付メールを案件台帳と返信確認につなげ、転記時間と返信漏れを減らします。" },
+  { tag: "クリエイター / 受注・在庫", title: "アトリエ業務整理", desc: "注文・在庫・発送準備・発信を整理し、制作時間と販売機会を増やします。" },
 ];
 
 export default function HomePage() {
@@ -238,8 +238,8 @@ export default function HomePage() {
           <Reveal>
             <SectionHeader
               label="WORKS"
-              title="実績"
-              subtitle="プロジェクトをテキストだけでなくビジュアル付きカードで紹介します。"
+              title="実績・構築例"
+              subtitle="個人用途の制作物ではなく、お客様の時間削減・確認漏れ削減・売上機会に近い改善例を紹介します。"
               className="mb-12"
             />
           </Reveal>

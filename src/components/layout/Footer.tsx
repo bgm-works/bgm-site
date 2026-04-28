@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/works" className="text-sm text-muted-foreground hover:text-primary">
-                  実績・ポートフォリオ
+                  実績・構築例
                 </Link>
               </li>
               <li>

@@ -22,39 +22,39 @@ const skills = [
 
 const works = [
   {
-    name: "katatte",
-    tag: "PWA / 体験設計",
-    desc: "写真を見ながら話すだけで、旅行体験を記事として残せるプロダクト。思い出を整理する手間を減らします。",
-    url: "https://katatte.vercel.app",
-    tech: ["Next.js", "OpenAI API", "PWA"],
-  },
-  {
-    name: "PP Route Optimizer",
-    tag: "最適化アルゴリズム",
-    desc: "ANA SFC修行の最高効率ルート自動計算。2026年5月新運賃体系に対応。月間数千件のアクセス。",
+    name: "工務店向け 日報・発注整理",
+    tag: "工務店 / 業務改善",
+    desc: "現場から届く写真・音声を、翌朝の確認しやすい日報下書きと発注メモへ整える構築例。",
     url: "#",
-    tech: ["React", "TypeScript", "Vercel"],
+    tech: ["LINE連携", "音声・写真整理", "確認画面"],
   },
   {
-    name: "O365→GCal自動同期",
+    name: "依頼受付・台帳整理",
+    tag: "士業 / 受付管理",
+    desc: "受付メールを案件台帳と返信確認につなげ、転記時間・返信漏れ・対応遅れを減らす構築例。",
+    url: "#",
+    tech: ["メール連携", "台帳設計", "ステータス管理"],
+  },
+  {
+    name: "Outlook予定の二重管理削減",
     tag: "予定管理 / 業務改善",
     desc: "会社のOutlook予定を毎朝Googleカレンダーへ反映。二重確認を減らし、予定の見落としを防ぎます。",
     url: "#",
     tech: ["Node.js", "Google API", "GAS"],
   },
   {
-    name: "AIコンシェルジュ",
-    tag: "日次業務の仕組み化",
-    desc: "朝の定型業務をまとめて処理し、1日の開始前に予定・発信・記録の準備が整う状態を作ります。",
+    name: "アトリエ向け 受注・在庫整理",
+    tag: "クリエイター / 受注・在庫",
+    desc: "注文・在庫・発送準備・新作告知を整理し、制作時間と販売機会を増やす構築例。",
     url: "#",
-    tech: ["Claude API", "GAS", "GitHub"],
+    tech: ["受注台帳", "在庫管理", "SNS下書き"],
   },
   {
-    name: "Master Flow Viewer",
-    tag: "Next.js / PWA",
-    desc: "マスタープランの処理フローをリアルタイム可視化。Edge Basic認証+PWA+Vercel自動デプロイ。",
-    url: "#",
-    tech: ["Next.js", "Vercel", "PWA"],
+    name: "写真・音声からの記事下書き",
+    tag: "発信支援 / 体験整理",
+    desc: "写真を見ながら話した内容を、記事やSNS下書きとして整理。文章化の時間を減らす構築例。",
+    url: "https://katatte.vercel.app",
+    tech: ["Next.js", "音声入力", "PWA"],
   },
 ];
 
@@ -160,7 +160,7 @@ export default function DevelopmentPage() {
       {/* Works */}
       <section className="py-20">
         <div className="container-wide">
-          <SectionHeader label="WORKS" title="実績" align="center" className="mb-10" />
+          <SectionHeader label="WORKS" title="実績・構築例" align="center" className="mb-10" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {works.map((w) => (
               <Reveal key={w.name}>

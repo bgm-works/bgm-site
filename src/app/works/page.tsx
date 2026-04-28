@@ -8,45 +8,45 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
-  title: "実績・ポートフォリオ",
+  title: "実績・構築例",
   description:
-    "BGM の実績・ポートフォリオ。体験整理、移動計画、予定管理、日次業務の仕組み化など、実際に稼働するプロダクト5作品を紹介。",
+    "BGM の実績・構築例。工務店の日報・発注整理、依頼受付の台帳化、アトリエの受注・在庫整理など、事業の時間と品質に効く仕組みを紹介。",
 };
 
 const works = [
   {
-    id: "katatte",
+    id: "construction-report-flow",
     number: "01",
-    name: "katatte",
-    tagline: "写真を見ながら語るだけ。思い出が記事として残る。",
-    tag: "PWA / 体験設計 / 音声入力",
+    name: "工務店向け 日報・発注整理フロー",
+    tagline: "現場はLINEで送るだけ。翌朝、日報と発注メモが整理されている。",
+    tag: "工務店 / 日報・発注 / 業務改善",
     description:
-      "旅の思い出写真と音声をセットにするだけで、体験を読みやすい記事として残せるPWAアプリ。旅の記録を整理する手間を減らし、スマートフォンだけで完結できる体験にこだわった作品。",
+      "現場から届く写真・音声・短文を、事務所で確認しやすい日報下書き・発注メモ・確認待ちリストへ整える構築例。新しい専用アプリを覚えさせず、帰宅後の事務作業と社長の確認時間を減らします。",
     points: [
-      "写真と思い出話を組み合わせた記録体験",
-      "PWA対応（ホーム画面追加・オフライン対応）",
-      "スマートフォンでの操作性を最優先に設計",
+      "現場の入力負担を増やさないLINE起点の運用",
+      "翌朝の聞き直し・整理し直しを減らす確認フロー",
+      "削減できた時間と現場の声を見ながら範囲を拡張",
     ],
-    tech: ["Next.js 15", "OpenAI API (Whisper + GPT-4o)", "Tailwind CSS", "Vercel", "PWA"],
-    url: "https://katatte.vercel.app",
-    available: true,
+    tech: ["LINE連携", "音声・写真整理", "業務フロー設計", "確認画面"],
+    url: "#",
+    available: false,
     color: "#E3F0F0",
     accentColor: "#1B6B6B",
   },
   {
-    id: "pp-route-optimizer",
+    id: "request-ledger-flow",
     number: "02",
-    name: "PP Route Optimizer",
-    tagline: "費用・PP数・フライト数を見比べ、納得できる旅程を探せる。",
-    tag: "最適化アルゴリズム / モダンUI",
+    name: "依頼受付・台帳整理フロー",
+    tagline: "受付メールを、案件台帳と返信確認へつなげる。",
+    tag: "士業 / 受付管理 / 返信品質",
     description:
-      "ANA SFC修行（2026年5月以降の新運賃）に対応した最適ルート自動計算ツール。フライト数・PP数・費用の3軸で最高効率の旅程を提案。複雑な組み合わせ爆発を効率的なアルゴリズムで解決。",
+      "問い合わせ・依頼受付メールを案件台帳に整理し、対応状況と返信確認を見える化する構築例。転記時間を減らし、返信漏れや対応遅れを防いで、案件対応の品質を安定させます。",
     points: [
-      "2026年5月新運賃体系への完全対応",
-      "組み合わせ最適化アルゴリズムの実装",
-      "レスポンシブ対応で外出先でも確認可能",
+      "受付内容・期限・対応状況を一覧で確認",
+      "返信文の下書きと確認待ちを分けて管理",
+      "属人化しやすい案件受付を標準化",
     ],
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    tech: ["メール連携", "台帳設計", "返信テンプレート", "ステータス管理"],
     url: "#",
     available: false,
     color: "#E8EEF0",
@@ -55,15 +55,15 @@ const works = [
   {
     id: "o365-gcal-sync",
     number: "03",
-    name: "O365→GCal 自動同期",
+    name: "Outlook予定の二重管理削減",
     tagline: "会社のOutlook予定が、毎朝Googleカレンダーに届く。",
     tag: "予定管理 / 業務改善 / GAS",
     description:
-      "会社のOutlook（Microsoft 365）の予定を、Googleカレンダーへ毎朝反映する実用ツール。仕事と個人の予定を別々に確認する手間を減らし、「二重管理の苦痛」を解消します。",
+      "会社のOutlook（Microsoft 365）の予定を、外部カレンダーへ毎朝反映する実用ツール。複数カレンダーを別々に確認する手間を減らし、予定の見落としと二重管理の負担を軽くします。",
     points: [
-      "Outlook予定をGoogleカレンダーへ毎朝反映",
+      "Outlook予定を外部カレンダーへ毎朝反映",
       "差分更新対応（重複作成なし）",
-      "Note記事で公開、多くのビジネスパーソンに活用",
+      "予定の二重確認と見落としを減らす運用",
     ],
     tech: ["Node.js", "Google Calendar API", "Microsoft Graph API", "GAS"],
     url: "#",
@@ -72,40 +72,40 @@ const works = [
     accentColor: "#C06A3A",
   },
   {
-    id: "ai-concierge",
+    id: "atelier-backoffice-flow",
     number: "04",
-    name: "朝の業務コンシェルジュ",
-    tagline: "起きたら、もう今日の仕事が動き始めている。",
-    tag: "日次業務 / 業務設計",
+    name: "アトリエ向け 受注・在庫整理",
+    tagline: "制作以外の作業を減らし、創る時間と販売機会を増やす。",
+    tag: "クリエイター / 受注・在庫 / 発信支援",
     description:
-      "毎朝8ステップのルーティン（カレンダー取得・思考ログ作成・SNS下書き生成・git push）をまとめて実行する仕組み。朝の立ち上がりを短くし、考える時間を増やすための実用設計です。",
+      "注文・在庫・発送準備・新作告知を整理する構築例。小規模なアトリエや個人クリエイターが、制作時間を削らずに顧客対応と販売活動を続けられる状態を作ります。",
     points: [
-      "8ステップの朝ルーティンをまとめて処理",
-      "Claude API + GAS + GitHub の連携",
-      "このポートフォリオ自体も継続的に改善・管理",
+      "注文・在庫・発送準備を一覧化",
+      "新作紹介や制作背景の発信を続けやすくする",
+      "売れ筋と在庫の動きから次の制作判断を支援",
     ],
-    tech: ["Claude API", "Google Apps Script", "GitHub Actions", "Cursor AI"],
+    tech: ["受注台帳", "在庫管理", "SNS下書き", "売上メモ"],
     url: "#",
     available: false,
     color: "#E3F0F0",
     accentColor: "#1B6B6B",
   },
   {
-    id: "master-flow-viewer",
+    id: "content-draft-flow",
     number: "05",
-    name: "Master Flow Viewer",
-    tagline: "マスタープランの処理フローをリアルタイムで可視化。",
-    tag: "Next.js / PWA / 認証",
+    name: "写真・音声からの記事下書き",
+    tagline: "現場や体験の記録を、発信に使える文章へ整える。",
+    tag: "コンテンツ化 / 音声入力 / 発信支援",
     description:
-      "個人の「マスタープラン」に記載された処理フローをWebで閲覧・管理するダッシュボード。判断や作業の流れを見える化し、迷わず次の行動に移るための実践ツール。",
+      "写真を見ながら話した内容を、記事やSNS下書きとして整理するプロトタイプ。観光・店舗・クリエイターなど、現場の魅力を発信したいが文章化に時間がかかる事業者向けの構築例です。",
     points: [
-      "必要な人だけが見られるアクセス制限",
-      "PWA対応（モバイルからもアクセス可能）",
-      "更新内容をすばやく反映できる運用フロー",
+      "写真と音声メモから文章の素材を整理",
+      "スマートフォンだけで記録から下書きまで完結",
+      "発信頻度を上げるための文章化負担を軽減",
     ],
-    tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "Vercel Edge Runtime", "PWA"],
-    url: "#",
-    available: false,
+    tech: ["Next.js", "音声入力", "文章整理", "PWA"],
+    url: "https://katatte.vercel.app",
+    available: true,
     color: "#E8EEF0",
     accentColor: "#3D5A6B",
   },
@@ -118,8 +118,8 @@ export default function WorksPage() {
         <div className="container-narrow">
           <SectionHeader
             label="WORKS"
-            title="実績・ポートフォリオ"
-            subtitle="実際に動いているプロダクトを5つ紹介します。技術そのものではなく、時間削減・判断のしやすさ・使いやすさにつながる形を重視しています。"
+            title="実績・構築例"
+            subtitle="個人用途のプロダクトではなく、BGMとしてお客様に提供しやすい業務改善の型を中心に紹介します。正式な導入実績は、公開許可をいただける範囲で今後追加します。"
             align="center"
           />
         </div>
@@ -177,7 +177,7 @@ export default function WorksPage() {
                         </ul>
                       </div>
                       <div>
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">使用技術</p>
+                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">構成要素</p>
                         <div className="flex flex-wrap gap-2">
                           {w.tech.map((t) => (
                             <Badge key={t} variant="outline">{t}</Badge>
@@ -195,9 +195,9 @@ export default function WorksPage() {
 
       <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
-          <h2 className="section-title mb-4">あなたのプロダクトも、作れます。</h2>
+          <h2 className="section-title mb-4">御社の業務にも、近い型を作れます。</h2>
           <p className="mb-8 text-muted-foreground">
-            アイデアがあれば、それが何でも形にできます。まずお話しください。
+            まずは1業務だけ、現状の流れを伺いながら効果が出やすい形に落とし込みます。
           </p>
           <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             相談してみる <ArrowRight size={16} />
