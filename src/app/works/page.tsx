@@ -119,7 +119,7 @@ export default function WorksPage() {
           <SectionHeader
             label="WORKS"
             title="実績・構築例"
-            subtitle="個人用途のプロダクトではなく、BGMとしてお客様に提供しやすい業務改善の型を中心に紹介します。正式な導入実績は、公開許可をいただける範囲で今後追加します。"
+            subtitle="お客様の時間削減・確認漏れ削減・売上機会づくりにつながる業務改善の型を紹介します。正式な導入実績は、公開許可をいただける範囲で今後追加します。"
             align="center"
           />
         </div>

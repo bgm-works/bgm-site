@@ -239,7 +239,7 @@ export default function HomePage() {
             <SectionHeader
               label="WORKS"
               title="実績・構築例"
-              subtitle="個人用途の制作物ではなく、お客様の時間削減・確認漏れ削減・売上機会に近い改善例を紹介します。"
+              subtitle="お客様の時間削減・確認漏れ削減・売上機会づくりにつながる改善例を紹介します。"
               className="mb-12"
             />
           </Reveal>
