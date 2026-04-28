@@ -195,7 +195,7 @@ export default function WorksPage() {
 
       <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
-          <h2 className="section-title mb-4">御社の業務にも、近い型を作れます。</h2>
+          <h2 className="section-title mb-4">御社の業務にも、近い仕組みを作れます。</h2>
           <p className="mb-8 text-muted-foreground">
             まずは1業務だけ、現状の流れを伺いながら効果が出やすい形に落とし込みます。
           </p>
