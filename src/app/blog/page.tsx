@@ -9,7 +9,7 @@ import { SectionHeader } from "@/components/shared/section-header";
 export const metadata: Metadata = {
   title: "ブログ・コンテンツ",
   description:
-    "BGM 公式のブログ・コンテンツページ。公式SNSと記事導線は準備中です。",
+    "BGM 公式のブログ・コンテンツページ。現在準備中です。",
 };
 
 export default function BlogPage() {
@@ -20,7 +20,7 @@ export default function BlogPage() {
           <SectionHeader
             label="BLOG & CONTENT"
             title="ブログ・コンテンツ"
-            subtitle="BGM公式としての発信導線は準備中です。個人SNSや別ブランドの発信とは切り分けて運用します。"
+            subtitle="現在準備中です。公開までしばらくお待ちください。"
             align="center"
           />
         </div>
@@ -35,8 +35,8 @@ export default function BlogPage() {
             </CardHeader>
             <CardContent>
               <CardDescription className="leading-relaxed">
-                BGM Worksとしての発信先は、公式アカウントを整備してから掲載します。
-                現時点では、個人のNote・X・Threadsなどへのリンクは掲載していません。
+                BGM Worksとしての発信内容を準備しています。
+                公開できる状態になり次第、こちらに掲載します。
               </CardDescription>
             </CardContent>
           </Card>
