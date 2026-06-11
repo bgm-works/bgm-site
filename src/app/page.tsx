@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Bot, BrainCircuit, ChartNoAxesCombined, Code, Palette, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, BrainCircuit, ChartNoAxesCombined, Code, Megaphone, Palette, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +23,14 @@ const services = [
     description:
       "受注管理、在庫、SNS投稿——制作以外の作業を減らし、あなたは「創る」ことに集中できるアトリエへ。",
     href: "/services/atelier-boost",
+  },
+  {
+    icon: Megaphone,
+    label: "AI MARKETING",
+    title: "AI集客・売上アップ支援",
+    description:
+      "目的を入れるだけのAIマーケプラン作成、SNS運用、動画→投稿の自動展開——「攻め」をAIで仕組み化し、集客と売上を伸ばします。",
+    href: "/services/marketing",
   },
   {
     icon: Code,
@@ -69,8 +77,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
               毎日がんばっているのに、もっと伸ばしたい。その想いを、業務設計と実装力で
-              「成長の仕組み」に変えます。経営の現場に寄り添いながら、
-              実装と運用までを一気通貫で伴走します。
+              「成長の仕組み」に変えます。ムダを減らす<strong>守り</strong>と、
+              集客・売上を伸ばす<strong>攻め</strong>の両輪で、実装と運用まで一気通貫で伴走します。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-6">
@@ -167,13 +175,13 @@ export default function HomePage() {
           <Reveal>
             <SectionHeader
               label="OUR SERVICES"
-              title="3つのサービス"
-              subtitle="事業フェーズと課題に合わせて、最適な仕組みを設計します。"
+              title="4つのサービス"
+              subtitle="守り（業務効率化）と攻め（集客・売上）の両輪で、事業フェーズと課題に合わせて最適な仕組みを設計します。"
               align="center"
               className="mb-12"
             />
           </Reveal>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => {
               const Icon = service.icon;
               return (
