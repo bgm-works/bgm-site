@@ -164,38 +164,49 @@ h1, h2, h3, h4 {
   transform: translateY(0);
 }
 
+/*
+  BGMWorks ダークモード パレット v2.0 (2026-06-18)
+  正本: 08_リソース/BGMWorks_ブランドガイド.md §3.5.3
+  以前は shadcn デフォルトの無彩色グレー (oklch L 0 0) でブランド色が消失していた。
+  深ターコイズの闇を面色にし、Primary は読みやすさのため Primary Light (#4FBFBF) へ持ち上げる。
+  フラット原則 (影・グラデ禁止) は維持。
+*/
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: oklch(0.18 0.018 205);
+  --foreground: oklch(0.96 0.008 197);
+  --card: oklch(0.22 0.022 204);
+  --card-foreground: oklch(0.96 0.008 197);
+  --popover: oklch(0.22 0.022 204);
+  --popover-foreground: oklch(0.96 0.008 197);
+  --primary: oklch(0.741 0.101 195);
+  --primary-foreground: oklch(0.20 0.03 200);
+  --secondary: oklch(0.30 0.030 202);
+  --secondary-foreground: oklch(0.93 0.010 197);
+  --muted: oklch(0.27 0.020 205);
+  --muted-foreground: oklch(0.72 0.022 210);
+  --accent: oklch(0.30 0.030 202);
+  --accent-foreground: oklch(0.93 0.010 197);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: oklch(0.32 0.022 205);
+  --input: oklch(0.32 0.022 205);
+  --ring: oklch(0.741 0.101 195);
+  --chart-1: oklch(0.741 0.101 195);
+  --chart-2: oklch(0.62 0.050 235);
+  --chart-3: oklch(0.76 0.110 54);
+  --chart-4: oklch(0.83 0.080 196);
+  --chart-5: oklch(0.55 0.075 200);
+  --hero-grad-start: oklch(0.22 0.030 200);
+  --hero-grad-end: oklch(0.18 0.018 205);
+  --warm-accent: oklch(0.76 0.110 54);
+  --cool-accent: oklch(0.62 0.050 235);
+  --sidebar: oklch(0.22 0.022 204);
+  --sidebar-foreground: oklch(0.96 0.008 197);
+  --sidebar-primary: oklch(0.741 0.101 195);
+  --sidebar-primary-foreground: oklch(0.20 0.03 200);
+  --sidebar-accent: oklch(0.30 0.030 202);
+  --sidebar-accent-foreground: oklch(0.93 0.010 197);
+  --sidebar-border: oklch(0.32 0.022 205);
+  --sidebar-ring: oklch(0.741 0.101 195);
 }
 
 @layer base {
