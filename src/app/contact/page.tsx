@@ -3,6 +3,7 @@ import { Mail, Clock, MessageSquare } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ContactForm } from "@/components/contact/contact-form";
+import { ObfuscatedEmail } from "@/components/contact/obfuscated-email";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -68,12 +69,7 @@ export default function ContactPage() {
                 <CardTitle className="text-sm">直接メール</CardTitle>
               </CardHeader>
               <CardContent>
-              <a
-                href="mailto:info@bgm-works.com"
-                className="text-sm font-medium text-primary hover:underline"
-              >
-                info@bgm-works.com
-              </a>
+              <ObfuscatedEmail className="text-sm font-medium text-primary hover:underline" />
               </CardContent>
             </Card>
           </div>
