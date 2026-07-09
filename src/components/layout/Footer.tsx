@@ -68,6 +68,16 @@ export function Footer() {
                   ブログ
                 </Link>
               </li>
+              <li>
+                <Link href="/company" className="text-sm text-muted-foreground hover:text-primary">
+                  会社概要
+                </Link>
+              </li>
+              <li>
+                <Link href="/koukoku" className="text-sm text-muted-foreground hover:text-primary">
+                  電子公告
+                </Link>
+              </li>
             </ul>
           </div>
 
