@@ -52,6 +52,16 @@ const products = [
   },
 ];
 
+const inHouse = {
+  name: "BGM Cockpit",
+  tag: "経営・タスク管理 / 自社運用",
+  tagline: "自社の経営を、自社の道具で回す。",
+  description:
+    "事業の状況とタスクを一つの画面でまとめて管理する経営ボードです。当社が自分たちの経営に毎日使っています。ここで確かめた使い勝手をもとに、お客様の業務とタスクを管理するツールとして育て、商品化を進めています。",
+  note: "ログインが必要な運用中のツールのため、URLは公開していません。商品版の公開に向けて開発を進めています。",
+  tech: ["経営ダッシュボード", "タスク管理", "アクセス制御"],
+};
+
 const research = {
   name: "避難行動シミュレーション",
   tag: "防災 / シミュレーション",
@@ -194,8 +204,46 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* 技術検証 */}
+      {/* 自社運用・商品化中のプロダクト */}
       <section className="bg-muted/35 py-20">
+        <div className="container-wide">
+          <SectionHeader
+            label="IN-HOUSE"
+            title="自社で使い、商品化を進めているプロダクト"
+            align="center"
+            className="mb-10"
+          />
+          <Reveal>
+            <Card className="border-border/80">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex flex-wrap items-center gap-2">
+                  <Badge variant="secondary">自社運用中</Badge>
+                  <span className="text-xs text-muted-foreground">{inHouse.tag}</span>
+                </div>
+                <CardTitle className="mt-3 text-2xl">{inHouse.name}</CardTitle>
+                <p className="mt-1 text-sm font-medium text-primary">{inHouse.tagline}</p>
+                <div className="mt-5 grid gap-6 md:grid-cols-3">
+                  <div className="space-y-3 md:col-span-2">
+                    <p className="text-sm leading-relaxed text-muted-foreground">{inHouse.description}</p>
+                    <p className="text-xs leading-relaxed text-muted-foreground">{inHouse.note}</p>
+                  </div>
+                  <div>
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">構成要素</p>
+                    <div className="flex flex-wrap gap-2">
+                      {inHouse.tech.map((t) => (
+                        <Badge key={t} variant="outline">{t}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 技術検証 */}
+      <section className="py-20">
         <div className="container-wide">
           <SectionHeader label="R&D" title="技術検証" align="center" className="mb-10" />
           <Reveal>
@@ -219,7 +267,7 @@ export default function WorksPage() {
       </section>
 
       {/* 構築例（モデルケース） */}
-      <section className="py-20">
+      <section className="bg-muted/35 py-20">
         <div className="container-wide">
           <SectionHeader label="MODEL CASE" title="構築例（モデルケース）" align="center" className="mb-4" />
           <p className="mx-auto mb-10 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
@@ -265,7 +313,7 @@ export default function WorksPage() {
         </div>
       </section>
 
-      <section className="bg-muted/35 py-20">
+      <section className="py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">御社の業務にも、近い仕組みを作れます。</h2>
           <p className="mb-8 text-muted-foreground">
