@@ -249,7 +249,7 @@ export default function AiImplementationPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             先に概算だけ知りたい方は、2問の
             <a
-              href="https://aidial-hearing.vercel.app"
+              href="https://shindan.aidial.jp"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"

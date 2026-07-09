@@ -30,7 +30,7 @@ const products = [
     description:
       "発注前の見積もりヒアリングを、誰でも試せる形で公開したツールです。概算費用と、補助金を使った場合の実質負担の目安まで、その場で確認できます。当社の進め方をそのまま体験できます。",
     tech: ["AIヒアリング", "概算見積もり", "補助金試算"],
-    url: "https://aidial-hearing.vercel.app",
+    url: "https://shindan.aidial.jp",
   },
   {
     name: "aidialポータル",

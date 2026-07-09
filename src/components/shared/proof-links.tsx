@@ -14,7 +14,7 @@ const products = [
   {
     name: "AiDIAL 無料AI診断",
     desc: "2問答えると、概算費用と補助金の実質負担の目安がわかります。",
-    url: "https://aidial-hearing.vercel.app",
+    url: "https://shindan.aidial.jp",
   },
   {
     name: "aidialポータル",
