@@ -6,9 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
+import { ProcessGuarantee } from "@/components/shared/process-guarantee";
+import { ProofLinks } from "@/components/shared/proof-links";
 
 export const metadata: Metadata = {
-  title: "AI集客・売上アップ支援 — 地方中小企業・店舗向け",
+  title: "AI集客・売上アップ支援｜地方中小企業・店舗向け",
   description:
     "目的を入れるだけのAIマーケプラン作成、SNS運用、動画→投稿の自動展開。「攻め」をAIで仕組み化し、集客と売上を伸ばす伴走支援。",
 };
@@ -160,7 +162,13 @@ export default function MarketingPage() {
 
       <section className="py-20">
         <div className="container-wide">
-          <SectionHeader label="CASE STUDY" title="集客と売上に効く変化を作ります" align="center" className="mb-10" />
+          <SectionHeader
+            label="MODEL CASE"
+            title="集客と売上に効く変化を作ります"
+            subtitle="以下は実案件ではなく、よくいただくご相談を当社の進め方に当てはめた想定モデルです。効果は業務の状況によって変わります。"
+            align="center"
+            className="mb-10"
+          />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cases.map((c) => (
               <Reveal key={c.business}>
@@ -184,6 +192,8 @@ export default function MarketingPage() {
           </div>
         </div>
       </section>
+
+      <ProofLinks />
 
       <section className="bg-muted/35 py-20">
         <div className="container-wide">
@@ -221,16 +231,30 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <ProcessGuarantee />
+
+      <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">「攻め」を、AIと一緒に始めませんか？</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">
-            発信が止まる・打ち手が思いつかない——そのループから抜け出しましょう。<br />
+            発信が止まる、打ち手が思いつかない。そのループから抜け出しましょう。<br />
             30分話すだけで、あなたの集客の「次の一手」が見えてきます。
           </p>
           <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            先に概算だけ知りたい方は、2問の
+            <a
+              href="https://aidial-hearing.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              無料AI診断
+            </a>
+            で目安を確認できます。
+          </p>
         </div>
       </section>
     </>

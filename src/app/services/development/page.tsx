@@ -6,11 +6,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
+import { ProcessGuarantee } from "@/components/shared/process-guarantee";
+import { ProofLinks } from "@/components/shared/proof-links";
 
 export const metadata: Metadata = {
   title: "Webアプリ開発・業務ツール受託",
   description:
-    "「こういうの、作れないかな」——そのぼんやりしたイメージで十分です。17年のSE経験で、業務改善や事業検証に効くプロダクトを一緒に形にします。",
+    "「こういうの、作れないかな」。そのぼんやりしたイメージで十分です。17年のSE経験で、業務改善や事業検証に効くプロダクトを一緒に形にします。",
 };
 
 const skills = [
@@ -23,37 +25,37 @@ const skills = [
 const works = [
   {
     name: "工務店向け 日報・発注整理",
+    badge: "モデルケース",
     tag: "工務店 / 業務改善",
     desc: "現場から届く写真・音声を、翌朝の確認しやすい日報下書きと発注メモへ整える構築例。",
-    url: "#",
     tech: ["LINE連携", "音声・写真整理", "確認画面"],
   },
   {
     name: "依頼受付・台帳整理",
+    badge: "モデルケース",
     tag: "士業 / 受付管理",
     desc: "受付メールを案件台帳と返信確認につなげ、転記時間・返信漏れ・対応遅れを減らす構築例。",
-    url: "#",
     tech: ["メール連携", "台帳設計", "ステータス管理"],
   },
   {
     name: "Outlook予定の二重管理削減",
+    badge: "社内運用中",
     tag: "予定管理 / 業務改善",
-    desc: "会社のOutlook予定を毎朝Googleカレンダーへ反映。二重確認を減らし、予定の見落としを防ぎます。",
-    url: "#",
+    desc: "当社が毎朝実際に使っている社内ツール。会社のOutlook予定を毎朝Googleカレンダーへ反映し、二重管理と見落としを減らしています。",
     tech: ["Node.js", "Google API", "GAS"],
   },
   {
     name: "アトリエ向け 受注・在庫整理",
+    badge: "モデルケース",
     tag: "クリエイター / 受注・在庫",
     desc: "注文・在庫・発送準備・新作告知を整理し、制作時間と販売機会を増やす構築例。",
-    url: "#",
     tech: ["受注台帳", "在庫管理", "SNS下書き"],
   },
   {
     name: "写真・音声からの記事下書き",
+    badge: "モデルケース",
     tag: "発信支援 / 体験整理",
-    desc: "写真を見ながら話した内容を、記事やSNS下書きとして整理。文章化の時間を減らす構築例。",
-    url: "https://katatte.vercel.app",
+    desc: "写真を見ながら話した内容を、記事やSNS下書きとして整理するプロトタイプの構築例。",
     tech: ["Next.js", "音声入力", "PWA"],
   },
 ];
@@ -76,13 +78,6 @@ const reasons = [
   },
 ];
 
-const flowItems = [
-  { step: "01", title: "一緒に整理する", desc: "何を作りたいか、まだぼんやりでも大丈夫。要件・予算・優先度を一緒に整理します。" },
-  { step: "02", title: "提案・見積もり", desc: "最適な技術と進め方を、3営業日以内にご提案します。" },
-  { step: "03", title: "一緒に作り上げる", desc: "毎週デモをお見せしながら、使う人の反応を見て一緒に磨いていきます。" },
-  { step: "04", title: "一緒に育てる", desc: "リリースはゴールではなく、スタート。月額保守で改善を続け、長期パートナーとして伴走します。" },
-];
-
 export default function DevelopmentPage() {
   return (
     <>
@@ -93,7 +88,7 @@ export default function DevelopmentPage() {
             Webアプリ開発<br />業務ツール受託
           </h1>
           <p className="mb-5 mt-3 text-xl font-medium text-[var(--cool-accent)]">
-            「こういうの、作れないかな」——それで十分です。
+            「こういうの、作れないかな」。それで十分です。
           </p>
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             まだぼんやりしたイメージでも大丈夫。17年のSE経験で、<strong>事業検証や業務改善に使える形</strong>まで一緒に落とし込みます。早く試せて、運用に耐える品質を大切にします。
@@ -160,13 +155,22 @@ export default function DevelopmentPage() {
       {/* Works */}
       <section className="py-20">
         <div className="container-wide">
-          <SectionHeader label="WORKS" title="実績・構築例" align="center" className="mb-10" />
+          <SectionHeader
+            label="WORKS"
+            title="実績・構築例"
+            subtitle="実案件は守秘のため公開していません。モデルケースと、当社が実際に使っている社内ツールを紹介します。"
+            align="center"
+            className="mb-10"
+          />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {works.map((w) => (
               <Reveal key={w.name}>
                 <Card className="h-full border-border/80">
                   <CardHeader>
-                    <Badge variant="secondary" className="w-fit text-[var(--cool-accent)]">{w.tag}</Badge>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge variant={w.badge === "社内運用中" ? "secondary" : "outline"}>{w.badge}</Badge>
+                      <span className="text-xs text-muted-foreground">{w.tag}</span>
+                    </div>
                     <CardTitle className="pt-2">{w.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -221,26 +225,9 @@ export default function DevelopmentPage() {
       </section>
 
       {/* Flow */}
-      <section className="py-20">
-        <div className="container-wide">
-          <SectionHeader label="FLOW" title="進め方" align="center" className="mb-10" />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {flowItems.map((f) => (
-              <Reveal key={f.step}>
-                <Card className="h-full border-border/80">
-                  <CardHeader>
-                    <p className="font-mono text-4xl text-muted">#{f.step}</p>
-                    <CardTitle className="text-base">{f.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="leading-relaxed">{f.desc}</CardDescription>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessGuarantee />
+
+      <ProofLinks />
 
       {/* Pricing */}
       <section className="bg-muted/35 py-20">
@@ -249,10 +236,11 @@ export default function DevelopmentPage() {
           <Card className="overflow-hidden border-border/80">
             <CardContent className="divide-y divide-border p-0">
             {[
-              { label: "小規模（LP・業務ツール）", price: "5万〜20万円", desc: "シンプルな機能 / 1〜2週間" },
-              { label: "中規模（Webアプリ）", price: "20万〜80万円", desc: "認証・DB・API連携あり / 2〜6週間" },
-              { label: "大規模（業務システム）", price: "80万円〜", desc: "複雑な要件・チーム開発 / 2ヶ月〜" },
-              { label: "月額保守", price: "2万〜10万円/月", desc: "バグ対応・機能追加・業務変化への追従" },
+              { label: "Webサイト・LP", price: "15万〜60万円", desc: "会社サイト・サービス紹介・キャンペーンLP" },
+              { label: "小さな業務ツール", price: "15万〜40万円", desc: "台帳・受付整理・日報など、1業務を軽くする道具" },
+              { label: "業務システム", price: "40万〜100万円", desc: "認証・データベース・外部連携を含む業務の仕組み" },
+              { label: "会員制Webサービス", price: "80万〜250万円", desc: "会員登録やマイページを備えたWebサービス" },
+              { label: "月額保守", price: "1万〜10万円/月", desc: "バグ対応・機能追加・業務変化への追従" },
             ].map((r) => (
               <div key={r.label} className="flex items-center justify-between gap-4 px-8 py-5">
                 <div>
@@ -264,6 +252,9 @@ export default function DevelopmentPage() {
             ))}
             </CardContent>
           </Card>
+          <p className="mt-5 text-center text-sm leading-relaxed text-muted-foreground">
+            補助金の活用をお考えの場合は、対象になりうる制度の調査と実質負担額の試算までお手伝いします。申請書類の作成代行は行っていません。
+          </p>
         </div>
       </section>
 
@@ -271,12 +262,24 @@ export default function DevelopmentPage() {
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">「これ、作れますか？」と聞いてみてください。</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">
-            たいていのことは作れます。<br />
+            できること、できないことを、最初に正直にお伝えします。<br />
             まずは気軽に、聞いてみてください。
           </p>
           <Button render={<Link href="/contact" />} size="lg" className="rounded-full bg-[var(--cool-accent)] px-8 text-white hover:bg-[color:var(--cool-accent)]/90">
             相談してみる <ArrowRight size={16} />
           </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            先に概算だけ知りたい方は、2問の
+            <a
+              href="https://aidial-hearing.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              無料AI診断
+            </a>
+            で目安を確認できます。
+          </p>
         </div>
       </section>
     </>

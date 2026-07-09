@@ -6,9 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
+import { ProcessGuarantee } from "@/components/shared/process-guarantee";
+import { ProofLinks } from "@/components/shared/proof-links";
 
 export const metadata: Metadata = {
-  title: "業務改善支援 — 地方中小企業・店舗向け",
+  title: "業務改善支援｜地方中小企業・店舗向け",
   description:
     "手入力・転記・確認待ちを減らし、経営者と現場の時間を取り戻す業務改善支援。小さく始めて、利益・時間・品質に効く仕組みを作ります。",
 };
@@ -49,7 +51,7 @@ const cases = [
   {
     business: "飲食店（ラーメン店）",
     before: "手書き発注→Excelへの転記を毎日30分",
-    after: "発注確認を5分に短縮。月15時間を、仕込み・接客・新メニュー検討に戻す。",
+    after: "発注確認が1日5分に。1日25分、月25日の営業なら、およそ10時間を仕込みと接客に戻せる計算です。",
   },
   {
     business: "小売店",
@@ -160,7 +162,13 @@ export default function AiImplementationPage() {
       {/* Cases */}
       <section className="py-20">
         <div className="container-wide">
-          <SectionHeader label="CASE STUDY" title="利益と時間に効く変化を作ります" align="center" className="mb-10" />
+          <SectionHeader
+            label="MODEL CASE"
+            title="利益と時間に効く変化を作ります"
+            subtitle="以下は実案件ではなく、よくいただくご相談を当社の進め方に当てはめた想定モデルです。効果は業務の状況によって変わります。"
+            align="center"
+            className="mb-10"
+          />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cases.map((c) => (
               <Reveal key={c.business}>
@@ -184,6 +192,8 @@ export default function AiImplementationPage() {
           </div>
         </div>
       </section>
+
+      <ProofLinks />
 
       <section className="bg-muted/35 py-20">
         <div className="container-wide">
@@ -218,19 +228,36 @@ export default function AiImplementationPage() {
               </Reveal>
             ))}
           </div>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">
+            補助金の活用をお考えの場合は、対象になりうる制度の調査と実質負担額の試算までお手伝いします。申請書類の作成代行は行っていません。
+          </p>
         </div>
       </section>
 
-      <section className="py-20">
+      <ProcessGuarantee />
+
+      <section className="bg-muted/35 py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">まずは気軽に、30分話してみませんか？</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">
-            「うちで本当に使えるの？」——その疑問、一緒に確かめましょう。<br />
+            「うちで本当に使えるの？」その疑問、一緒に確かめましょう。<br />
             話すだけで、やるべきことが見えてきます。
           </p>
           <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            先に概算だけ知りたい方は、2問の
+            <a
+              href="https://aidial-hearing.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              無料AI診断
+            </a>
+            で目安を確認できます。
+          </p>
         </div>
       </section>
     </>

@@ -6,9 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
+import { ProcessGuarantee } from "@/components/shared/process-guarantee";
+import { ProofLinks } from "@/components/shared/proof-links";
 
 export const metadata: Metadata = {
-  title: "アトリエboost — 個人クリエイター向けバックオフィス改善",
+  title: "アトリエboost｜個人クリエイター向けバックオフィス改善",
   description:
     "受注管理、在庫、SNS投稿、顧客対応に奪われる時間を減らし、制作時間・販売機会・顧客対応品質を取り戻すアトリエ改善サービス。",
 };
@@ -45,13 +47,6 @@ const supportAreas = [
     role: "売上・データ分析",
     desc: "何が売れているか、どのタイミングで動くかを整理し、次に作る作品や在庫量を判断しやすくします。",
   },
-];
-
-const flow = [
-  { step: "01", title: "現状ヒアリング", desc: "今どんな作業に時間を取られているかを全部聞かせてください。" },
-  { step: "02", title: "改善範囲の設計", desc: "制作時間・販売機会・顧客対応に効く順番で、改善する業務を絞り込みます。" },
-  { step: "03", title: "構築・テスト", desc: "2〜4週間で動く状態に。実際に使いながら一緒に調整します。" },
-  { step: "04", title: "定着＋保守", desc: "日々の制作を止めずに使い続けられるよう、運用しながら改善します。" },
 ];
 
 export default function AtelierBoostPage() {
@@ -123,7 +118,13 @@ export default function AtelierBoostPage() {
       {/* Before / After */}
       <section className="py-20">
         <div className="container-narrow">
-          <SectionHeader label="BEFORE / AFTER" title="導入前と後" align="center" className="mb-10" />
+          <SectionHeader
+            label="BEFORE / AFTER"
+            title="導入前と後"
+            subtitle="以下は実案件ではなく、よくいただくご相談を当社の進め方に当てはめた想定モデルです。効果は業務の状況によって変わります。"
+            align="center"
+            className="mb-10"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="overflow-hidden border-border/80">
               <CardHeader className="bg-muted/35">
@@ -152,7 +153,7 @@ export default function AtelierBoostPage() {
               <CardContent className="p-6">
                 <ul className="space-y-3">
                   {[
-                    "制作に集中できる時間が月50時間増加",
+                    "制作以外の作業を圧縮（1日2時間の事務が30分になれば、月30時間以上を制作に戻せる計算）",
                     "注文・在庫・発送準備が一覧化され、対応漏れを削減",
                     "新作告知の頻度が上がり、販売機会を増やせる",
                     "売れ筋と在庫の動きから、次の制作判断がしやすくなる",
@@ -169,26 +170,9 @@ export default function AtelierBoostPage() {
         </div>
       </section>
 
-      <section className="bg-muted/35 py-20">
-        <div className="container-wide">
-          <SectionHeader label="FLOW" title="導入の流れ" align="center" className="mb-10" />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {flow.map((f) => (
-              <Reveal key={f.step}>
-                <Card className="h-full border-border/80">
-                  <CardHeader>
-                    <p className="font-mono text-4xl text-muted">#{f.step}</p>
-                    <CardTitle className="text-base">{f.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="leading-relaxed">{f.desc}</CardDescription>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessGuarantee className="bg-muted/35" />
+
+      <ProofLinks />
 
       <section className="py-20">
         <div className="container-narrow">
@@ -220,6 +204,18 @@ export default function AtelierBoostPage() {
           <Button render={<Link href="/contact" />} size="lg" className="rounded-full bg-[var(--warm-accent)] px-8 text-white hover:bg-[color:var(--warm-accent)]/90">
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            先に概算だけ知りたい方は、2問の
+            <a
+              href="https://aidial-hearing.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              無料AI診断
+            </a>
+            で目安を確認できます。
+          </p>
         </div>
       </section>
     </>

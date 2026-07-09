@@ -92,9 +92,9 @@ export function Footer() {
           */}
           <p className="text-xs text-muted-foreground">
             © 2026 <BrandWord className="text-xs align-baseline" /> –{" "}
-            <span className="font-extrabold text-[#0E8B8B]">B</span>usiness{" "}
-            <span className="font-extrabold text-[#0E8B8B]">G</span>rowth{" "}
-            <span className="font-extrabold text-[#0E8B8B]">M</span>echanics. All rights reserved.
+            <span className="font-extrabold text-primary">B</span>usiness{" "}
+            <span className="font-extrabold text-primary">G</span>rowth{" "}
+            <span className="font-extrabold text-primary">M</span>echanics. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             全国対応 | オンラインで完結

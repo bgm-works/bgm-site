@@ -13,7 +13,7 @@ const services = [
     label: "BUSINESS IMPROVEMENT",
     title: "業務改善支援",
     description:
-      "事務作業、在庫管理、販促づくり——繰り返しの業務を見直し、利益につながる時間を経営者と現場に戻します。",
+      "事務作業、在庫管理、販促づくり。繰り返しの業務を見直し、利益につながる時間を経営者と現場に戻します。",
     href: "/services/ai-implementation",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     label: "ATELIER BOOST",
     title: "アトリエboost",
     description:
-      "受注管理、在庫、SNS投稿——制作以外の作業を減らし、あなたは「創る」ことに集中できるアトリエへ。",
+      "受注管理、在庫、SNS投稿。制作以外の作業を減らし、あなたは「創る」ことに集中できるアトリエへ。",
     href: "/services/atelier-boost",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     label: "AI MARKETING",
     title: "AI集客・売上アップ支援",
     description:
-      "目的を入れるだけのAIマーケプラン作成、SNS運用、動画→投稿の自動展開——「攻め」をAIで仕組み化し、集客と売上を伸ばします。",
+      "目的を入れるだけのAIマーケプラン作成、SNS運用、動画→投稿の自動展開。「攻め」をAIで仕組み化し、集客と売上を伸ばします。",
     href: "/services/marketing",
   },
   {

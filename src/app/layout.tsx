@@ -15,7 +15,7 @@ const notoSansJp = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bgm-works.com"),
   title: {
-    default: "BGM | Business Growth Mechanics — 仕組みで事業成長を設計する",
+    default: "BGM | Business Growth Mechanics | 仕組みで事業成長を設計する",
     template: "%s | BGM",
   },
   description:
