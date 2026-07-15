@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     "がんばりを、仕組みに変えよう。業務設計と実装力で、中小企業・個人事業主の成長を継続的にサポートします。",
   keywords: ["業務改善支援", "時間削減", "Webアプリ開発", "中小企業DX", "事業成長", "GAS連携", "Business Growth Mechanics", "BGM"],
-  authors: [{ name: "BGM / JIN" }],
-  creator: "BGM",
+  authors: [{ name: "BGM Works株式会社" }],
+  creator: "BGM Works株式会社",
   openGraph: {
     type: "website",
     locale: "ja_JP",
