@@ -14,9 +14,20 @@ type ProfileRow = {
   value: React.ReactNode;
 };
 
+const services: { name: string; desc: string; href: string }[] = [
+  { name: "AiDIAL（アイディール）", desc: "AIで、アイデアを現実にするサービスブランド", href: "https://aidial.jp/" },
+  { name: "AI相談デスク（無料診断）", desc: "業務のお困りごとから改善の画面イメージを自動生成", href: "https://shindan.aidial.jp/" },
+  { name: "イクワケ", desc: "地域事業者向けの顧客管理サービス", href: "https://ikuwake.bgm-works.com/" },
+  { name: "RunNavi（ランナビ）", desc: "全国のマラソン大会情報サイト", href: "https://runnavi.aidial.jp/" },
+  { name: "花火大会ナビ", desc: "全国の花火大会情報サイト", href: "https://hanabi.aidial.jp/" },
+];
+
 const rows: ProfileRow[] = [
   { label: "会社名", value: "BGM Works株式会社" },
   { label: "ブランド名", value: "BGM（Business Growth Mechanics）" },
+  { label: "設立", value: "2026年7月9日" },
+  { label: "法人番号", value: "9140001143437" },
+  { label: "代表者", value: "代表取締役 熱田 健司" },
   { label: "所在地", value: "兵庫県南あわじ市阿那賀1629番260" },
   {
     // 定款の事業目的（bgm-ops/00_起業準備/07_事業目的_法人化.md 確定版）から顧客に関係する号を抜粋
@@ -31,6 +42,21 @@ const rows: ProfileRow[] = [
         <li>インターネット広告、SNS運用代行その他デジタルマーケティングの企画、運用及び支援</li>
         <li>動画、音声、画像その他デジタルコンテンツの企画、制作、編集及び販売</li>
         <li>オンライン教育講座及びeラーニングコンテンツの企画、制作、配信及び販売</li>
+      </ul>
+    ),
+  },
+  {
+    label: "主なサービス",
+    value: (
+      <ul className="space-y-1.5">
+        {services.map((s) => (
+          <li key={s.name}>
+            <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              {s.name}
+            </a>
+            <span className="ml-2">{s.desc}</span>
+          </li>
+        ))}
       </ul>
     ),
   },
