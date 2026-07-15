@@ -27,7 +27,6 @@ const rows: ProfileRow[] = [
   { label: "ブランド名", value: "BGM（Business Growth Mechanics）" },
   { label: "設立", value: "2026年7月9日" },
   { label: "法人番号", value: "9140001143437" },
-  { label: "代表者", value: "代表取締役 熱田 健司" },
   { label: "所在地", value: "兵庫県南あわじ市阿那賀1629番260" },
   {
     // 定款の事業目的（bgm-ops/00_起業準備/07_事業目的_法人化.md 確定版）から顧客に関係する号を抜粋
