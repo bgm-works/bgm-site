@@ -146,13 +146,13 @@ const modelCases = [
 export default function WorksPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
-            label="WORKS"
+            label="Works"
             title="実績・構築例"
             subtitle="実際に動いているプロダクトと、当社ならこう組むという構築例を紹介します。正式な導入実績は、公開許可をいただける範囲で今後追加します。"
-            align="center"
+            hero
           />
         </div>
       </section>

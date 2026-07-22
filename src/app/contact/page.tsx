@@ -28,12 +28,13 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
             label="Contact"
             title="お問い合わせ"
             subtitle="「この作業、どれくらい軽くできる？」「費用対効果は合う？」どんな小さな疑問でも、気軽にどうぞ。"
+            hero
           />
         </div>
       </section>

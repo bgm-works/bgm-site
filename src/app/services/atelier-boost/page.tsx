@@ -68,12 +68,10 @@ export default function AtelierBoostPage() {
   return (
     <>
       <section className="border-b border-border bg-warm-accent/10">
-        <div className="container-wide py-20 md:py-24">
+        <div className="container-wide py-24 md:py-32">
           <p className="section-eyebrow uppercase">Service 04 ／ Atelier Boost</p>
-          <h1 className="mt-6 text-[clamp(2rem,6vw,3.5rem)] font-bold leading-tight tracking-tight">
-            アトリエboost
-          </h1>
-          <p className="mt-3 text-xl font-medium text-warm-accent">制作時間と販売機会を、取り戻す。</p>
+          <h1 className="display-lg mt-6">アトリエboost</h1>
+          <p className="mt-4 text-xl font-medium text-warm-accent">制作時間と販売機会を、取り戻す。</p>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             受注管理、在庫、SNS、顧客対応。制作以外の作業を軽くして、あなたが「創ること」と「売ること」に集中できるアトリエへ。
           </p>

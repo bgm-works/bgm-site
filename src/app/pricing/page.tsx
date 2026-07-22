@@ -59,13 +59,13 @@ const faq = [
 export default function PricingPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
-            label="PRICING"
+            label="Pricing"
             title="料金"
             subtitle="小さく始めて、確かめてから進める料金体系です。"
-            align="center"
+            hero
           />
         </div>
       </section>

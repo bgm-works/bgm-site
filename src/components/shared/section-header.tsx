@@ -5,19 +5,21 @@ type SectionHeaderProps = {
   title: string;
   subtitle?: string;
   align?: "left" | "center";
+  hero?: boolean;
   className?: string;
 };
 
 /**
- * editorial セクション見出し（v2.0 2026-07-22）。
+ * セクション/ページ見出し（v3.0 2026-07-22）。
  * - eyebrow は small-caps + テラコッタの先頭ティック（.section-eyebrow）。中央寄せ時はティック非表示。
- * - 左寄せを既定にし、余白と罫線で構造を作る editorial 方針に合わせる。
+ * - hero=true でページ先頭見出しを display スケール（大きく詰めて）に。
  */
 export function SectionHeader({
   label,
   title,
   subtitle,
   align = "left",
+  hero = false,
   className,
 }: SectionHeaderProps) {
   const centered = align === "center";
@@ -26,9 +28,15 @@ export function SectionHeader({
       <p className={cn("section-eyebrow uppercase", centered && "no-tick justify-center")}>
         {label}
       </p>
-      <h2 className="section-title mt-4">{title}</h2>
+      {hero ? (
+        <h1 className="display-lg mt-6">{title}</h1>
+      ) : (
+        <h2 className="section-title mt-4">{title}</h2>
+      )}
       {subtitle ? (
-        <p className={cn("section-subtitle max-w-2xl", centered && "mx-auto")}>{subtitle}</p>
+        <p className={cn("section-subtitle max-w-2xl text-base md:text-lg", centered && "mx-auto")}>
+          {subtitle}
+        </p>
       ) : null}
     </div>
   );

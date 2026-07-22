@@ -46,6 +46,7 @@
   --hero-grad-end: #ffffff;
   --warm-accent: #d89060;
   --cool-accent: #3d5a6b;
+  --primary-dark: #08545a;
 }
 
 @theme inline {
@@ -71,6 +72,7 @@
   --color-chart-1: var(--chart-1);
   --color-warm-accent: var(--warm-accent);
   --color-cool-accent: var(--cool-accent);
+  --color-primary-dark: var(--primary-dark);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -118,6 +120,26 @@ h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--foreground);
+}
+
+/* premium ディスプレイタイポ（Apple/SoftBank ベンチ: 大きく・詰めて・堂々と） */
+.display-hero {
+  font-size: clamp(2.75rem, 7.5vw, 5.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+.display-lg {
+  font-size: clamp(2.1rem, 5vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.display-md {
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 /* 桁揃え数値（統計・KPI）。等幅 + tabular-nums */

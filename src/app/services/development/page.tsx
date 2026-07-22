@@ -93,12 +93,12 @@ export default function DevelopmentPage() {
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="container-wide py-20 md:py-24">
+        <div className="container-wide py-24 md:py-32">
           <p className="section-eyebrow uppercase">Service 01 ／ Development</p>
-          <h1 className="mt-6 text-[clamp(2rem,6vw,3.5rem)] font-bold leading-tight tracking-tight">
+          <h1 className="display-lg mt-6">
             Webアプリ開発<br />業務ツール受託
           </h1>
-          <p className="mt-3 text-xl font-medium text-cool-accent">
+          <p className="mt-4 text-xl font-medium text-cool-accent">
             「こういうの、作れないかな」。それで十分です。
           </p>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">

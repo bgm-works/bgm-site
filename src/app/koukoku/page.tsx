@@ -25,13 +25,13 @@ const notices: Notice[] = [];
 export default function KoukokuPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
-            label="PUBLIC NOTICE"
+            label="Public Notice"
             title="電子公告"
             subtitle={`${COMPANY_NAME}は、当ページにおいて電子公告を行います。`}
-            align="center"
+            hero
           />
         </div>
       </section>

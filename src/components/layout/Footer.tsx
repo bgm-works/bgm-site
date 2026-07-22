@@ -85,16 +85,8 @@ export function Footer() {
 
         <Separator className="my-6" />
         <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
-          {/*
-            ブランド v1.0 r2 (2026-04-21):
-            コピーライト行も BGM 頭文字を font-extrabold + Primary Turquoise で強調。
-            ここは tracking なしの普通の散文体なので、間隔調整 (-mr) は不要。
-          */}
           <p className="text-xs text-muted-foreground">
-            © 2026 <BrandWord className="text-xs align-baseline" /> –{" "}
-            <span className="font-extrabold text-primary">B</span>usiness{" "}
-            <span className="font-extrabold text-primary">G</span>rowth{" "}
-            <span className="font-extrabold text-primary">M</span>echanics. All rights reserved.
+            © 2026 BGM Works株式会社 — Business Growth Mechanics. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             全国対応 | オンラインで完結

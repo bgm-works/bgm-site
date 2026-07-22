@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
-            label="BLOG & CONTENT"
+            label="Blog & Content"
             title="ブログ・コンテンツ"
             subtitle="現在準備中です。公開までしばらくお待ちください。"
-            align="center"
+            hero
           />
         </div>
       </section>

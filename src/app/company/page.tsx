@@ -86,13 +86,13 @@ const rows: ProfileRow[] = [
 export default function CompanyPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
-        <div className="container-narrow">
+      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+        <div className="container-wide">
           <SectionHeader
-            label="COMPANY"
+            label="Company"
             title="会社概要"
             subtitle="がんばりを、仕組みに変えよう。業務設計と実装力で、中小企業・個人事業主の成長を支えます。"
-            align="center"
+            hero
           />
         </div>
       </section>

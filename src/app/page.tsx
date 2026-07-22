@@ -1,263 +1,275 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/shared/section-header";
-import { StatCounter } from "@/components/shared/stat-counter";
-import { ProofLinks } from "@/components/shared/proof-links";
-import { Reveal } from "@/components/shared/reveal";
-
-// 会社概要（/company）と実績（/works）の確定値から引用。推測値を置かない。
-const heroMeta = [
-  { k: "会社設立", v: "2026年7月" },
-  { k: "法人番号", v: "9140001143437" },
-  { k: "所在地", v: "兵庫県南あわじ市" },
-  { k: "対応", v: "全国・オンライン完結" },
-];
-
-// 法人としての実績（個人の経歴ではなく、会社が出しているもの）。
-const stats = [
-  { value: "5", label: "本番稼働・自社運用しているプロダクト" },
-  { value: "4", label: "提供領域（開発・業務改善・集客・アトリエ支援）" },
-  { value: "8", label: "定款に定めた事業目的の号数" },
-  { value: "全国", label: "オンラインで完結する対応範囲" },
-];
+import { HeroVisual } from "@/components/shared/hero-visual";
 
 const services = [
   {
     no: "01",
-    label: "DEVELOPMENT",
+    label: "Development",
     title: "受託開発",
+    promise: "アイデアを、\n動くプロダクトへ。",
     description:
-      "要件定義から本番運用まで一気通貫。Webアプリ・業務ツール・会員制サービスを、事業成長に直結する形で設計し、運用に耐える品質で届けます。",
+      "要件定義から本番運用まで一気通貫。Webアプリ・業務ツール・会員制サービスを、運用に耐える品質で設計し、事業成長に直結する形で届けます。",
     href: "/services/development",
+    accent: "cool" as const,
   },
   {
     no: "02",
-    label: "BUSINESS IMPROVEMENT",
+    label: "Business Improvement",
     title: "業務改善支援",
+    promise: "手作業を、\n確認だけの流れへ。",
     description:
       "手入力・転記・確認待ちを減らし、経営者と現場の時間を利益につながる仕事に戻します。開発を伴わない業務フローの整理から着手できます。",
     href: "/services/ai-implementation",
+    accent: "primary" as const,
   },
   {
     no: "03",
-    label: "AI MARKETING",
+    label: "AI Marketing",
     title: "集客・売上アップ支援",
+    promise: "止まる発信を、\n続く仕組みへ。",
     description:
       "AIによる集客プラン、SNS運用の仕組み化、動画から各SNS投稿への自動展開。属人的な発信を、止まらない仕組みに変えます。",
     href: "/services/marketing",
+    accent: "primary" as const,
   },
   {
     no: "04",
-    label: "ATELIER BOOST",
+    label: "Atelier Boost",
     title: "アトリエboost",
+    promise: "制作以外を、\n軽くする。",
     description:
       "受注・在庫・発信を整理し、個人クリエイターが制作と販売に集中できる状態を作ります。制作以外の作業を減らすバックオフィス支援です。",
     href: "/services/atelier-boost",
+    accent: "warm" as const,
   },
 ];
 
-const reasons = [
+const accentPanel: Record<"primary" | "warm" | "cool", string> = {
+  primary: "bg-secondary text-primary-dark",
+  warm: "bg-warm-accent/12 text-warm-accent",
+  cool: "bg-secondary text-cool-accent",
+};
+
+const impact = [
+  { value: "5", label: "本番稼働・自社運用しているプロダクト" },
+  { value: "4", label: "開発・業務改善・集客・アトリエの提供領域" },
+  { value: "全国", label: "オンラインで完結する対応範囲" },
+];
+
+const products = [
   {
-    title: "事業の詰まりを、構造で捉える",
-    text: "表面的なツール導入ではなく、売上や時間の詰まりを分解し、最も効く一手から着手します。作る前に、直す場所を見極めます。",
+    name: "RunNavi",
+    tagline: "全国のマラソン大会検索・締切管理",
+    url: "https://runnavi.aidial.jp",
   },
   {
-    title: "小さく作って、早く確かめる",
-    text: "最初から大きく作りません。成果が出る単位で実装し、投資対効果を見ながら範囲を広げます。動く試作を触ってから本開発を判断できます。",
+    name: "AiDIAL 無料AI診断",
+    tagline: "2問で概算費用と補助金の目安がわかる",
+    url: "https://shindan.aidial.jp",
   },
   {
-    title: "運用フェーズまで、伴走する",
-    text: "納品して終わりにしません。公開後も月額保守で運用と改善を続け、事業の変化に仕組みを追従させます。長く隣にいる開発会社です。",
+    name: "aidialポータル",
+    tagline: "花火・ウォーキング等の生活情報サイト群",
+    url: "https://aidial.jp",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero — フラット・editorial（グラデ/ブロブ/グリッド/ダミーカードを撤去） */}
-      <section className="border-b border-border">
-        <div className="container-wide py-20 md:py-28">
-          <p className="section-eyebrow uppercase">Business Growth Mechanics</p>
-          <h1 className="mt-6 max-w-3xl text-[clamp(2.4rem,6.5vw,4.2rem)] font-bold leading-[1.15] tracking-tight">
-            がんばりを、<br className="hidden sm:block" />
-            仕組みに変えよう。
-          </h1>
-          <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            BGM Works株式会社は、業務設計とAI実装で、中小企業と個人事業のための
-            「成長の仕組み」を作る開発会社です。ムダを減らす守りと、集客・売上を伸ばす攻めの両輪を、
-            実装から運用まで一気通貫で伴走します。
+      {/* Hero — ブランド宣言を主役に（登記情報はトップに置かない） */}
+      <section className="bg-primary-dark text-primary-foreground">
+        <div className="container-wide grid items-center gap-12 py-24 md:py-32 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-foreground/60">
+              Business Growth Mechanics
+            </p>
+            <h1 className="display-hero mt-8">
+              がんばりを、
+              <br />
+              仕組みに変えよう。
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-primary-foreground/80 md:text-lg">
+              BGM Worksは、業務設計とAI実装で、中小企業と個人事業の成長を「仕組み」から支える開発会社です。
+              ムダを減らす守りと、集客・売上を伸ばす攻めを、実装から運用まで一気通貫で伴走します。
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button
+                render={<Link href="/contact" />}
+                size="lg"
+                variant="secondary"
+                className="px-7 text-secondary-foreground"
+              >
+                無料で相談する <ArrowRight />
+              </Button>
+              <Link
+                href="#services"
+                className="inline-flex items-center gap-2 self-center text-sm font-medium text-primary-foreground/90 underline-offset-4 hover:underline"
+              >
+                事業を見る <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+          <div className="hidden text-primary-foreground/70 lg:block">
+            <HeroVisual />
+          </div>
+        </div>
+      </section>
+
+      {/* Vision statement — 大きく1行で言い切る（SoftBank ベンチ） */}
+      <section className="border-b border-border py-24 md:py-36">
+        <div className="container-wide">
+          <p className="section-eyebrow uppercase">Our Belief</p>
+          <p className="display-lg mt-8 max-w-4xl text-foreground">
+            成長する事業には、必ず
+            <span className="text-primary">「成長の仕組み」</span>
+            がある。<br className="hidden md:block" />
+            それは才能でも運でもなく、設計できるものだと考えています。
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button render={<Link href="/contact" />} size="lg" className="px-6">
-              無料で相談する <ArrowRight />
-            </Button>
-            <Button variant="outline" render={<Link href="/works" />} size="lg" className="px-6">
-              公開中のプロダクトを見る
-            </Button>
-          </div>
+        </div>
+      </section>
 
-          {/* 法人メタ情報（editorial の署名的な罫線行） */}
-          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-border pt-8 md:grid-cols-4">
-            {heroMeta.map((m) => (
-              <div key={m.k}>
-                <dt className="text-xs tracking-[0.14em] text-muted-foreground">{m.k}</dt>
-                <dd className="mt-1.5 font-numeric text-sm font-medium text-foreground">{m.v}</dd>
+      {/* Services — 全幅の交互モジュール（Apple ベンチ） */}
+      <section id="services" className="border-b border-border">
+        <div className="container-wide py-16 md:py-24">
+          <p className="section-eyebrow uppercase">Services</p>
+          <h2 className="display-md mt-6 max-w-3xl">
+            事業のフェーズと課題に合わせて、4つの領域で伴走します。
+          </h2>
+        </div>
+        {services.map((s, i) => (
+          <div key={s.title} className="border-t border-border">
+            <div className="container-wide grid items-center gap-10 py-16 md:py-24 lg:grid-cols-2 lg:gap-16">
+              {/* text */}
+              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                <div className="flex items-baseline gap-4">
+                  <span className="font-numeric text-lg text-warm-accent">{s.no}</span>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                    {s.label}
+                  </p>
+                </div>
+                <h3 className="display-md mt-5">{s.title}</h3>
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  {s.description}
+                </p>
+                <Button render={<Link href={s.href} />} variant="outline" className="mt-8 px-6">
+                  詳しく見る <ArrowRight className="size-4" />
+                </Button>
               </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* 数字で見るBGM（法人実績） */}
-      <section className="border-b border-border bg-muted/30 py-20">
-        <div className="container-wide">
-          <SectionHeader
-            label="By the numbers"
-            title="数字で見るBGM Works"
-            subtitle="個人の経歴ではなく、会社として実際に出しているものです。稼働中のプロダクトは本番URLから直接触れます。"
-            className="mb-12"
-          />
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s) => (
-              <StatCounter key={s.label} value={s.value} label={s.label} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="border-b border-border py-20 md:py-28">
-        <div className="container-wide grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
-          <SectionHeader label="Philosophy" title="がんばっている、あなたへ。" />
-          <div className="max-w-2xl space-y-5 border-l-2 border-primary/60 pl-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            <p>
-              「もう少し売上を伸ばしたい。でも自分の手が足りない」「何から手をつければいいか分からない」。
-              その忙しさは、事業を本気で良くしたいという証拠だと考えています。
-            </p>
-            <p>
-              成長する事業には、必ず「成長の仕組み」があります。それは才能でも運でもなく、設計できるものです。
-            </p>
-            <p className="font-medium text-foreground">
-              がんばりを、仕組みに変える。そしてその仕組みを一緒に育てる。それがBGM Worksの約束です。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services — 罫線番号リスト（装飾アイコン/カードグリッドを撤去） */}
-      <section id="services" className="border-b border-border py-20 md:py-28">
-        <div className="container-wide">
-          <SectionHeader
-            label="Services"
-            title="4つのサービス"
-            subtitle="守り（業務効率化）と攻め（集客・売上）の両輪で、事業フェーズと課題に合わせて最適な仕組みを設計します。"
-            className="mb-14"
-          />
-          <div className="border-t border-border">
-            {services.map((service) => (
-              <Reveal key={service.title}>
-                <Link
-                  href={service.href}
-                  className="group grid gap-4 border-b border-border py-8 md:grid-cols-[5rem_minmax(0,1fr)_auto] md:items-baseline md:gap-8"
+              {/* accent panel */}
+              <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                <div
+                  className={`flex aspect-[4/3] items-end rounded-2xl p-8 md:p-10 ${accentPanel[s.accent]}`}
                 >
-                  <span className="font-numeric text-2xl font-semibold text-warm-accent">
-                    {service.no}
-                  </span>
-                  <div>
-                    <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
-                      {service.label}
-                    </p>
-                    <h3 className="mt-1.5 text-xl font-bold tracking-tight md:text-2xl">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {service.description}
-                    </p>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors group-hover:text-primary/80">
-                    詳しく見る <ArrowRight className="size-4" />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
+                  <p className="display-md whitespace-pre-line font-bold leading-[1.15]">
+                    {s.promise}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </section>
 
-      {/* Proof — 実物で確かめる（共通コンポーネント） */}
-      <ProofLinks />
-
-      {/* Why BGM */}
-      <section className="border-b border-border py-20 md:py-28">
+      {/* Impact — 大きな数字で会社の輪郭（登記情報ではない） */}
+      <section className="bg-primary-dark py-24 text-primary-foreground md:py-32">
         <div className="container-wide">
-          <SectionHeader label="Why BGM" title="BGM Worksが選ばれる理由" className="mb-14" />
-          <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
-            {reasons.map((reason, i) => (
-              <div key={reason.title} className="bg-background p-8">
-                <span className="font-numeric text-sm text-warm-accent">0{i + 1}</span>
-                <h3 className="mt-4 text-lg font-bold tracking-tight">{reason.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-foreground/60">
+            BGM Works in numbers
+          </p>
+          <div className="mt-14 grid gap-12 sm:grid-cols-3">
+            {impact.map((s) => (
+              <div key={s.label}>
+                <p className="font-numeric text-6xl font-semibold tracking-tight md:text-7xl">{s.value}</p>
+                <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-primary-foreground/70">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 代表（個人の経歴はここに集約） */}
-      <section className="border-b border-border py-20 md:py-28">
-        <div className="container-wide grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
-          <SectionHeader label="Founder" title="代表について" />
+      {/* Proof — 実際に動いているプロダクト（本番URLで触れる） */}
+      <section className="border-b border-border py-24 md:py-32">
+        <div className="container-wide">
+          <p className="section-eyebrow uppercase">Proof</p>
+          <h2 className="display-md mt-6 max-w-3xl">
+            発注の前に、当社の設計と品質を、実物で確かめてください。
+          </h2>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {products.map((p) => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col justify-between rounded-2xl border border-border p-8 transition-colors hover:border-primary"
+              >
+                <div>
+                  <p className="text-xl font-bold tracking-tight">{p.name}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.tagline}</p>
+                </div>
+                <span className="mt-10 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                  サイトを見る <ArrowUpRight className="size-4" />
+                </span>
+              </a>
+            ))}
+          </div>
+          <div className="mt-10">
+            <Button variant="outline" render={<Link href="/works" />} className="px-6">
+              すべての実績・構築例を見る <ArrowRight className="size-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 代表 */}
+      <section className="border-b border-border py-24 md:py-32">
+        <div className="container-wide grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="section-eyebrow uppercase">Founder</p>
+            <p className="display-md mt-6">代表取締役<br />熱田 健司</p>
+          </div>
           <div className="max-w-2xl">
-            <p className="text-lg font-bold tracking-tight">代表取締役　熱田 健司</p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
               17年のシステムエンジニア経験で培った仕組み設計の確かさと、最新AI技術への現場での好奇心。
               その両方を持って、地方の中小企業のすぐ隣で長く伴走することを事業にしています。
             </p>
-            <dl className="mt-6 grid grid-cols-1 gap-4 border-t border-border pt-6 sm:grid-cols-2">
+            <div className="mt-10 flex flex-wrap gap-x-16 gap-y-8 border-t border-border pt-8">
               <div>
-                <dt className="text-xs tracking-[0.14em] text-muted-foreground">開発経験</dt>
-                <dd className="mt-1 font-numeric text-2xl font-semibold text-foreground">17年</dd>
+                <p className="font-numeric text-4xl font-semibold">17年</p>
+                <p className="mt-2 text-sm text-muted-foreground">システム開発経験</p>
               </div>
               <div>
-                <dt className="text-xs tracking-[0.14em] text-muted-foreground">AWS認定資格</dt>
-                <dd className="mt-1 font-numeric text-2xl font-semibold text-foreground">
-                  3冠 <span className="text-sm font-normal text-muted-foreground">SAA / DVA / SOA</span>
-                </dd>
+                <p className="font-numeric text-4xl font-semibold">
+                  3冠 <span className="text-base font-normal text-muted-foreground">SAA / DVA / SOA</span>
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">AWS認定資格</p>
               </div>
-            </dl>
-            <p className="mt-6 text-sm text-muted-foreground">
-              会社の詳細は
-              <Link href="/company" className="text-primary hover:underline">
-                会社概要
-              </Link>
-              にまとめています。
-            </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA — フラットな Primary 帯（グラデ撤去） */}
-      <section className="bg-primary py-20 text-primary-foreground md:py-24">
+      {/* CTA */}
+      <section className="py-24 md:py-32">
         <div className="container-wide text-center">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="display-lg mx-auto max-w-3xl">
             まずは気軽に、話してみてください。
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/85 md:text-base">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             「何から手をつければいいか分からない」でも大丈夫です。30分の無料相談で、
             事業の「がんばりどころ」を一緒に整理します。
           </p>
-          <div className="mt-9">
-            <Button
-              render={<Link href="/contact" />}
-              size="lg"
-              variant="secondary"
-              className="px-7 text-secondary-foreground"
-            >
+          <div className="mt-10">
+            <Button render={<Link href="/contact" />} size="lg" className="px-8">
               無料で相談する <ArrowRight />
             </Button>
           </div>
-          <p className="mt-4 text-xs text-primary-foreground/70">返信は24時間以内。費用は一切かかりません。</p>
+          <p className="mt-4 text-sm text-muted-foreground">返信は24時間以内。費用は一切かかりません。</p>
         </div>
       </section>
     </>

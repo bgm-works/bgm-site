@@ -94,11 +94,9 @@ export default function MarketingPage() {
   return (
     <>
       <section className="border-b border-border bg-muted/30">
-        <div className="container-wide py-20 md:py-24">
+        <div className="container-wide py-24 md:py-32">
           <p className="section-eyebrow uppercase">Service 03 ／ AI Marketing</p>
-          <h1 className="mt-6 text-[clamp(2rem,6vw,3.6rem)] font-bold leading-tight tracking-tight">
-            AI集客・売上アップ支援
-          </h1>
+          <h1 className="display-lg mt-6">AI集客・売上アップ支援</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             守り（効率化）だけでなく、<strong className="font-semibold text-foreground">攻め（集客・売上）</strong>もBGM Worksの仕事です。
             「何を発信すればいいか」「続かない」「人手がない」を、AIの仕組みで解決し、

@@ -94,11 +94,9 @@ export default function AiImplementationPage() {
   return (
     <>
       <section className="border-b border-border bg-muted/30">
-        <div className="container-wide py-20 md:py-24">
+        <div className="container-wide py-24 md:py-32">
           <p className="section-eyebrow uppercase">Service 02 ／ Business Improvement</p>
-          <h1 className="mt-6 text-[clamp(2rem,6vw,3.6rem)] font-bold leading-tight tracking-tight">
-            業務改善支援
-          </h1>
+          <h1 className="display-lg mt-6">業務改善支援</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             大事なのは、どんな技術を使うかではなく、<strong className="font-semibold text-foreground">利益に効く時間</strong>をどれだけ取り戻せるか。
             手入力・転記・確認待ちを減らし、経営者と現場が本来の仕事に集中できる流れを作ります。
