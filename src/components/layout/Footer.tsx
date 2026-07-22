@@ -28,18 +28,28 @@ export function Footer() {
             <h3 className="mb-3 text-sm font-bold text-foreground">サービス</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/services/web-production" className="text-sm text-muted-foreground hover:text-primary">
+                  ホームページ制作・更新支援
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/development" className="text-sm text-muted-foreground hover:text-primary">
+                  受託開発
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/ai-implementation" className="text-sm text-muted-foreground hover:text-primary">
                   業務改善支援
                 </Link>
               </li>
               <li>
-                <Link href="/services/atelier-boost" className="text-sm text-muted-foreground hover:text-primary">
-                  アトリエboost
+                <Link href="/services/marketing" className="text-sm text-muted-foreground hover:text-primary">
+                  集客・売上アップ支援
                 </Link>
               </li>
               <li>
-                <Link href="/services/development" className="text-sm text-muted-foreground hover:text-primary">
-                  Webアプリ開発
+                <Link href="/services/atelier-boost" className="text-sm text-muted-foreground hover:text-primary">
+                  アトリエboost
                 </Link>
               </li>
             </ul>
@@ -64,13 +74,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary">
-                  ブログ
+                <Link href="/company" className="text-sm text-muted-foreground hover:text-primary">
+                  会社概要
                 </Link>
               </li>
               <li>
-                <Link href="/company" className="text-sm text-muted-foreground hover:text-primary">
-                  会社概要
+                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
+                  プライバシーポリシー
                 </Link>
               </li>
               <li>

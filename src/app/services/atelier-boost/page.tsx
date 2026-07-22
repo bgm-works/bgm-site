@@ -69,7 +69,7 @@ export default function AtelierBoostPage() {
     <>
       <section className="border-b border-border bg-warm-accent/10">
         <div className="container-wide py-24 md:py-32">
-          <p className="section-eyebrow uppercase">Service 04 ／ Atelier Boost</p>
+          <p className="section-eyebrow uppercase">Service 05 ／ Atelier Boost</p>
           <h1 className="display-lg mt-6">アトリエboost</h1>
           <p className="mt-4 text-xl font-medium text-warm-accent">制作時間と販売機会を、取り戻す。</p>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -106,7 +106,7 @@ export default function AtelierBoostPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader
             label="Improvement areas"
@@ -175,7 +175,7 @@ export default function AtelierBoostPage() {
         </div>
       </section>
 
-      <ProcessGuarantee className="border-b border-border bg-muted/30" />
+      <ProcessGuarantee className="border-b border-border bg-muted" />
 
       <ProofLinks />
 

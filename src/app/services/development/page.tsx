@@ -94,7 +94,7 @@ export default function DevelopmentPage() {
     <>
       <section className="border-b border-border bg-secondary">
         <div className="container-wide py-24 md:py-32">
-          <p className="section-eyebrow uppercase">Service 01 ／ Development</p>
+          <p className="section-eyebrow uppercase">Service 02 ／ Development</p>
           <h1 className="display-lg mt-6">
             Webアプリ開発<br />業務ツール受託
           </h1>
@@ -131,7 +131,7 @@ export default function DevelopmentPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Tech stack" title="対応技術" className="mb-12" />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -199,7 +199,7 @@ export default function DevelopmentPage() {
       </section>
 
       {/* Build targets */}
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Build targets" title="こんな「作りたい」に応えます" className="mb-12" />
           <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-3">
@@ -221,7 +221,7 @@ export default function DevelopmentPage() {
       <ProofLinks />
 
       {/* Pricing */}
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-narrow">
           <SectionHeader label="Price guide" title="料金の目安" subtitle="要件によって大きく変わるため、まずはご相談ください。" className="mb-10" />
           <Card className="border-border">

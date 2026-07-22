@@ -14,7 +14,7 @@ const notes = [
     desc: "Zoom or Google Meetで実施。画面共有で業務を見せていただくと、より具体的なご提案ができます。",
   },
   {
-    title: "秘密保持は万全",
+    title: "秘密保持を徹底",
     desc: "ヒアリングで伺った内容は外部に共有しません。必要であればNDA締結も対応します。",
   },
 ];
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+      <section className="border-b border-border bg-muted py-24 md:py-32">
         <div className="container-wide">
           <SectionHeader
             label="Contact"

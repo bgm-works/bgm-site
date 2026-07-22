@@ -25,7 +25,7 @@ const notices: Notice[] = [];
 export default function KoukokuPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+      <section className="border-b border-border bg-muted py-24 md:py-32">
         <div className="container-wide">
           <SectionHeader
             label="Public Notice"

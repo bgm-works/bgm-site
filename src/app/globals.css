@@ -20,7 +20,8 @@
   --primary-foreground: #f6ffff;
   --secondary: #e5f0f0;
   --secondary-foreground: #08545a;
-  --muted: #f3f6f7;
+  /* v2.1: #f3f6f7 → #edf2f3。background(#fafaf8) との明度差を広げ、白続き区間に面の階調を作る（UI監査） */
+  --muted: #edf2f3;
   --muted-foreground: #5f7378;
   --accent: #e0eded;
   --accent-foreground: #08545a;
@@ -122,10 +123,14 @@ h1, h2, h3, h4 {
   color: var(--foreground);
 }
 
-/* premium ディスプレイタイポ（Apple/SoftBank ベンチ: 大きく・詰めて・堂々と） */
+/*
+  premium ディスプレイタイポ（Apple/SoftBank ベンチ: 大きく・詰めて・堂々と）
+  v2.1: hero の clamp 上限を 5.75rem→4.75rem に是正。1440px の 2 カラム実幅で
+  「仕組みに変えよう。」(9文字) が 1 行に収まる上限。語中改行は見出しの死（UI監査指摘）。
+*/
 .display-hero {
-  font-size: clamp(2.75rem, 7.5vw, 5.75rem);
-  line-height: 1.04;
+  font-size: clamp(2.6rem, 6.5vw, 4.75rem);
+  line-height: 1.06;
   letter-spacing: -0.035em;
   font-weight: 700;
 }
@@ -202,59 +207,61 @@ h1, h2, h3, h4 {
 }
 
 /*
-  motion: editorial（静かな専門性）の方針に合わせ、スクロール連動の入場演出は撤去。
-  Webデザイン制作の型 §2「モーションは削るか1点だけ」に対応。
-  Reveal コンポーネントは呼び出し側の互換のため残すが、CSS 上は常時表示の no-op とし、
-  コンテンツが JS/スクロール状態に依存して不可視にならないことを保証する。
+  motion 最小セット（UI監査 2026-07-22: ゼロモーションは「静けさ」でなく「放置」）。
+  - 入場: opacity + 12px の一回きり。JS 無効・observer 不発でも読めるよう
+    アニメは JS が data-visible を付けられる環境でのみ発火（noscript 安全）。
+  - prefers-reduced-motion では即時表示。
 */
-.animate-reveal {
+.animate-reveal[data-visible] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-reveal[data-visible="true"] {
   opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal[data-visible],
+  .animate-reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ヒーロー折れ線の一回描画（1.2s・reduced-motion では静止） */
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 700;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-line {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: draw-line 1.2s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
 }
 
 /*
-  BGMWorks ダークモード パレット v2.0 (2026-06-18)
-  正本: 08_リソース/BGMWorks_ブランドガイド.md §3.5.3
-  以前は shadcn デフォルトの無彩色グレー (oklch L 0 0) でブランド色が消失していた。
-  深ターコイズの闇を面色にし、Primary は読みやすさのため Primary Light (#4FBFBF) へ持ち上げる。
-  フラット原則 (影・グラデ禁止) は維持。
+  ダークモードについて (2026-07-22):
+  旧版はここに .dark パレット67行を定義していたが、トグルも prefers-color-scheme 連携も
+  存在しない dead code だった（UI監査指摘）。商品サンプルとして中途半端が最悪のため撤去。
+  正式対応時は next-themes を配線し、ブランドガイド §3.5.3 / tokens/bgm の生成CSSを再導入する。
 */
-.dark {
-  --background: oklch(0.18 0.018 205);
-  --foreground: oklch(0.96 0.008 197);
-  --card: oklch(0.22 0.022 204);
-  --card-foreground: oklch(0.96 0.008 197);
-  --popover: oklch(0.22 0.022 204);
-  --popover-foreground: oklch(0.96 0.008 197);
-  --primary: oklch(0.741 0.101 195);
-  --primary-foreground: oklch(0.20 0.03 200);
-  --secondary: oklch(0.30 0.030 202);
-  --secondary-foreground: oklch(0.93 0.010 197);
-  --muted: oklch(0.27 0.020 205);
-  --muted-foreground: oklch(0.72 0.022 210);
-  --accent: oklch(0.30 0.030 202);
-  --accent-foreground: oklch(0.93 0.010 197);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.32 0.022 205);
-  --input: oklch(0.32 0.022 205);
-  --ring: oklch(0.741 0.101 195);
-  --chart-1: oklch(0.741 0.101 195);
-  --chart-2: oklch(0.62 0.050 235);
-  --chart-3: oklch(0.76 0.110 54);
-  --chart-4: oklch(0.83 0.080 196);
-  --chart-5: oklch(0.55 0.075 200);
-  --hero-grad-start: oklch(0.22 0.030 200);
-  --hero-grad-end: oklch(0.18 0.018 205);
-  --warm-accent: oklch(0.76 0.110 54);
-  --cool-accent: oklch(0.62 0.050 235);
-  --sidebar: oklch(0.22 0.022 204);
-  --sidebar-foreground: oklch(0.96 0.008 197);
-  --sidebar-primary: oklch(0.741 0.101 195);
-  --sidebar-primary-foreground: oklch(0.20 0.03 200);
-  --sidebar-accent: oklch(0.30 0.030 202);
-  --sidebar-accent-foreground: oklch(0.93 0.010 197);
-  --sidebar-border: oklch(0.32 0.022 205);
-  --sidebar-ring: oklch(0.741 0.101 195);
-}
 
 @layer base {
   * {

@@ -93,9 +93,9 @@ const pricing = [
 export default function MarketingPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30">
+      <section className="border-b border-border bg-muted">
         <div className="container-wide py-24 md:py-32">
-          <p className="section-eyebrow uppercase">Service 03 ／ AI Marketing</p>
+          <p className="section-eyebrow uppercase">Service 04 ／ AI Marketing</p>
           <h1 className="display-lg mt-6">AI集客・売上アップ支援</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             守り（効率化）だけでなく、<strong className="font-semibold text-foreground">攻め（集客・売上）</strong>もBGM Worksの仕事です。
@@ -127,7 +127,7 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Solutions" title="AIで「攻め」を仕組みに変えます" className="mb-14" />
           <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
@@ -178,7 +178,7 @@ export default function MarketingPage() {
 
       <ProofLinks />
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Pricing" title="料金" subtitle="まずは無料ヒアリングから。小さく攻めを始められます。" className="mb-12" />
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
@@ -223,7 +223,7 @@ export default function MarketingPage() {
 
       <ProcessGuarantee />
 
-      <section className="bg-muted/30 py-20">
+      <section className="bg-muted py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">「攻め」を、AIと一緒に始めませんか？</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">

@@ -16,7 +16,8 @@ export const metadata: Metadata = {
 };
 
 const estimates = [
-  { label: "Webサイト・LP", price: "15万〜60万円", desc: "会社サイト・サービス紹介・キャンペーンLPなど" },
+  { label: "ホームページ制作・LP", price: "15万〜60万円", desc: "会社サイト・サービス紹介・キャンペーンLPなど" },
+  { label: "ホームページ月額更新サポート", price: "1万〜3万円/月", desc: "お知らせ・実績・内容変更の反映を月数回まで代行" },
   { label: "小さな業務ツール", price: "15万〜40万円", desc: "台帳・受付整理・日報など、1業務を軽くする道具" },
   { label: "業務システム", price: "40万〜100万円", desc: "認証・データベース・外部連携を含む業務の仕組み" },
   { label: "会員制Webサービス", price: "80万〜250万円", desc: "会員登録やマイページを備えたWebサービス" },
@@ -59,7 +60,7 @@ const faq = [
 export default function PricingPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+      <section className="border-b border-border bg-muted py-24 md:py-32">
         <div className="container-wide">
           <SectionHeader
             label="Pricing"
@@ -72,7 +73,7 @@ export default function PricingPage() {
 
       <ProcessGuarantee showPricingLink={false} />
 
-      <section className="bg-muted/35 py-20">
+      <section className="bg-muted py-20">
         <div className="container-narrow">
           <SectionHeader
             label="PRICE GUIDE"
@@ -119,7 +120,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-muted/35 py-20">
+      <section className="bg-muted py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">まずは話してみましょう。</h2>
           <p className="mb-8 text-muted-foreground">

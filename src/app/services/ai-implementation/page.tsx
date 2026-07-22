@@ -93,9 +93,9 @@ const pricing = [
 export default function AiImplementationPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30">
+      <section className="border-b border-border bg-muted">
         <div className="container-wide py-24 md:py-32">
-          <p className="section-eyebrow uppercase">Service 02 ／ Business Improvement</p>
+          <p className="section-eyebrow uppercase">Service 03 ／ Business Improvement</p>
           <h1 className="display-lg mt-6">業務改善支援</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             大事なのは、どんな技術を使うかではなく、<strong className="font-semibold text-foreground">利益に効く時間</strong>をどれだけ取り戻せるか。
@@ -126,7 +126,7 @@ export default function AiImplementationPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Solutions" title="事業のQCDを整えます" className="mb-14" />
           <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
@@ -177,7 +177,7 @@ export default function AiImplementationPage() {
 
       <ProofLinks />
 
-      <section className="border-b border-border bg-muted/30 py-20">
+      <section className="border-b border-border bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="Pricing" title="料金" subtitle="まずは無料ヒアリングから。費用は一切かかりません。" className="mb-12" />
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
@@ -225,7 +225,7 @@ export default function AiImplementationPage() {
 
       <ProcessGuarantee />
 
-      <section className="bg-muted/30 py-20">
+      <section className="bg-muted py-20">
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">まずは気軽に、30分話してみませんか？</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">

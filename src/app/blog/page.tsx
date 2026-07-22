@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+      <section className="border-b border-border bg-muted py-24 md:py-32">
         <div className="container-wide">
           <SectionHeader
             label="Blog & Content"
@@ -47,7 +47,7 @@ export default function BlogPage() {
         <div className="container-narrow text-center">
           <h2 className="section-title mb-4">お仕事のご相談はこちら</h2>
           <p className="mb-8 text-muted-foreground">
-            記事を読んで「うちも試したい」と思ったら、お気軽にどうぞ。
+            業務改善やホームページのご相談は、お気軽にどうぞ。
           </p>
           <Button render={<Link href="/contact" />} size="lg" className="px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />

@@ -6,6 +6,7 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
+import { BrowserFrame } from "@/components/shared/browser-frame";
 
 export const metadata: Metadata = {
   title: "実績・構築例",
@@ -13,7 +14,17 @@ export const metadata: Metadata = {
     "BGMの実績・構築例。自社で企画から公開まで行い、いま実際に動いているプロダクトと、業務改善の構成例（モデルケース）を紹介します。",
 };
 
-const products = [
+type LiveProduct = {
+  name: string;
+  tag: string;
+  tagline: string;
+  description: string;
+  tech: string[];
+  url: string;
+  shot?: { src: string; alt: string; url: string };
+};
+
+const products: LiveProduct[] = [
   {
     name: "RunNavi",
     tag: "ランナー向け / 大会検索・締切管理",
@@ -22,6 +33,7 @@ const products = [
       "マラソン大会の検索と締切管理のWebサービス。会員認証、データベース、SNS連携まで自社で設計、構築、運用しています。実際の使い心地をそのまま確認できます。",
     tech: ["会員認証", "データベース", "SNS連携"],
     url: "https://runnavi.aidial.jp",
+    shot: { src: "/screenshots/runnavi.png", alt: "RunNaviの実際の画面", url: "runnavi.aidial.jp" },
   },
   {
     name: "AiDIAL 無料AI診断",
@@ -31,6 +43,7 @@ const products = [
       "発注前の見積もりヒアリングを、誰でも試せる形で公開したツールです。概算費用と、補助金を使った場合の実質負担の目安まで、その場で確認できます。当社の進め方をそのまま体験できます。",
     tech: ["AIヒアリング", "概算見積もり", "補助金試算"],
     url: "https://shindan.aidial.jp",
+    shot: { src: "/screenshots/shindan.png", alt: "AiDIAL無料AI診断の実際の画面", url: "shindan.aidial.jp" },
   },
   {
     name: "aidialポータル",
@@ -40,6 +53,7 @@ const products = [
       "花火大会やウォーキングの情報サイトを共通設計で構築し、運用を続けています。作って終わりにせず、複数のサイトを動かし続けている体制の証明です。",
     tech: ["共通設計", "複数サイト展開", "継続運用"],
     url: "https://aidial.jp",
+    shot: { src: "/screenshots/aidial.png", alt: "aidialポータルの実際の画面", url: "aidial.jp" },
   },
   {
     name: "まちみらい",
@@ -146,7 +160,7 @@ const modelCases = [
 export default function WorksPage() {
   return (
     <>
-      <section className="border-b border-border bg-muted/30 py-24 md:py-32">
+      <section className="border-b border-border bg-muted py-24 md:py-32">
         <div className="container-wide">
           <SectionHeader
             label="Works"
@@ -184,16 +198,21 @@ export default function WorksPage() {
                         サイトを見る <ExternalLink size={13} />
                       </Button>
                     </div>
-                    <div className="mt-5 grid gap-6 md:grid-cols-3">
-                      <p className="text-sm leading-relaxed text-muted-foreground md:col-span-2">{p.description}</p>
-                      <div>
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">構成要素</p>
-                        <div className="flex flex-wrap gap-2">
-                          {p.tech.map((t) => (
-                            <Badge key={t} variant="outline">{t}</Badge>
-                          ))}
+                    <div className="mt-5 grid gap-6 md:grid-cols-2">
+                      <div className="space-y-5">
+                        <p className="text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                        <div>
+                          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">構成要素</p>
+                          <div className="flex flex-wrap gap-2">
+                            {p.tech.map((t) => (
+                              <Badge key={t} variant="outline">{t}</Badge>
+                            ))}
+                          </div>
                         </div>
                       </div>
+                      {p.shot ? (
+                        <BrowserFrame src={p.shot.src} alt={p.shot.alt} url={p.shot.url} />
+                      ) : null}
                     </div>
                   </CardContent>
                 </Card>
@@ -204,7 +223,7 @@ export default function WorksPage() {
       </section>
 
       {/* 自社運用・商品化中のプロダクト */}
-      <section className="bg-muted/35 py-20">
+      <section className="bg-muted py-20">
         <div className="container-wide">
           <SectionHeader
             label="IN-HOUSE"
@@ -266,7 +285,7 @@ export default function WorksPage() {
       </section>
 
       {/* 構築例（モデルケース） */}
-      <section className="bg-muted/35 py-20">
+      <section className="bg-muted py-20">
         <div className="container-wide">
           <SectionHeader label="MODEL CASE" title="構築例（モデルケース）" align="center" className="mb-4" />
           <p className="mx-auto mb-10 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">

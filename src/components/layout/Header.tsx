@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -14,17 +16,34 @@ import { Separator } from "@/components/ui/separator";
 import { BrandWord } from "@/components/shared/brand-word";
 import { BrandSubtitle } from "@/components/shared/brand-subtitle";
 
+// ブログは記事公開までナビに出さない（信頼性監査: COMING SOON行き止まりの一等地露出をやめる）
 const navItems = [
   { label: "サービス", href: "/#services" },
   { label: "実績", href: "/works" },
   { label: "料金", href: "/pricing" },
-  { label: "ブログ", href: "/blog" },
+  { label: "会社概要", href: "/company" },
   { label: "お問い合わせ", href: "/contact", highlight: true },
 ];
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border bg-background/95 backdrop-blur-sm"
+          : "border-transparent bg-background"
+      )}
+    >
       <div className="container-wide flex h-18 items-center justify-between gap-3">
         <Link href="/" className="flex flex-col leading-none">
           <BrandWord className="text-xl" />
@@ -36,10 +55,7 @@ export function Header() {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
                 {item.highlight ? (
-                  <Button
-                    render={<Link href={item.href} />}
-                    className="px-4"
-                  >
+                  <Button render={<Link href={item.href} />} className="px-4">
                     {item.label}
                   </Button>
                 ) : (
