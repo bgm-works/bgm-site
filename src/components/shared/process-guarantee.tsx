@@ -50,7 +50,7 @@ export function ProcessGuarantee({
             <Reveal key={s.step}>
               <Card className="h-full border-border/80">
                 <CardHeader>
-                  <p className="font-mono text-4xl text-muted">#{s.step}</p>
+                  <p className="font-numeric text-4xl text-warm-accent/70">{s.step}</p>
                   <CardTitle className="text-base">{s.title}</CardTitle>
                   <p className="text-sm font-bold text-primary">{s.price}</p>
                 </CardHeader>

@@ -23,9 +23,9 @@ export function BrandSubtitle({ className }: BrandSubtitleProps) {
         className
       )}
     >
-      <span className="font-extrabold text-[#0E8B8B] -mr-[0.05em]">B</span>usiness{" "}
-      <span className="font-extrabold text-[#0E8B8B] -mr-[0.05em]">G</span>rowth{" "}
-      <span className="font-extrabold text-[#0E8B8B] -mr-[0.05em]">M</span>echanics
+      <span className="font-bold text-primary -mr-[0.05em]">B</span>usiness{" "}
+      <span className="font-bold text-primary -mr-[0.05em]">G</span>rowth{" "}
+      <span className="font-bold text-primary -mr-[0.05em]">M</span>echanics
     </span>
   );
 }

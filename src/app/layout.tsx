@@ -2,13 +2,30 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Inter, JetBrains_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+// 日本語本文・見出し（ブランドガイド §4）
 const notoSansJp = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto",
+  display: "swap",
+});
+
+// ラテン・数字（ロゴ/統計/見出しのラテン）
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+// コード・桁揃え数値（表/KPI）= 等幅 + tabular-nums
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono-jb",
   display: "swap",
 });
 
@@ -66,7 +83,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={cn("font-sans", notoSansJp.variable)}>
+    <html
+      lang="ja"
+      className={cn("font-sans", notoSansJp.variable, inter.variable, jetBrainsMono.variable)}
+    >
       <body className="min-h-screen bg-background">
         <Header />
         <main>{children}</main>

@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
-import { Mail, Clock, MessageSquare } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ObfuscatedEmail } from "@/components/contact/obfuscated-email";
+
+const notes = [
+  {
+    title: "返信は24時間以内",
+    desc: "土日祝日を除く平日にご連絡します。急ぎの場合はその旨をお書きください。",
+  },
+  {
+    title: "ヒアリングは30分",
+    desc: "Zoom or Google Meetで実施。画面共有で業務を見せていただくと、より具体的なご提案ができます。",
+  },
+  {
+    title: "秘密保持は万全",
+    desc: "ヒアリングで伺った内容は外部に共有しません。必要であればNDA締結も対応します。",
+  },
+];
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -14,13 +28,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-muted/35 py-20">
+      <section className="border-b border-border bg-muted/30 py-20">
         <div className="container-narrow">
           <SectionHeader
-            label="CONTACT"
+            label="Contact"
             title="お問い合わせ"
             subtitle="「この作業、どれくらい軽くできる？」「費用対効果は合う？」どんな小さな疑問でも、気軽にどうぞ。"
-            align="center"
           />
         </div>
       </section>
@@ -29,42 +42,21 @@ export default function ContactPage() {
         <div className="container-wide grid grid-cols-1 gap-10 lg:grid-cols-3">
           <div className="space-y-8">
             <div>
-              <h2 className="mb-4 text-lg font-bold">ご連絡の前に</h2>
-              <div className="space-y-5">
-                {[
-                  {
-                    icon: Clock,
-                    title: "返信は24時間以内",
-                    desc: "土日祝日を除く平日にご連絡します。急ぎの場合はその旨をお書きください。",
-                  },
-                  {
-                    icon: MessageSquare,
-                    title: "ヒアリングは30分",
-                    desc: "Zoom or Google Meetで実施。画面共有で業務を見せていただくと、より具体的なご提案ができます。",
-                  },
-                  {
-                    icon: Mail,
-                    title: "秘密保持は万全",
-                    desc: "ヒアリングで伺った内容は外部に共有しません。必要であればNDA締結も対応します。",
-                  },
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.title} className="flex gap-4">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent">
-                        <Icon size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <p className="mb-1 text-sm font-bold">{item.title}</p>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
-                      </div>
+              <h2 className="mb-5 text-lg font-bold tracking-tight">ご連絡の前に</h2>
+              <div className="border-t border-border">
+                {notes.map((item, i) => (
+                  <div key={item.title} className="flex gap-4 border-b border-border py-5">
+                    <span className="font-numeric text-sm text-warm-accent">0{i + 1}</span>
+                    <div>
+                      <p className="mb-1 text-sm font-bold">{item.title}</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
 
-            <Card className="border-border/80 bg-muted/25">
+            <Card className="border-border bg-muted/25">
               <CardHeader>
                 <CardTitle className="text-sm">直接メール</CardTitle>
               </CardHeader>
@@ -75,7 +67,7 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-2">
-            <Card className="border-border/80">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-lg">お問い合わせフォーム</CardTitle>
               </CardHeader>

@@ -80,7 +80,7 @@ export function ContactForm() {
         <input type="hidden" name="budget" value={budget} />
       </div>
 
-      <Button type="submit" className="w-full rounded-full py-5">
+      <Button type="submit" className="w-full py-5">
         送信する（無料）
       </Button>
       <p className="text-center text-xs text-muted-foreground">

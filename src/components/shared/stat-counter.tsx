@@ -1,83 +1,22 @@
-"use client";
-
-import { useEffect, useMemo, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type StatCounterProps = {
   value: string;
   label: string;
+  className?: string;
 };
 
-function parseCounterValue(value: string) {
-  const match = value.match(/\d+/);
-  if (!match) return { target: null as number | null, prefix: "", suffix: value };
-
-  const number = Number(match[0]);
-  const start = match.index ?? 0;
-  const end = start + match[0].length;
-  return {
-    target: number,
-    prefix: value.slice(0, start),
-    suffix: value.slice(end),
-  };
-}
-
-export function StatCounter({ value, label }: StatCounterProps) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-  const parsed = useMemo(() => parseCounterValue(value), [value]);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setStarted(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!started || parsed.target === null) return;
-
-    const duration = 900;
-    const startAt = performance.now();
-    const target = parsed.target;
-    let frame = 0;
-
-    const tick = (time: number) => {
-      const progress = Math.min((time - startAt) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(target * eased));
-      if (progress < 1) {
-        frame = requestAnimationFrame(tick);
-      }
-    };
-
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [started, parsed.target]);
-
-  const display =
-    parsed.target === null ? value : `${parsed.prefix}${count.toLocaleString()}${parsed.suffix}`;
-
+/**
+ * editorial 統計ブロック（v2.0 2026-07-22）。
+ * 旧実装のガラス面（bg-white/15）・影・backdrop-blur・カウントアップ演出は
+ * フラット原則（§8 Don'ts 影／グラデ）と「静かな専門性」方針に反するため撤去。
+ * 数値は等幅 tabular（.font-numeric）で桁を揃え、罫線と余白で示す。
+ */
+export function StatCounter({ value, label, className }: StatCounterProps) {
   return (
-    <div
-      ref={ref}
-      className="rounded-2xl border border-white/35 bg-white/15 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-sm"
-    >
-      <p className="text-4xl font-bold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">{display}</p>
-      <p className="mt-2 text-sm text-white/90">{label}</p>
+    <div className={cn("border-l-2 border-primary/70 pl-4", className)}>
+      <p className="font-numeric text-4xl font-semibold text-foreground md:text-5xl">{value}</p>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{label}</p>
     </div>
   );
 }

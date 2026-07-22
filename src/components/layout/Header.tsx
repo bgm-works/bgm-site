@@ -24,7 +24,7 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
       <div className="container-wide flex h-18 items-center justify-between gap-3">
         <Link href="/" className="flex flex-col leading-none">
           <BrandWord className="text-xl" />
@@ -38,7 +38,7 @@ export function Header() {
                 {item.highlight ? (
                   <Button
                     render={<Link href={item.href} />}
-                    className="rounded-full px-4"
+                    className="px-4"
                   >
                     {item.label}
                   </Button>

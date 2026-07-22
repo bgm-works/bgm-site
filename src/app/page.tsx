@@ -1,137 +1,124 @@
 import Link from "next/link";
-import { ArrowRight, Bot, BrainCircuit, ChartNoAxesCombined, Code, Megaphone, Palette, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/section-header";
 import { StatCounter } from "@/components/shared/stat-counter";
+import { ProofLinks } from "@/components/shared/proof-links";
 import { Reveal } from "@/components/shared/reveal";
+
+// 会社概要（/company）と実績（/works）の確定値から引用。推測値を置かない。
+const heroMeta = [
+  { k: "会社設立", v: "2026年7月" },
+  { k: "法人番号", v: "9140001143437" },
+  { k: "所在地", v: "兵庫県南あわじ市" },
+  { k: "対応", v: "全国・オンライン完結" },
+];
+
+// 法人としての実績（個人の経歴ではなく、会社が出しているもの）。
+const stats = [
+  { value: "5", label: "本番稼働・自社運用しているプロダクト" },
+  { value: "4", label: "提供領域（開発・業務改善・集客・アトリエ支援）" },
+  { value: "8", label: "定款に定めた事業目的の号数" },
+  { value: "全国", label: "オンラインで完結する対応範囲" },
+];
 
 const services = [
   {
-    icon: Bot,
-    label: "BUSINESS IMPROVEMENT",
-    title: "業務改善支援",
-    description:
-      "事務作業、在庫管理、販促づくり。繰り返しの業務を見直し、利益につながる時間を経営者と現場に戻します。",
-    href: "/services/ai-implementation",
-  },
-  {
-    icon: Palette,
-    label: "ATELIER BOOST",
-    title: "アトリエboost",
-    description:
-      "受注管理、在庫、SNS投稿。制作以外の作業を減らし、あなたは「創る」ことに集中できるアトリエへ。",
-    href: "/services/atelier-boost",
-  },
-  {
-    icon: Megaphone,
-    label: "AI MARKETING",
-    title: "AI集客・売上アップ支援",
-    description:
-      "目的を入れるだけのAIマーケプラン作成、SNS運用、動画→投稿の自動展開。「攻め」をAIで仕組み化し、集客と売上を伸ばします。",
-    href: "/services/marketing",
-  },
-  {
-    icon: Code,
+    no: "01",
     label: "DEVELOPMENT",
     title: "受託開発",
     description:
-      "17年のSE経験と効率的な開発体制で、要件定義から本番運用まで一気通貫。事業成長に直結するプロダクトを短納期で届けます。",
+      "要件定義から本番運用まで一気通貫。Webアプリ・業務ツール・会員制サービスを、事業成長に直結する形で設計し、運用に耐える品質で届けます。",
     href: "/services/development",
+  },
+  {
+    no: "02",
+    label: "BUSINESS IMPROVEMENT",
+    title: "業務改善支援",
+    description:
+      "手入力・転記・確認待ちを減らし、経営者と現場の時間を利益につながる仕事に戻します。開発を伴わない業務フローの整理から着手できます。",
+    href: "/services/ai-implementation",
+  },
+  {
+    no: "03",
+    label: "AI MARKETING",
+    title: "集客・売上アップ支援",
+    description:
+      "AIによる集客プラン、SNS運用の仕組み化、動画から各SNS投稿への自動展開。属人的な発信を、止まらない仕組みに変えます。",
+    href: "/services/marketing",
+  },
+  {
+    no: "04",
+    label: "ATELIER BOOST",
+    title: "アトリエboost",
+    description:
+      "受注・在庫・発信を整理し、個人クリエイターが制作と販売に集中できる状態を作ります。制作以外の作業を減らすバックオフィス支援です。",
+    href: "/services/atelier-boost",
   },
 ];
 
-const stats = [
-  { value: "17年", label: "システムエンジニア経験" },
-  { value: "3冠", label: "AWS認定資格（SAA/DVA/SOA）" },
-  { value: "1/3", label: "他社比の開発納期" },
-  { value: "月30h+", label: "業務削減の実績" },
-];
-
-const flow = [
-  { step: "01", title: "無料ヒアリング", desc: "30分のオンラインで、今いちばん困っていることを聞かせてください。" },
-  { step: "02", title: "成長設計図の提案", desc: "あなたの事業に合った仕組みと費用感を、3営業日以内にご提案します。" },
-  { step: "03", title: "仕組みの構築・導入", desc: "小さく始めて、手応えを感じながら一緒に作り上げます。" },
-  { step: "04", title: "一緒に育てる", desc: "事業の変化に合わせて仕組みを定期チューニング。ずっと伴走します。" },
-];
-
-const works = [
-  { tag: "工務店 / 日報・発注", title: "日報・発注整理フロー", desc: "現場から届く写真・音声を、翌朝の確認しやすい日報下書きと発注メモへ整えます。" },
-  { tag: "士業 / 受付管理", title: "依頼受付・台帳整理", desc: "受付メールを案件台帳と返信確認につなげ、転記時間と返信漏れを減らします。" },
-  { tag: "クリエイター / 受注・在庫", title: "アトリエ業務整理", desc: "注文・在庫・発送準備・発信を整理し、制作時間と販売機会を増やします。" },
+const reasons = [
+  {
+    title: "事業の詰まりを、構造で捉える",
+    text: "表面的なツール導入ではなく、売上や時間の詰まりを分解し、最も効く一手から着手します。作る前に、直す場所を見極めます。",
+  },
+  {
+    title: "小さく作って、早く確かめる",
+    text: "最初から大きく作りません。成果が出る単位で実装し、投資対効果を見ながら範囲を広げます。動く試作を触ってから本開発を判断できます。",
+  },
+  {
+    title: "運用フェーズまで、伴走する",
+    text: "納品して終わりにしません。公開後も月額保守で運用と改善を続け、事業の変化に仕組みを追従させます。長く隣にいる開発会社です。",
+  },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-[var(--hero-grad-start)] via-background to-[var(--hero-grad-end)] py-24">
-        <div aria-hidden className="bg-grid-pattern absolute inset-0 opacity-40" />
-        <div aria-hidden className="absolute -left-24 top-0 h-60 w-60 rounded-full bg-accent/70 blur-3xl" />
-        <div aria-hidden className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-secondary blur-3xl" />
-        <div className="container-wide relative grid items-center gap-10 lg:grid-cols-2">
-          <Reveal>
-            <h1 className="text-balance text-[clamp(2.6rem,7vw,4.6rem)] font-bold leading-tight">
-              がんばりを、<br />
-              仕組みに変えよう。
-            </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-              毎日がんばっているのに、もっと伸ばしたい。その想いを、業務設計と実装力で
-              「成長の仕組み」に変えます。ムダを減らす<strong>守り</strong>と、
-              集客・売上を伸ばす<strong>攻め</strong>の両輪で、実装と運用まで一気通貫で伴走します。
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-6">
-                無料ヒアリングを予約する <ArrowRight />
-              </Button>
-              <Button variant="outline" render={<Link href="/#services" />} size="lg" className="rounded-full px-6">
-                サービスを見る
-              </Button>
-            </div>
-          </Reveal>
+      {/* Hero — フラット・editorial（グラデ/ブロブ/グリッド/ダミーカードを撤去） */}
+      <section className="border-b border-border">
+        <div className="container-wide py-20 md:py-28">
+          <p className="section-eyebrow uppercase">Business Growth Mechanics</p>
+          <h1 className="mt-6 max-w-3xl text-[clamp(2.4rem,6.5vw,4.2rem)] font-bold leading-[1.15] tracking-tight">
+            がんばりを、<br className="hidden sm:block" />
+            仕組みに変えよう。
+          </h1>
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            BGM Works株式会社は、業務設計とAI実装で、中小企業と個人事業のための
+            「成長の仕組み」を作る開発会社です。ムダを減らす守りと、集客・売上を伸ばす攻めの両輪を、
+            実装から運用まで一気通貫で伴走します。
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Button render={<Link href="/contact" />} size="lg" className="px-6">
+              無料で相談する <ArrowRight />
+            </Button>
+            <Button variant="outline" render={<Link href="/works" />} size="lg" className="px-6">
+              公開中のプロダクトを見る
+            </Button>
+          </div>
 
-          <Reveal className="delay-100">
-            <Card className="overflow-hidden border-border/70 shadow-lg">
-              <CardHeader className="bg-muted/40">
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <Sparkles className="size-4 text-primary" />
-                  Growth Architecture
-                </CardTitle>
-                <CardDescription>課題の発見から改善ループまで可視化します</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4 p-6">
-                {[
-                  "現場ヒアリングでボトルネックを構造化",
-                  "現場の業務フローに合わせて小さく実装",
-                  "運用データを基に継続改善を実行",
-                ].map((item, index) => (
-                  <div key={item} className="flex items-start gap-3 rounded-xl border border-border/80 p-4">
-                    <span className="font-mono text-xs text-primary">0{index + 1}</span>
-                    <p className="text-sm text-muted-foreground">{item}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </Reveal>
+          {/* 法人メタ情報（editorial の署名的な罫線行） */}
+          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-border pt-8 md:grid-cols-4">
+            {heroMeta.map((m) => (
+              <div key={m.k}>
+                <dt className="text-xs tracking-[0.14em] text-muted-foreground">{m.k}</dt>
+                <dd className="mt-1.5 font-numeric text-sm font-medium text-foreground">{m.v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      {/*
-        BGMWorks ブランド v1.0 (2026-04-21):
-        - 背景: 旧 hard-coded ダークティール (#14383d 系) → Primary Dark (#08545A) のフラット 1 色。
-        - section-eyebrow ("ABOUT BGM") は default で primary 色 (#0E8B8B) になり、
-          暗背景上で同系色のため埋もれていた → テラコッタ (#D89060) で上書き。
-        - section-subtitle / section-title も白系で明示的に上書き。
-      */}
-      <section className="bg-[#08545A] py-16">
+      {/* 数字で見るBGM（法人実績） */}
+      <section className="border-b border-border bg-muted/30 py-20">
         <div className="container-wide">
           <SectionHeader
-            label="ABOUT BGM"
-            title="数字で見るBGM"
-            subtitle="現場で積み重ねてきた経験・資格・成果を、BGMの実績として分かりやすく可視化しています。"
-            className="mb-8 [&_.section-eyebrow]:text-[#D89060] [&_.section-subtitle]:text-white/85 [&_.section-title]:text-white"
+            label="By the numbers"
+            title="数字で見るBGM Works"
+            subtitle="個人の経歴ではなく、会社として実際に出しているものです。稼働中のプロダクトは本番URLから直接触れます。"
+            className="mb-12"
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (
               <StatCounter key={s.label} value={s.value} label={s.label} />
             ))}
@@ -139,219 +126,138 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container-wide">
-          <Reveal>
-            <SectionHeader
-              label="OUR PHILOSOPHY"
-              title="がんばっている、あなたへ。"
-              subtitle="BGMは「作って終わり」ではなく、仕組みを育て続ける伴走型のパートナーです。"
-              align="center"
-            />
-          </Reveal>
-          <Reveal className="mx-auto mt-10 max-w-4xl">
-            <Card className="border-border/70 bg-card/90 shadow-sm">
-              <CardContent className="space-y-5 p-8 text-muted-foreground">
-                <p>
-                  「もう少し売上を伸ばしたい。でも、自分の手が足りない。」
-                  「何から手をつければいいか分からない。」
-                </p>
-                <p>
-                  その忙しさは、事業を本気で良くしたいという証拠です。成長する事業には、
-                  必ず「成長の仕組み」があります。それは才能でも運でもなく、設計できるものです。
-                </p>
-                <p className="font-medium text-foreground">
-                  あなたのがんばりを、仕組みに変える。そしてその仕組みを一緒に育てる。
-                  それがBGMの約束です。
-                </p>
-              </CardContent>
-            </Card>
-          </Reveal>
-        </div>
-      </section>
-
-      <section id="services" className="bg-muted/35 py-24">
-        <div className="container-wide">
-          <Reveal>
-            <SectionHeader
-              label="OUR SERVICES"
-              title="4つのサービス"
-              subtitle="守り（業務効率化）と攻め（集客・売上）の両輪で、事業フェーズと課題に合わせて最適な仕組みを設計します。"
-              align="center"
-              className="mb-12"
-            />
-          </Reveal>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <Reveal key={service.title}>
-                  <Card className="group h-full border-border/80 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <CardHeader>
-                      <Badge variant="secondary" className="w-fit text-[10px] tracking-[0.2em]">
-                        {service.label}
-                      </Badge>
-                      <div className="mt-4 flex size-12 items-center justify-center rounded-xl bg-accent text-primary">
-                        <Icon className="size-5" />
-                      </div>
-                      <CardTitle className="pt-3">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-5">
-                      <CardDescription className="text-sm leading-relaxed">
-                        {service.description}
-                      </CardDescription>
-                      <Button variant="ghost" render={<Link href={service.href} />} className="px-0 text-primary">
-                        詳しく見る <ArrowRight />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </Reveal>
-              );
-            })}
+      {/* Philosophy */}
+      <section className="border-b border-border py-20 md:py-28">
+        <div className="container-wide grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+          <SectionHeader label="Philosophy" title="がんばっている、あなたへ。" />
+          <div className="max-w-2xl space-y-5 border-l-2 border-primary/60 pl-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              「もう少し売上を伸ばしたい。でも自分の手が足りない」「何から手をつければいいか分からない」。
+              その忙しさは、事業を本気で良くしたいという証拠だと考えています。
+            </p>
+            <p>
+              成長する事業には、必ず「成長の仕組み」があります。それは才能でも運でもなく、設計できるものです。
+            </p>
+            <p className="font-medium text-foreground">
+              がんばりを、仕組みに変える。そしてその仕組みを一緒に育てる。それがBGM Worksの約束です。
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
+      {/* Services — 罫線番号リスト（装飾アイコン/カードグリッドを撤去） */}
+      <section id="services" className="border-b border-border py-20 md:py-28">
         <div className="container-wide">
-          <Reveal>
-            <SectionHeader
-              label="HOW WE WORK"
-              title="はじめ方"
-              subtitle="4ステップで、あなたの事業に成長の仕組みが生まれます。"
-              align="center"
-              className="mb-12"
-            />
-          </Reveal>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {flow.map((item) => (
-              <Reveal key={item.step}>
-                <Card className="relative h-full border-border/80">
-                  <CardHeader>
-                    <p className="font-mono text-4xl font-semibold text-muted">#{item.step}</p>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm leading-relaxed">{item.desc}</CardDescription>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-muted/35 py-24">
-        <div className="container-wide">
-          <Reveal>
-            <SectionHeader
-              label="WORKS"
-              title="実績・構築例"
-              subtitle="お客様の時間削減・確認漏れ削減・売上機会づくりにつながる改善例を紹介します。"
-              className="mb-12"
-            />
-          </Reveal>
-          <div className="grid gap-6 md:grid-cols-3">
-            {works.map((work) => (
-              <Reveal key={work.title}>
-                <Card className="group overflow-hidden border-border/80 transition-all hover:-translate-y-1 hover:shadow-xl">
-                  <div className="h-36 bg-gradient-to-br from-accent to-secondary p-4">
-                    <div className="flex h-full items-end rounded-lg border border-white/40 bg-white/25 p-3">
-                      <p className="text-xs font-medium tracking-[0.18em] text-primary">{work.tag}</p>
-                    </div>
+          <SectionHeader
+            label="Services"
+            title="4つのサービス"
+            subtitle="守り（業務効率化）と攻め（集客・売上）の両輪で、事業フェーズと課題に合わせて最適な仕組みを設計します。"
+            className="mb-14"
+          />
+          <div className="border-t border-border">
+            {services.map((service) => (
+              <Reveal key={service.title}>
+                <Link
+                  href={service.href}
+                  className="group grid gap-4 border-b border-border py-8 md:grid-cols-[5rem_minmax(0,1fr)_auto] md:items-baseline md:gap-8"
+                >
+                  <span className="font-numeric text-2xl font-semibold text-warm-accent">
+                    {service.no}
+                  </span>
+                  <div>
+                    <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
+                      {service.label}
+                    </p>
+                    <h3 className="mt-1.5 text-xl font-bold tracking-tight md:text-2xl">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                      {service.description}
+                    </p>
                   </div>
-                  <CardHeader>
-                    <CardTitle>{work.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="leading-relaxed">{work.desc}</CardDescription>
-                  </CardContent>
-                </Card>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors group-hover:text-primary/80">
+                    詳しく見る <ArrowRight className="size-4" />
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>
-          <div className="mt-10 text-center">
-            <Button variant="outline" render={<Link href="/works" />} className="rounded-full px-6">
-              すべての実績を見る <ArrowRight />
+        </div>
+      </section>
+
+      {/* Proof — 実物で確かめる（共通コンポーネント） */}
+      <ProofLinks />
+
+      {/* Why BGM */}
+      <section className="border-b border-border py-20 md:py-28">
+        <div className="container-wide">
+          <SectionHeader label="Why BGM" title="BGM Worksが選ばれる理由" className="mb-14" />
+          <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
+            {reasons.map((reason, i) => (
+              <div key={reason.title} className="bg-background p-8">
+                <span className="font-numeric text-sm text-warm-accent">0{i + 1}</span>
+                <h3 className="mt-4 text-lg font-bold tracking-tight">{reason.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 代表（個人の経歴はここに集約） */}
+      <section className="border-b border-border py-20 md:py-28">
+        <div className="container-wide grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+          <SectionHeader label="Founder" title="代表について" />
+          <div className="max-w-2xl">
+            <p className="text-lg font-bold tracking-tight">代表取締役　熱田 健司</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+              17年のシステムエンジニア経験で培った仕組み設計の確かさと、最新AI技術への現場での好奇心。
+              その両方を持って、地方の中小企業のすぐ隣で長く伴走することを事業にしています。
+            </p>
+            <dl className="mt-6 grid grid-cols-1 gap-4 border-t border-border pt-6 sm:grid-cols-2">
+              <div>
+                <dt className="text-xs tracking-[0.14em] text-muted-foreground">開発経験</dt>
+                <dd className="mt-1 font-numeric text-2xl font-semibold text-foreground">17年</dd>
+              </div>
+              <div>
+                <dt className="text-xs tracking-[0.14em] text-muted-foreground">AWS認定資格</dt>
+                <dd className="mt-1 font-numeric text-2xl font-semibold text-foreground">
+                  3冠 <span className="text-sm font-normal text-muted-foreground">SAA / DVA / SOA</span>
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-6 text-sm text-muted-foreground">
+              会社の詳細は
+              <Link href="/company" className="text-primary hover:underline">
+                会社概要
+              </Link>
+              にまとめています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — フラットな Primary 帯（グラデ撤去） */}
+      <section className="bg-primary py-20 text-primary-foreground md:py-24">
+        <div className="container-wide text-center">
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+            まずは気軽に、話してみてください。
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/85 md:text-base">
+            「何から手をつければいいか分からない」でも大丈夫です。30分の無料相談で、
+            事業の「がんばりどころ」を一緒に整理します。
+          </p>
+          <div className="mt-9">
+            <Button
+              render={<Link href="/contact" />}
+              size="lg"
+              variant="secondary"
+              className="px-7 text-secondary-foreground"
+            >
+              無料で相談する <ArrowRight />
             </Button>
           </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container-wide">
-          <Reveal>
-            <SectionHeader
-              label="WHY BGM"
-              title="BGMが選ばれる理由"
-              subtitle="見つける・作る・育てるの3つを、ひとつのチームで実装します。"
-              align="center"
-              className="mb-12"
-            />
-          </Reveal>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                icon: BrainCircuit,
-                title: "事業の詰まりを構造で捉える",
-                text: "表面的なツール導入ではなく、売上が伸びない原因を分解して最短で改善します。",
-              },
-              {
-                icon: Code,
-                title: "小さく作って早く検証",
-                text: "最初から大きく作らず、成果が出る単位で実装。投資対効果を可視化します。",
-              },
-              {
-                icon: ChartNoAxesCombined,
-                title: "運用フェーズまで伴走",
-                text: "導入後もモニタリングと改善を継続し、仕組みが止まらない状態を作ります。",
-              },
-            ].map((reason) => {
-              const Icon = reason.icon;
-              return (
-                <Reveal key={reason.title}>
-                  <Card className="h-full border-border/80">
-                    <CardHeader>
-                      <div className="flex size-12 items-center justify-center rounded-xl bg-accent text-primary">
-                        <Icon className="size-5" />
-                      </div>
-                      <CardTitle className="pt-3 text-xl">{reason.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="leading-relaxed">{reason.text}</CardDescription>
-                    </CardContent>
-                  </Card>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container-narrow">
-          <Reveal>
-            <Card className="overflow-hidden border-border shadow-lg">
-              <CardContent className="bg-gradient-to-r from-primary/95 to-[var(--cool-accent)] p-10 text-center text-white">
-                <h2 className="text-3xl font-bold">まずは気軽に、話してみてください。</h2>
-                <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/80 md:text-base">
-                  「何から手をつければいいか分からない」でも大丈夫です。30分の無料ヒアリングで、
-                  あなたの事業の「がんばりどころ」を一緒に整理します。
-                </p>
-                <div className="mt-7">
-                  <Button
-                    render={<Link href="/contact" />}
-                    size="lg"
-                    variant="secondary"
-                    className="rounded-full px-7 text-primary"
-                  >
-                    無料ヒアリングを予約する <ArrowRight />
-                  </Button>
-                </div>
-                <p className="mt-4 text-xs text-white/70">返信は24時間以内。費用は一切かかりません。</p>
-              </CardContent>
-            </Card>
-          </Reveal>
+          <p className="mt-4 text-xs text-primary-foreground/70">返信は24時間以内。費用は一切かかりません。</p>
         </div>
       </section>
     </>

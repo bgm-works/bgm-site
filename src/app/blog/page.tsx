@@ -49,7 +49,7 @@ export default function BlogPage() {
           <p className="mb-8 text-muted-foreground">
             記事を読んで「うちも試したい」と思ったら、お気軽にどうぞ。
           </p>
-          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
+          <Button render={<Link href="/contact" />} size="lg" className="px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Button>
         </div>

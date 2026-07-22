@@ -52,7 +52,7 @@ export function ProofLinks() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Button variant="outline" render={<Link href="/works" />} className="rounded-full px-6">
+          <Button variant="outline" render={<Link href="/works" />} className="px-6">
             すべての公開プロダクトを見る <ArrowRight size={15} />
           </Button>
         </div>

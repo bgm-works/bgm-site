@@ -125,7 +125,7 @@ export default function PricingPage() {
           <p className="mb-8 text-muted-foreground">
             「予算が不安」「何から始めれば」。その疑問にも、ヒアリングでお答えします。
           </p>
-          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
+          <Button render={<Link href="/contact" />} size="lg" className="px-8">
             無料ヒアリングを予約する <ArrowRight size={16} />
           </Button>
           <p className="mt-3 text-xs text-muted-foreground">返信は24時間以内。費用は一切かかりません。</p>

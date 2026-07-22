@@ -180,7 +180,6 @@ export default function WorksPage() {
                       </div>
                       <Button
                         render={<a href={p.url} target="_blank" rel="noopener noreferrer" />}
-                        className="rounded-full"
                       >
                         サイトを見る <ExternalLink size={13} />
                       </Button>
@@ -319,7 +318,7 @@ export default function WorksPage() {
           <p className="mb-8 text-muted-foreground">
             まずは1業務だけ、現状の流れを伺いながら効果が出やすい形に落とし込みます。
           </p>
-          <Button render={<Link href="/contact" />} size="lg" className="rounded-full px-8">
+          <Button render={<Link href="/contact" />} size="lg" className="px-8">
             相談してみる <ArrowRight size={16} />
           </Button>
           <p className="mt-6 text-sm text-muted-foreground">
