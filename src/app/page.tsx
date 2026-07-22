@@ -226,22 +226,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 代表 */}
+      {/* About — 会社を主役に（個人名は前面に出さず会社概要へ集約） */}
       <section className="border-b border-border py-24 md:py-32">
-        <div className="container-wide grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="container-wide grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="section-eyebrow uppercase">Founder</p>
-            <p className="display-md mt-6">代表取締役<br />熱田 健司</p>
+            <p className="section-eyebrow uppercase">About BGM Works</p>
+            <p className="display-md mt-6">
+              大企業品質の設計力を、
+              <br />
+              地方の一社の隣に。
+            </p>
           </div>
           <div className="max-w-2xl">
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              17年のシステムエンジニア経験で培った仕組み設計の確かさと、最新AI技術への現場での好奇心。
-              その両方を持って、地方の中小企業のすぐ隣で長く伴走することを事業にしています。
+              BGM Worksは、17年のシステム開発経験とAWS認定資格3冠に裏打ちされた設計力で、
+              中小企業と個人事業のすぐ隣に立つ開発会社です。大企業で磨いた仕組み設計の確かさと、
+              最新AI技術への現場での好奇心を両手に、作って終わりにせず長く伴走します。
             </p>
             <div className="mt-10 flex flex-wrap gap-x-16 gap-y-8 border-t border-border pt-8">
               <div>
                 <p className="font-numeric text-4xl font-semibold">17年</p>
-                <p className="mt-2 text-sm text-muted-foreground">システム開発経験</p>
+                <p className="mt-2 text-sm text-muted-foreground">システム開発の経験</p>
               </div>
               <div>
                 <p className="font-numeric text-4xl font-semibold">
@@ -250,6 +255,13 @@ export default function HomePage() {
                 <p className="mt-2 text-sm text-muted-foreground">AWS認定資格</p>
               </div>
             </div>
+            <p className="mt-8 text-sm text-muted-foreground">
+              代表者を含む会社の詳細は
+              <Link href="/company" className="text-primary hover:underline">
+                会社概要
+              </Link>
+              をご覧ください。
+            </p>
           </div>
         </div>
       </section>
