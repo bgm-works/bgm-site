@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | BGM",
   },
   description:
-    "がんばりを、仕組みに変えよう。BGM Worksは業務設計とAI実装で中小企業・個人事業の成長を支える開発会社です。ホームページ制作・受託開発・業務改善・集客支援まで一気通貫で伴走し、30分の無料相談で事業の課題を一緒に整理します。",
+    "がんばりを、仕組みに変えよう。BGM Worksは業務設計とAI実装で中小企業・個人事業の成長を支える開発会社です。ホームページ制作・受託開発・業務改善・集客支援まで一気通貫で伴走します。30分の無料相談は全国オンライン対応、事業の課題を一緒に整理します。",
   keywords: ["業務改善支援", "時間削減", "Webアプリ開発", "中小企業DX", "事業成長", "GAS連携", "Business Growth Mechanics", "BGM"],
   authors: [{ name: "BGM Works株式会社" }],
   creator: "BGM Works株式会社",
