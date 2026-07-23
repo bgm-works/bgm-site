@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BrandWord } from "@/components/shared/brand-word";
@@ -27,6 +28,17 @@ export function Footer() {
           <div>
             <h3 className="mb-3 text-sm font-bold text-foreground">サービス</h3>
             <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://hp-shindan.bgm-works.com/shindan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                >
+                  ホームページ無料診断
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+              </li>
               <li>
                 <Link href="/services/web-production" className="text-sm text-muted-foreground hover:text-primary">
                   ホームページ制作・更新支援

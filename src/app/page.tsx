@@ -32,6 +32,9 @@ type Service = {
   promise?: string;
   panelClass: string;
   promiseClass?: string;
+  /** その場で試せる無料ツールがある場合の外部導線（例: ホームページ無料診断） */
+  toolUrl?: string;
+  toolLabel?: string;
 };
 
 const services: Service[] = [
@@ -48,6 +51,8 @@ const services: Service[] = [
       url: "aidial.jp",
     },
     panelClass: "bg-secondary",
+    toolUrl: "https://hp-shindan.bgm-works.com/shindan",
+    toolLabel: "無料診断を試す",
   },
   {
     no: "02",
@@ -217,14 +222,27 @@ export default function HomePage() {
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
                   {s.description}
                 </p>
-                <Button
-                  render={<Link href={s.href} />}
-                  variant="outline"
-                  className="group mt-8 px-6"
-                >
-                  詳しく見る{" "}
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <Button
+                    render={<Link href={s.href} />}
+                    variant="outline"
+                    className="group px-6"
+                  >
+                    詳しく見る{" "}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                  {s.toolUrl && (
+                    <a
+                      href={s.toolUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                      {s.toolLabel}
+                      <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                </div>
               </div>
               {/* visual */}
               <Reveal className={i % 2 === 1 ? "lg:order-1" : ""}>

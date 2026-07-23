@@ -201,14 +201,26 @@ export default function WebProductionPage() {
 
       <section className="py-20">
         <div className="container-narrow text-center">
-          <h2 className="section-title mb-4">いまのサイト、無料で診断します。</h2>
+          <h2 className="section-title mb-4">いまのサイト、その場で無料診断。</h2>
           <p className="mb-8 leading-relaxed text-muted-foreground">
-            現在のホームページのURLを送っていただければ、30分の無料相談で
-            「どこを直すと効果が出るか」を具体的にお伝えします。
+            ホームページのURLと目指したいゴールを入力するだけで、8つの観点のスコアと、
+            優先度の高い3つの改善ポイントをその場でお出しします。登録は不要です。
           </p>
-          <Button render={<Link href="/contact" />} size="lg" className="px-8">
-            無料で相談する <ArrowRight size={16} />
-          </Button>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button
+              render={
+                <a href="https://hp-shindan.bgm-works.com/shindan" target="_blank" rel="noopener noreferrer" />
+              }
+              size="lg"
+              className="group px-8"
+            >
+              無料で診断する{" "}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button variant="outline" render={<Link href="/contact" />} size="lg" className="px-8">
+              相談から始める
+            </Button>
+          </div>
         </div>
       </section>
     </>
