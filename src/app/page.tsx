@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroVisual } from "@/components/shared/hero-visual";
 import { BrowserFrame } from "@/components/shared/browser-frame";
 import { Reveal } from "@/components/shared/reveal";
+import { serialize, organization, website } from "@/lib/vendor/typed";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://bgm-works.com/" },
+};
+
+// 構造化データ（seo-jsonld・ASSET-047 で生成）
+const ld = serialize([
+  organization({
+    name: "BGM Works株式会社",
+    url: "https://bgm-works.com/",
+    logo: "https://bgm-works.com/icon.png",
+  }),
+  website({ name: "BGM Works | Business Growth Mechanics", url: "https://bgm-works.com/" }),
+]);
 
 type Service = {
   no: string;
@@ -117,6 +133,7 @@ const products = [
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       {/* Hero — ブランド宣言を主役に。アークは右下から裁ち落とし（モバイルでも表示） */}
       <section className="relative overflow-hidden bg-primary-dark text-primary-foreground">
         <div
@@ -152,6 +169,12 @@ export default function HomePage() {
               事業を見る <ArrowRight className="size-4" />
             </Link>
           </div>
+          {/* FVの安心材料（検証可能な実数のみ。impact セクションと同一ソース） */}
+          <p className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-primary-foreground/70">
+            <span>本番稼働5プロダクトを自社運用</span>
+            <span>17年のシステム開発経験</span>
+            <span>相談無料・返信は24時間以内</span>
+          </p>
         </div>
       </section>
 
