@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroVisual } from "@/components/shared/hero-visual";
 import { BrowserFrame } from "@/components/shared/browser-frame";
@@ -159,13 +159,21 @@ export default function HomePage() {
             BGM Worksは、業務設計とAI実装で、中小企業と個人事業の成長を「仕組み」から支える開発会社です。
             ムダを減らす守りと、集客・売上を伸ばす攻めを、実装から運用まで一気通貫で伴走します。
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button
               render={<Link href="/contact" />}
               size="lg"
               className="bg-primary-foreground px-7 text-primary-dark hover:bg-warm-accent hover:text-white"
             >
               無料で相談する <ArrowRight />
+            </Button>
+            <Button
+              variant="outline"
+              render={<a href="https://hp-shindan.bgm-works.com/shindan" target="_blank" rel="noopener noreferrer" />}
+              size="lg"
+              className="border-primary-foreground/40 bg-transparent px-7 text-primary-foreground hover:border-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              サイトを無料診断 <ArrowUpRight />
             </Button>
             <Link
               href="#services"
@@ -361,18 +369,48 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="py-24 md:py-32">
-        <div className="container-wide text-center">
-          <h2 className="display-lg mx-auto max-w-3xl">まずは気軽に、話してみてください。</h2>
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            「何から手をつければいいか分からない」でも大丈夫です。30分の無料相談で、
-            事業の「がんばりどころ」を一緒に整理します。
-          </p>
-          <div className="mt-10">
+        <div className="container-wide">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="display-lg">まずは気軽に、話してみてください。</h2>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              「何から手をつければいいか分からない」でも大丈夫です。30分の無料相談で、
+              事業の「がんばりどころ」を一緒に整理します。
+            </p>
+          </div>
+
+          {/* 相談で得られること（何がもらえるかを先に示して、相談の敷居を下げる） */}
+          <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {[
+              "いまのサイトや業務の、どこを直すと効果が出るかを言語化します。",
+              "予算に合わせた現実的な進め方を提案します。小さく試す選択肢もあります。",
+              "概算の費用感と、着手から公開までの期間をその場でお伝えします。",
+            ].map((t) => (
+              <li
+                key={t}
+                className="flex gap-3 rounded-xl border border-border bg-muted/30 p-5 text-sm leading-relaxed text-muted-foreground"
+              >
+                <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button render={<Link href="/contact" />} size="lg" className="px-8">
               無料で相談する <ArrowRight />
             </Button>
+            <Button
+              variant="outline"
+              render={<a href="https://hp-shindan.bgm-works.com/shindan" target="_blank" rel="noopener noreferrer" />}
+              size="lg"
+              className="px-8"
+            >
+              先にサイトを無料診断 <ArrowUpRight />
+            </Button>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">返信は24時間以内。費用は一切かかりません。</p>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            相談後の売り込みはしません。返信は24時間以内、費用は一切かかりません。
+          </p>
         </div>
       </section>
     </>
