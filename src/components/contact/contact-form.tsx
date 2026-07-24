@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +19,12 @@ export function ContactForm() {
   const [budget, setBudget] = useState("");
 
   return (
-    <form action="https://formspree.io/f/xrerzbje" method="POST" className="space-y-5">
+    <form
+      action="https://formspree.io/f/xrerzbje"
+      method="POST"
+      className="space-y-5"
+      onSubmit={() => trackEvent("generate_lead", { service: service || "unspecified", budget: budget || "unspecified" })}
+    >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">お名前 *</Label>

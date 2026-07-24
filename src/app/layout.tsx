@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Noto_Sans_JP, Inter, JetBrains_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 // 日本語本文・見出し（ブランドガイド §4）
 const notoSansJp = Noto_Sans_JP({
@@ -91,6 +93,14 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        {/* GA4（bgm-works.com プロパティ G-PFX68Z3PJQ・サブドメイン一体計測） */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+        </Script>
       </body>
     </html>
   );
